@@ -1,0 +1,158 @@
+#home {
+	h2 {
+		margin-top: rem-calc(44px);
+		@media #{$medium-up} {
+			margin-top: rem-calc(88px);
+		}
+		@media #{$large-up} {
+			margin-top: rem-calc(104px);
+		}
+		@media #{$xlarge-up} {
+			margin-top: rem-calc(128px);
+		}
+	}
+	.top {
+		background: $primary-color;
+		padding-top: 0;
+		hr {
+			border: none;
+			border-top: 1px solid $white;
+			padding: 0;
+			@media #{$medium-up} {
+			margin: rem-calc(0 16px);
+			}
+		}		
+		@media #{$medium-up} {
+		padding-top: rem-calc(56px);
+		}
+		h2 {
+			color: $white;
+			padding-top: 0;
+			margin-top: rem-calc(48px);
+				@media #{$medium-up} { 
+					margin-top: rem-calc(48px);
+				}
+				@media #{$large-up} { 
+					margin-top: rem-calc(56px);
+				}
+		}
+		a {
+			color: $white;
+		}
+	}
+	.photo {
+		color: $white;
+		text-align: center;
+		padding-top: rem-calc(64px);
+		padding-bottom: rem-calc(64px);
+			@media #{$medium-up} { 
+				padding-top: rem-calc(96px);
+				padding-bottom: rem-calc(96px);
+			}
+			@media #{$large-up} { 
+				padding-top: rem-calc(240px);
+				padding-bottom: rem-calc(240px);
+			}		
+		a.button {
+			display: block;
+			width: rem-calc(160px);
+			@media #{$medium-up} { 
+				margin-top: rem-calc(32px);
+				width: rem-calc(280px);
+			}
+			@media #{$large-up} { 
+				margin-top: rem-calc(48px);
+			}
+		}
+		p {
+		font-style: italic;
+		@include hugebodyfontsize;
+		}
+	}
+}
+
+a.homedescription {
+	@include largebodyfontsize;
+	@include largebodyspacing;
+	line-height: 1.7;
+	color: $white;
+	@media #{$medium-up} { 
+		&:before {
+			background: url(../images/arrow_white.svg);
+			background-size: 100%;
+			display: block;
+			content: " ";
+			height: rem-calc(40px);
+			width: rem-calc(40px);
+			top: rem-calc(4px);
+			left: rem-calc(-56px);
+			position: absolute;	
+		}
+	}
+	&:hover {
+		opacity: 0.5;
+	}
+}
+#selective {
+	background-color: #005b82;
+	background-image: url(../images/selected.jpg);
+	background-size: cover;
+	background-position: center;
+}
+#pastwork {
+	background-color: $steel;
+	h2 {
+		color: $white;
+		a {
+			color: $white;
+			text-shadow: rem-calc(0px 2px 0px) $steel,rem-calc(2px 2px 0px) $steel,rem-calc(-2px 2px 0px) $steel;
+			@media #{$medium-up} {
+				text-shadow: rem-calc(0px 6px 0px) $steel,rem-calc(3px 3px 0px) $steel,rem-calc(-3px 3px 0px) $steel;
+			}
+			@media #{$large-up} {
+				text-shadow: rem-calc(0px 8px 0px) $steel,rem-calc(4px 4px 0px) $steel,rem-calc(-4px 4px 0px) $steel;
+			}
+			box-shadow: inset rem-calc(0px -4px 0px) $steel, inset rem-calc(0px -6px 0px) $white;
+			@media #{$medium-up} {
+				box-shadow: inset rem-calc(0px -8px 0px) $steel, inset rem-calc(0px -10px 0px) $white;
+			}
+			@media #{$large-up} {
+				box-shadow: inset rem-calc(0px -8px 0px) $steel, inset rem-calc(0px -12px 0px) $white;
+			}
+			@media #{$xlarge-up} {
+				box-shadow: inset rem-calc(0px -12px 0px) $steel, inset rem-calc(0px -16px 0px) $white;
+			}
+			&:hover {
+				color: rgba(255,255,255,0.5);
+				text-decoration: none;
+				text-shadow: none;
+				box-shadow: inset rem-calc(0px -16px 0px) $steel;
+			}
+		}
+	}
+}
+#pride {
+	background-color: #707e89;
+	background-image: url(../images/pride.jpg);
+	background-size: cover;
+	background-position: center;	
+}
+#home-bottom {
+	background-color: $white;
+}
+#FOSS {
+	h2,a {
+	color: $primary-color;
+	}
+	a.homedescription:before {
+		background-image: url(../images/arrow_blue.svg);
+	}
+}
+#self-improvement {
+	h2,a {
+		color: $steel;
+	}
+	a.homedescription:before {
+		background-image: url(../images/arrow_steel.svg)
+	}
+}

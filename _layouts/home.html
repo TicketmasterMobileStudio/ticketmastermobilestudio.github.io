@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    {% include head.html %}
+    <body id="home">
+        <div id="spacer">
+          <h1 class="hide-for-medium-up" id="logo"><span>Ticketmaster Mobile Studio</span></h1>
+        </div>
+        <header class="contain-to-grid sticky">
+          <nav class="top-bar" data-topbar>
+              <section class="title columns hide-for-small-only medium-4">
+                  <h1 id="logo"><a href="http://ticketmastermobilestudio.com"><span>Ticketmaster Mobile Studio</span></a></h1>
+              </section>
+              <section class="nav-items columns small-12 medium-8">
+                {% include navigation.html %}
+              </section>
+          </nav>
+        </header>
+        <section class="top">
+          <article class="row">
+            <hr/>
+            <h2 class="columns large-12">Passion is the reason we’ve gravitated towards each other.</h2>
+            <a href="http://ticketmastermobilestudio.com/about-us.html" class="homedescription columns small-12 medium-6 large-6">
+            We love our tight-knit product team. Our blend of talents and experiences means we are constantly learning, mentoring, and evolving. 
+            </a>
+          </article>
+        </section>
+        <section id="selective">
+          <article class="row photo">
+            <div class="columns large-12">
+              <p class="hide-for-small-only">We’re selective about the talented people we work with and products we build.</p>
+              <a class="button" href="http://ticketmastermobilestudio.com/careers.html">See Openings</a>
+            </div>
+          </article>
+        </section>
+        <section id="pastwork">
+          <article id="past-work" class="row">
+            <h2 class="columns large-12">In our past life we worked with the likes of <a target="_blank" href="http://twotoasters.com/two-toasters-to-build-project-ara-marketplace-app/">Google</a>, <a target="_blank" href="http://twotoasters.com/regal-cinemas/">Regal Cinemas</a>, <a target="_blank" href="http://twotoasters.com/imgur/">Imgur</a>, <a target="_blank" href="http://twotoasters.com/airbnb/">Airbnb</a>, and <a href="http://twotoasters.com/birchbox/">Birchbox</a>.</h2>
+            <a target="_blank" href="http://twotoasters.com/work" class="homedescription columns small-12 medium-6 large-6">
+              Our approach has always been to find challenging problems, design with empathy, and build robust products. Creating engaging experiences is in our DNA.
+            </a>
+          </article>
+        </section>
+        <section id="pride">
+          <article class="row photo">
+            <div class="columns large-12">
+              <p class="hide-for-small-only">We’re proud of what we’ve built as a team.</p>
+              <a class="button" target="_blank" href="http://twotoasters.com/work">See Our Work</a>
+            </div>
+          </article>      
+        </section>
+        <section id="home-bottom">
+            <article id="FOSS" class="row">
+              <h2 class="columns large-12">We're committed to giving back to the open source community.</h2>
+              <a target="_blank" href="http://code.ticketmaster.com" class="homedescription columns small-12 medium-6 large-6">
+                We use open source projects extensively in our products. As a result, we think it’s important to give back to the community and enrich it with projects we feel could benefit others. 
+              </a>        
+            </article>
+            <article id="self-improvement" class="row">
+              <hr/>
+              <h2 class="columns large-12">Collaboration, education, and self-improvement are paramount.</h2>
+              <a target="_blank" href="http://twotoasters.com/blogs/ideas/" class="homedescription columns small-12 medium-6 large-6">
+                We host meetups, speak at conferences, teach classes, and write articles. It’s our belief that sharing knowledge helps us understand our craft better. 
+              </a>          
+            </article>
+        </section>
+        {% include openings.html %}
+        {% include footer.html %}
+    </body>
+</html>

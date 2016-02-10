@@ -1,0 +1,9 @@
+---
+layout: default
+---
+
+<div class="page-header">
+    <h5>{% if site.subtitle %}{{ site.subtitle }}{% endif %} → {{ page.categories | array_to_sentence_string }}</h5>
+    <h2>{{ page.title }}</h2>
+</div>
+{{ content }}

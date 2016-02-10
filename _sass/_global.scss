@@ -1,0 +1,136 @@
+html,body {
+	background-color: $primary-color;
+}
+@media #{$medium-only} {
+	.contain-to-grid, .row {
+		padding: rem-calc(0px 32px);
+		@media #{$medium-up} {
+			.top-bar {
+				max-width: 67.25rem;
+			  	margin-left: auto;
+			  	margin-right: auto;
+			}
+		}
+	}	
+}
+a {
+	transition: all 0.2s ease-in-out;
+	transform: translate3d(0,0,0);
+}
+h2 {
+	@include largeheadingsize;	
+}
+hr {
+	margin: 0px;
+	@media #{$medium-up} {
+		margin: 0 1rem;
+		}
+}
+#openings {
+	background: #e9eff2;
+	a {
+		@extend %flexbox;
+		@include justify-content(flex-start);
+		@include align-items(center); 
+		padding: rem-calc(16px 0);
+		@media #{$medium-up} { 
+			padding: rem-calc(32px 0px);
+			&:before {
+				background-position: center;
+				background-repeat: no-repeat;
+				content: " ";
+				height: rem-calc(32px);
+				width: rem-calc(32px);
+			}
+			span {
+			padding-left: rem-calc(16px);
+			}
+		}
+		h3, h4 {
+			display: block;
+			color: $primary-color;
+			margin: 0;
+		}
+		&#ios:before {
+			background-image: url(../images/ios.svg);
+		}
+		&#android:before {
+			background-image: url(../images/android.svg);	
+		}
+		&#pm:before {
+			background-image: url(../images/pm.svg);
+		}
+		&#more:before {
+			display: none;
+		}
+		&:hover {
+			opacity: 0.5;
+		}
+	}
+	h3 {
+		font-weight: 700;
+	}
+	h4 {
+		font-weight: normal;
+		text-transform: uppercase;
+	}
+}
+
+a.button {
+	@include bodyfontsize;
+	background: none;
+	box-shadow: inset 0px 0px 0px 1px $white;
+	border-radius: rem-calc(40px);
+	letter-spacing: rem-calc(1px);
+	margin: 0px auto;
+	padding: rem-calc(12px 24px);
+	font-style: normal;
+	@media #{$medium-up} { 
+		padding: rem-calc(20px 40px);
+	}
+	&:hover {
+		opacity: 0.5;
+		background: transparentize($white, 0.75);
+	}
+}
+
+.center {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+.top {
+	background-color: $primary-color;
+	background-size: cover;
+	background-position: center;	
+	color: $white;
+	padding-top: rem-calc(44px);
+	@media #{$medium-up} {
+		padding-top: rem-calc(88px);
+	}
+	h2 {
+		color: $white;
+	}
+	p {
+		line-height: 1.7;
+		font-weight: lighter;
+		color: $white;
+		@include largebodyfontsize;
+		@include largebodyspacing;
+	}
+}
+
+.wf-loading {
+	h2, h3, h4, h5, h6, p, li, a, span {
+		visibility: hidden;
+	}
+
+}
+
+
+.wf-active {
+	h2, h3, h4, h5, h6, p, li, a, span {
+		visibility: visible;
+		font-family: $font-family-sans-serif;
+	}
+}

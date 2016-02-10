@@ -1,0 +1,85 @@
+#about {
+	background-color: $white;
+	h2 {
+		margin-top: rem-calc(32px);
+		@media #{$medium-up} {
+			margin-top: rem-calc(72px);
+		}
+		@media #{$large-up} {
+			margin-top: rem-calc(104px);
+		}		
+	}
+	#how p, #about-us p {
+	line-height: 1.7;
+	color: $steel;
+	font-weight: lighter;
+	@include largebodyfontsize;
+	&:last-child {
+		margin-bottom: rem-calc(32px);
+	}
+	@media #{$medium-up} { 
+		margin: rem-calc(24px 0px 88px 0px);
+	}
+	@media #{$large-up} {
+		margin: rem-calc(56px 0px 128px 0);
+	}
+	}
+	.top {
+		background-image: url(../images/about.jpg);
+	}
+	#model {
+		background: $white;
+		padding: rem-calc(24px 0px);
+		img {
+			margin: rem-calc(16px 0);
+			@media #{$medium-up} { 
+				display: block;
+				height: rem-calc(480px);
+				margin: rem-calc(48px) auto rem-calc(64px) auto;
+				height: 480px;
+			}
+			@media #{$large-up} {
+				margin: rem-calc(64px) auto rem-calc(88px) auto;
+			}			
+		}
+		p {
+			@include hugebodyfontsize;
+			color: $primary-color;
+			font-style: italic;
+			text-align: center;
+			@media #{$medium-up} { 
+				margin: rem-calc(0px 0px 64px 0px);
+			}
+			@media #{$large-up} {
+				margin: rem-calc(0px 0px 88px 0);
+			}
+		}
+	}
+	#how {
+		background: $steel;
+		color: $white;
+		h2,p {
+			color: $white;
+		}
+	}
+	#photos {
+		background: $black;
+		@extend %flexbox;
+		@include justify-content(flex-start);
+		@include align-items(center); 
+		@include flex-wrap(wrap);
+		img {
+			width: 50%;
+			@media #{$large-up} {
+				width: 33.3333%;
+			}			
+		}
+	}
+
+	#about-us {
+		background: $white;
+		h2 {
+			color: $primary-color;
+		}
+	}
+}

@@ -1,0 +1,120 @@
+#careers {
+	background-color: $white;
+	h2 {
+		margin-top: rem-calc(32px);
+		margin-bottom: rem-calc(16px);
+		@media #{$medium-up} {
+			margin-top: rem-calc(48px);
+			margin-bottom: 0;
+		}
+		@media #{$large-up} {
+			margin-top: rem-calc(104px);
+		}		
+	}
+	.top {
+		background-image: url(../images/careers.jpg);
+	}
+	.main {
+		background: $white;
+		ul {
+			margin: rem-calc(0px);
+			padding: rem-calc(0px 0px 0px 20px);
+			@media #{$medium-up} { 
+				margin: rem-calc(32px 0px);
+			}
+			@media #{$large-up} { 
+				margin: rem-calc(64px 0px);
+			}
+		}
+	}
+	#positions {
+		padding-bottom: rem-calc(32px);
+		@media #{$medium-up} {
+			padding-bottom: rem-calc(48px);
+		}
+		@media #{$large-up} {
+			padding-bottom: rem-calc(72px);
+		}
+		@media #{$xlarge-up} {
+			padding-bottom: rem-calc(96px);
+		}
+		h2 {
+			color: $primary-color;
+		}
+		ul {
+			li {
+				@include largebodyfontsize;
+				background-image: url(../images/arrow_blue.svg);
+				background-repeat: no-repeat;
+				background-position: left center;
+				font-weight: 500;
+				list-style: none;
+				transition: all 0.2s ease-in-out;
+				font-weight: light;
+				margin-bottom: 1rem;
+				background-size: rem-calc(20px 20px);
+				line-height: rem-calc(24px);
+				padding-left: rem-calc(32px);
+				margin: rem-calc(16px 0px);
+				@media #{$medium-up} { 
+					background-size: rem-calc(30px 30px);
+					line-height: rem-calc(34px);
+					padding-left: rem-calc(48px);
+					margin: rem-calc(20px 0px);
+				}
+				@media #{$large-up} {
+					background-size: rem-calc(40px 40px);
+					line-height: rem-calc(44px);
+					padding-left: rem-calc(64px);
+					margin: rem-calc(24px 0px 24px -72px);
+				}
+				&:hover {
+					opacity: 0.5;
+				}
+				&:first-child {
+					margin-top: 0;
+				}
+				a {
+					color: $primary-color;
+					&:hover {
+						color: $primary-color;
+					}
+				}
+			}
+		}
+	}
+	#benefits {
+		color: $steel;
+		padding-bottom: rem-calc(40px);
+		@media #{$medium-up} {
+			padding-bottom: rem-calc(64px);
+		}
+		@media #{$large-up} {
+			padding-bottom: rem-calc(88px);
+		}
+		@media #{$xlarge-up} {
+			padding-bottom: rem-calc(112px);
+		}
+		h2 {
+			color: $steel;
+		}
+		ul {
+			@media #{$medium-up} { 
+				margin-top: rem-calc(48px);
+				margin-bottom: rem-calc(64px);
+				padding: rem-calc(0px 0px 0px 16px);
+			}
+			@media #{$large-up} {
+				margin-top: rem-calc(64px);
+				margin-bottom: rem-calc(88px);
+				padding: rem-calc(0px 0px 0px 16px);
+			}
+
+			li {
+				@include largebodyfontsize;
+				font-weight: light;
+				margin-bottom: 1rem;
+			}
+		}
+	}
+}
