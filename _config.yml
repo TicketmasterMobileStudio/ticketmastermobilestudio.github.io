@@ -4,19 +4,9 @@ title: 'Ticketmaster Mobile Studio'
 # if you use google analytics, add your tracking id here
 google_analytics_id: 'UA-62605735-1'
 
-
 # Keep as an empty string if served up at the root. If served up at a specific
 # path (e.g. on GitHub pages) leave off the trailing slash, e.g. /my-project
 baseurl: 'http://ticketmastermobilestudio.github.io'
-
-# Dates are not included in permalinks
-permalink: none
-
-# Syntax highlighting
-highlighter: pygments
-
-# Since these are pages, it doesn't really matter
-future: true
 
 # Exclude non-site files
 exclude: ['README.md']
