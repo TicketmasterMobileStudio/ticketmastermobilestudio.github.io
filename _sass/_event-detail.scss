@@ -1,0 +1,85 @@
+.eventdetail {
+	background-color: $white;
+	h2 {
+		margin-top: rem-calc(32px);
+		@media #{$medium-up} {
+			margin-top: rem-calc(72px);
+		}
+		@media #{$large-up} {
+			margin-top: rem-calc(104px);
+		}		
+	}	
+	.top {
+		background: $primary-color;
+		padding-top: rem-calc(44px);
+		@media #{$medium-up} {
+			padding-top: rem-calc(88px);
+		}
+		h2,h3 {
+			color: $white;
+		}
+		a.button {
+			width: auto;
+			margin: rem-calc(16px 16px 32px 16px);
+			@media #{$medium-up} { 
+				margin: rem-calc(16px 16px 56px 16px);
+				width: rem-calc(240px);
+			}
+			@media #{$large-up} { 
+				margin: rem-calc(24px 16px 88px 16px);
+			}
+		}
+	}
+	.main {
+		background: $white;
+		padding: rem-calc(16px 0px 40px 0px);
+	}
+	h5 {
+		text-transform: uppercase;
+		font-weight: bold;
+		font-size: rem-calc(14px);
+		@media #{$medium-up} { 
+			font-size: rem-calc(18px);
+		}
+		@media #{$large-up} {
+			font-size: rem-calc(24px);
+		}
+	}	
+	.event-info {
+		margin-top: rem-calc(24px);
+		@media #{$medium-up} {
+			margin-top: rem-calc(44px);
+		}
+		@media #{$large-up} {
+			margin-top: rem-calc(64px);
+		}
+		h5 {
+			margin: rem-calc(0px 0px 16px 0px);
+			@media #{$medium-up} {
+				margin-top: rem-calc(2px);
+			}
+			@media #{$large-up} {
+				margin-top: rem-calc(8px);
+			}
+			@media #{$xlarge-up} {
+				margin-top: rem-calc(12px);
+			}
+			color: $primary-color;
+		}
+		p,li {
+			line-height: 1.7;
+			color: $steel;
+			font-weight: lighter;
+			@include largebodyfontsize;
+		}
+		a.button {
+			color: $primary-color;
+			box-shadow: 0px 0px 0px 1px $primary-color;
+			margin: rem-calc(16px 0px 16px 0px);
+			&:hover {
+				color: $white;
+				background-color: $primary-color;
+			}
+		}
+	}
+}

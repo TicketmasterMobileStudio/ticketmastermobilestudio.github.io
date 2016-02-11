@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    {% include head.html %}
+    <body class="eventdetail">
+      {% include header.html %}
+    <section class="top">
+      <article class="row">
+        <h2 class="columns large-12">{{ page.title }}</h2>
+        {% if page.url%}<a class="button" target="_blank" href="{{ page.linkout }}">Event Page</a>{% endif %}
+      </article>
+    </section>
+    <section class="main">
+        <article class="row event-info">
+          <h5 class="columns medium-3 large-3">Date</h5>
+          <div class="columns small-12 medium-9 large-9">
+            <p>{{ page.date | date: '%B %d, %Y' }}</p>
+          </div>
+        </article>      
+        <article class="row event-info">
+          <h5 class="columns medium-3 large-3">Location</h5>
+          <div class="columns small-12 medium-9 large-9">
+            <p>{{ page.location }}</p>
+          </div>
+        </article>
+        </article>
+        <article class="row event-info">
+          <h5 class="columns medium-3 large-3">What's it About?</h5>
+          <div class="columns small-12 medium-9 large-9">
+              {{ content }}
+          </div>
+        </article>  
+      </section>        
+        {% include openings.html %}
+        {% include footer.html %}
+    </body>
+</html>

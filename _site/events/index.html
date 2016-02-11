@@ -16,8 +16,8 @@
         !function(){function a(){}function b(a){return f.retinaImageSuffix+a}function c(a,c){if(this.path=a||"","undefined"!=typeof c&&null!==c)this.at_2x_path=c,this.perform_check=!1;else{if(void 0!==document.createElement){var d=document.createElement("a");d.href=this.path,d.pathname=d.pathname.replace(g,b),this.at_2x_path=d.href}else{var e=this.path.split("?");e[0]=e[0].replace(g,b),this.at_2x_path=e.join("?")}this.perform_check=!0}}function d(a){this.el=a,this.path=new c(this.el.getAttribute("src"),this.el.getAttribute("data-at2x"));var b=this;this.path.check_2x_variant(function(a){a&&b.swap()})}var e="undefined"==typeof exports?window:exports,f={retinaImageSuffix:"@2x",check_mime_type:!0,force_original_dimensions:!0};e.Retina=a,a.configure=function(a){null===a&&(a={});for(var b in a)a.hasOwnProperty(b)&&(f[b]=a[b])},a.init=function(a){null===a&&(a=e);var b=a.onload||function(){};a.onload=function(){var a,c,e=document.getElementsByTagName("img"),f=[];for(a=0;a<e.length;a+=1)c=e[a],c.getAttributeNode("data-no-retina")||f.push(new d(c));b()}},a.isRetina=function(){var a="(-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 1.5dppx)";return e.devicePixelRatio>1?!0:e.matchMedia&&e.matchMedia(a).matches?!0:!1};var g=/\.\w+$/;e.RetinaImagePath=c,c.confirmed_paths=[],c.prototype.is_external=function(){return!(!this.path.match(/^https?\:/i)||this.path.match("//"+document.domain))},c.prototype.check_2x_variant=function(a){var b,d=this;return this.is_external()?a(!1):this.perform_check||"undefined"==typeof this.at_2x_path||null===this.at_2x_path?this.at_2x_path in c.confirmed_paths?a(!0):(b=new XMLHttpRequest,b.open("HEAD",this.at_2x_path),b.onreadystatechange=function(){if(4!==b.readyState)return a(!1);if(b.status>=200&&b.status<=399){if(f.check_mime_type){var e=b.getResponseHeader("Content-Type");if(null===e||!e.match(/^image/i))return a(!1)}return c.confirmed_paths.push(d.at_2x_path),a(!0)}return a(!1)},b.send(),void 0):a(!0)},e.RetinaImage=d,d.prototype.swap=function(a){function b(){c.el.complete?(f.force_original_dimensions&&(c.el.setAttribute("width",c.el.offsetWidth),c.el.setAttribute("height",c.el.offsetHeight)),c.el.setAttribute("src",a)):setTimeout(b,5)}"undefined"==typeof a&&(a=this.path.at_2x_path);var c=this;b()},a.isRetina()&&a.init(e)}();
         </script>
     </head>
-    <body>
-                <header class="contain-to-grid innerfix">
+    <body id="events">
+              <header class="contain-to-grid innerfix">
           <nav class="top-bar" data-topbar>
               <section class="title columns hide-for-small-only medium-4">
                   <h1 id="logo"><a href="file:///Users/adit/Box%20Sync/TMS%20Website/ticketmastermobilestudio.github.io/_site"><span>Ticketmaster Mobile Studio</span></a></h1>
@@ -30,30 +30,148 @@
               </section>
           </nav>
         </header>
-        <p>aoskdjfl;kajsd</p>
+      <section class="top">
+        <article class="row">
+          <h2 class="columns large-12">Being Involved in the Community is Critical to Our Success</h2>
+          <p class="columns small-12 medium-6 large-6">
+            We choose to participate or lead events in areas where we can use our expertise to make a real positive impact.
+          </p>
+        </article>
+      </section>
+      <section class="main">
+        <article id="upcoming-events" class="row">
+          <h2 class="columns large-12">Upcoming Events</h2>
+          <ul class="columns large-12">
+            
+            
+              
+              
+                  
+                  <li class="columns medium-12 large-6 eventlisting">
+                    <a href="file:///Users/adit/Box%20Sync/TMS%20Website/ticketmastermobilestudio.github.io/_site/events/tridroid-android-pay-and-the-fingerprint-api.html">
+                      <h3>TriDroid: Android Pay and the Fingerprint API</h3>
+                      <h4>February 18, 2016</h4>
+                      <p>What is Android Pay? How do I use it? And for applicable devices, how can I authenticate the user with the fingerprint sensor? Presentation will include a demo with code samples. </p>
 
+                    </a>
+                  </li>
+                  
+              
+            
+              
+              
+                  
+              
+            
+              
+              
+                  
+              
+            
+              
+              
+                  
+              
+            
+              
+              
+                  
+              
+            
+          </ul>
+        </article>
+        <article id="past-events" class="row">
+          <hr/>
+          <h2 class="columns large-12">Past Events</h2>
+          <ul class="columns large-12">
+            
+            
+              
+              
+                  
+              
+            
+              
+              
+                  
+                  <li class="columns medium-12 large-6 eventlisting">
+                    <a href="file:///Users/adit/Box%20Sync/TMS%20Website/ticketmastermobilestudio.github.io/_site/events/cocoaheads-january-durham.html">
+                      <h3>CocoaHeads January - Durham</h3>
+                      <h4>January 28, 2016</h4>
+                      <p>The first CocoaHeads of 2016! Join us at the Ticketmaster Mobile Studio office in Durham for a great set of talks, pizza, and a chance to show off what you&#39;ve been working on. </p>
+
+                    </a>
+                  </li>
+                  
+              
+            
+              
+              
+                  
+                  <li class="columns medium-12 large-6 eventlisting">
+                    <a href="file:///Users/adit/Box%20Sync/TMS%20Website/ticketmastermobilestudio.github.io/_site/events/networking-with-intent-1.html">
+                      <h3>Networking with Intent #1</h3>
+                      <h4>October 21, 2015</h4>
+                      <p>It&#39;s been a while since our last event–those of us that organize this meetup got acquired, so we&#39;ve been a bit busy–but it&#39;s time to get back in the swing of things with something new: our first networking event.</p>
+
+                    </a>
+                  </li>
+                  
+              
+            
+              
+              
+                  
+                  <li class="columns medium-12 large-6 eventlisting">
+                    <a href="file:///Users/adit/Box%20Sync/TMS%20Website/ticketmastermobilestudio.github.io/_site/events/delightful-user-experiences-with-intent.html">
+                      <h3>Delightful User Experiences with Intent</h3>
+                      <h4>March 16, 2015</h4>
+                      <p>Delightful user experiences: how to design UIs that are polite and forgiving, and have a great personality.</p>
+
+                    </a>
+                  </li>
+                  
+              
+            
+              
+              
+                  
+                  <li class="columns medium-12 large-6 eventlisting">
+                    <a href="file:///Users/adit/Box%20Sync/TMS%20Website/ticketmastermobilestudio.github.io/_site/events/accessibility-with-intent.html">
+                      <h3>Accessibility with Intent</h3>
+                      <h4>January 13, 2015</h4>
+                      <p>Join us on January 13th for a panel discussion on the all-too-important but oft-neglected topic of accessibility. We have a wonderful panel of experienced people, so bring your most burning questions on the topic.</p>
+
+                    </a>
+                  </li>
+                  
+              
+            
+          </ul>
+        </article>
+      </section>      
           <section id="openings">
       <article class="row">
         <detail class="job columns large-3 medium-6 small-12">
-          <a id="ios" href="file:///Users/adit/Box%20Sync/TMS%20Website/ticketmastermobilestudio.github.io/_site/careers/ios-engineer.html">
+          <a href="file:///Users/adit/Box%20Sync/TMS%20Website/ticketmastermobilestudio.github.io/_site/careers/ios-engineer.html">
             <span>
-              <h4>Opening</h4>
+              <h4 id="ios">Opening</h4>
               <h3>Senior Mobile Engineer, iOS</h3>
             </span>
           </a>
         </detail>
         <detail class="job columns large-3 medium-6 small-12">
-          <a id="pm" href="file:///Users/adit/Box%20Sync/TMS%20Website/ticketmastermobilestudio.github.io/_site/careers/senior-qa-engineer.html">
+          <a href="file:///Users/adit/Box%20Sync/TMS%20Website/ticketmastermobilestudio.github.io/_site/careers/senior-qa-engineer.html">
             <span>
-              <h4>Opening</h4>
+              <h4 id="pm">Opening</h4>
               <h3>Senior QA Engineer</h3>
             </span>
           </a>
         </detail>
         <detail class="job columns large-3 medium-6 small-12">
-          <a id="ios" href="file:///Users/adit/Box%20Sync/TMS%20Website/ticketmastermobilestudio.github.io/_site/careers/ios-manager.html">
+          <a href="file:///Users/adit/Box%20Sync/TMS%20Website/ticketmastermobilestudio.github.io/_site/careers/ios-manager.html">
             <span>
-              <h4>Opening</h4>
+              <h4 id="ios" >Opening</h4>
               <h3>Mobile Development Manager, iOS</h3>
             </span>
           </a>

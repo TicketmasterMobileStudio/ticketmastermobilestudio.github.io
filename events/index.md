@@ -1,6 +1,5 @@
 ---
-layout: default
+layout: events
 title: "Events"
 ---
-
-aoskdjfl;kajsd
+asdfa

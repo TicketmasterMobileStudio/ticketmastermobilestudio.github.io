@@ -51,17 +51,19 @@ hr {
 			color: $primary-color;
 			margin: 0;
 		}
-		&#ios:before {
-			background-image: url(../images/ios.svg);
-		}
-		&#android:before {
-			background-image: url(../images/android.svg);	
-		}
-		&#pm:before {
-			background-image: url(../images/pm.svg);
-		}
-		&#more:before {
-			display: none;
+			h4 {
+			&#ios:before {
+				background-image: url(../images/ios.svg);
+			}
+			&#android:before {
+				background-image: url(../images/android.svg);	
+			}
+			&#pm:before {
+				background-image: url(../images/pm.svg);
+			}
+			&#more:before {
+				display: none;
+			}
 		}
 		&:hover {
 			opacity: 0.5;

@@ -6419,13 +6419,13 @@ hr {
       display: block;
       color: #009cde;
       margin: 0; }
-    #openings a#ios:before {
+    #openings a h4#ios:before {
       background-image: url(../images/ios.svg); }
-    #openings a#android:before {
+    #openings a h4#android:before {
       background-image: url(../images/android.svg); }
-    #openings a#pm:before {
+    #openings a h4#pm:before {
       background-image: url(../images/pm.svg); }
-    #openings a#more:before {
+    #openings a h4#more:before {
       display: none; }
     #openings a:hover {
       opacity: 0.5; }
@@ -7033,3 +7033,219 @@ a.homedescription {
     @media only screen and (min-width: 88.063em) {
       .career-detail a#applyend {
         margin-bottom: 4rem; } }
+
+#events {
+  background-color: #FFFFFF; }
+  #events h2 {
+    margin-top: 2rem; }
+    @media only screen and (min-width: 40.063em) {
+      #events h2 {
+        margin-top: 3rem;
+        margin-bottom: 0; } }
+    @media only screen and (min-width: 88.063em) {
+      #events h2 {
+        margin-top: 6.5rem; } }
+  #events .top {
+    background-image: url(../images/events.jpg); }
+  #events .main {
+    background: #FFFFFF; }
+    #events .main ul {
+      margin: 0;
+      padding: 0 0 0 1.25rem; }
+      @media only screen and (min-width: 40.063em) {
+        #events .main ul {
+          margin: 2rem 0; } }
+      @media only screen and (min-width: 88.063em) {
+        #events .main ul {
+          margin: 4rem 0; } }
+  #events #upcoming-events h2, #events #past-events h2 {
+    color: #009cde; }
+  #events #upcoming-events ul, #events #past-events ul {
+    color: #768692; }
+    #events #upcoming-events ul li, #events #past-events ul li {
+      font-size: 1rem;
+      background-repeat: no-repeat;
+      background-position: left center;
+      font-weight: 500;
+      list-style: none;
+      transition: all 0.2s ease-in-out;
+      font-weight: light;
+      background-size: 1.25rem 1.25rem;
+      line-height: 1.5rem;
+      padding-left: 0;
+      margin: 0; }
+      #events #upcoming-events ul li a, #events #past-events ul li a {
+        color: #768692; }
+        #events #upcoming-events ul li a h3, #events #past-events ul li a h3 {
+          color: #009cde;
+          font-size: 1.25rem; }
+          @media only screen and (min-width: 40.063em) {
+            #events #upcoming-events ul li a h3, #events #past-events ul li a h3 {
+              font-size: 1.5rem; } }
+          @media only screen and (min-width: 88.063em) {
+            #events #upcoming-events ul li a h3, #events #past-events ul li a h3 {
+              font-size: 2rem; } }
+          @media only screen and (min-width: 120.063em) {
+            #events #upcoming-events ul li a h3, #events #past-events ul li a h3 {
+              font-size: 3rem; } }
+          @media only screen and (min-width: 40.063em) {
+            #events #upcoming-events ul li a h3, #events #past-events ul li a h3 {
+              margin-bottom: 0.5rem; } }
+          @media only screen and (min-width: 88.063em) {
+            #events #upcoming-events ul li a h3, #events #past-events ul li a h3 {
+              margin-bottom: 1.5rem; } }
+        #events #upcoming-events ul li a h4, #events #upcoming-events ul li a p, #events #past-events ul li a h4, #events #past-events ul li a p {
+          color: #768692;
+          font-size: 1rem; }
+          @media only screen and (min-width: 40.063em) {
+            #events #upcoming-events ul li a h4, #events #upcoming-events ul li a p, #events #past-events ul li a h4, #events #past-events ul li a p {
+              font-size: 1.125rem; } }
+          @media only screen and (min-width: 88.063em) {
+            #events #upcoming-events ul li a h4, #events #upcoming-events ul li a p, #events #past-events ul li a h4, #events #past-events ul li a p {
+              font-size: 1.5rem; } }
+          @media only screen and (min-width: 120.063em) {
+            #events #upcoming-events ul li a h4, #events #upcoming-events ul li a p, #events #past-events ul li a h4, #events #past-events ul li a p {
+              font-size: 1.875rem; } }
+      @media only screen and (min-width: 40.063em) {
+        #events #upcoming-events ul li, #events #past-events ul li {
+          font-size: 1.125rem; } }
+      @media only screen and (min-width: 88.063em) {
+        #events #upcoming-events ul li, #events #past-events ul li {
+          font-size: 1.5rem; } }
+      @media only screen and (min-width: 120.063em) {
+        #events #upcoming-events ul li, #events #past-events ul li {
+          font-size: 1.875rem; } }
+      @media only screen and (min-width: 40.063em) {
+        #events #upcoming-events ul li, #events #past-events ul li {
+          background-size: 1.875rem 1.875rem;
+          line-height: 2.125rem;
+          padding-bottom: 0.5rem; } }
+      @media only screen and (min-width: 88.063em) {
+        #events #upcoming-events ul li, #events #past-events ul li {
+          background-size: 2.5rem 2.5rem;
+          line-height: 2.75rem;
+          padding-bottom: 1.5rem; } }
+      #events #upcoming-events ul li:hover, #events #past-events ul li:hover {
+        opacity: 0.5; }
+      #events #upcoming-events ul li:first-child, #events #past-events ul li:first-child {
+        margin-top: 0; }
+  #events #past-events {
+    padding-bottom: 2rem; }
+    @media only screen and (min-width: 40.063em) {
+      #events #past-events {
+        padding-bottom: 3rem; } }
+    @media only screen and (min-width: 88.063em) {
+      #events #past-events {
+        padding-bottom: 4.5rem; } }
+    @media only screen and (min-width: 120.063em) {
+      #events #past-events {
+        padding-bottom: 6rem; } }
+    #events #past-events h2 {
+      color: #768692; }
+    #events #past-events ul li a h3 {
+      color: #768692;
+      font-size: 1rem; }
+      @media only screen and (min-width: 40.063em) {
+        #events #past-events ul li a h3 {
+          font-size: 1.125rem; } }
+      @media only screen and (min-width: 88.063em) {
+        #events #past-events ul li a h3 {
+          font-size: 1.5rem; } }
+      @media only screen and (min-width: 120.063em) {
+        #events #past-events ul li a h3 {
+          font-size: 1.875rem; } }
+    #events #past-events ul li a h4, #events #past-events ul li a p {
+      font-weight: normal;
+      font-size: 0.875rem; }
+      @media only screen and (min-width: 40.063em) {
+        #events #past-events ul li a h4, #events #past-events ul li a p {
+          font-size: 1rem; } }
+      @media only screen and (min-width: 88.063em) {
+        #events #past-events ul li a h4, #events #past-events ul li a p {
+          font-size: 1.25rem; } }
+      @media only screen and (min-width: 120.063em) {
+        #events #past-events ul li a h4, #events #past-events ul li a p {
+          font-size: 1.5rem; } }
+
+.eventdetail {
+  background-color: #FFFFFF; }
+  .eventdetail h2 {
+    margin-top: 2rem; }
+    @media only screen and (min-width: 40.063em) {
+      .eventdetail h2 {
+        margin-top: 4.5rem; } }
+    @media only screen and (min-width: 88.063em) {
+      .eventdetail h2 {
+        margin-top: 6.5rem; } }
+  .eventdetail .top {
+    background: #009cde;
+    padding-top: 2.75rem; }
+    @media only screen and (min-width: 40.063em) {
+      .eventdetail .top {
+        padding-top: 5.5rem; } }
+    .eventdetail .top h2, .eventdetail .top h3 {
+      color: #FFFFFF; }
+    .eventdetail .top a.button {
+      width: auto;
+      margin: 1rem 1rem 2rem 1rem; }
+      @media only screen and (min-width: 40.063em) {
+        .eventdetail .top a.button {
+          margin: 1rem 1rem 3.5rem 1rem;
+          width: 15rem; } }
+      @media only screen and (min-width: 88.063em) {
+        .eventdetail .top a.button {
+          margin: 1.5rem 1rem 5.5rem 1rem; } }
+  .eventdetail .main {
+    background: #FFFFFF;
+    padding: 1rem 0 2.5rem 0; }
+  .eventdetail h5 {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.875rem; }
+    @media only screen and (min-width: 40.063em) {
+      .eventdetail h5 {
+        font-size: 1.125rem; } }
+    @media only screen and (min-width: 88.063em) {
+      .eventdetail h5 {
+        font-size: 1.5rem; } }
+  .eventdetail .event-info {
+    margin-top: 1.5rem; }
+    @media only screen and (min-width: 40.063em) {
+      .eventdetail .event-info {
+        margin-top: 2.75rem; } }
+    @media only screen and (min-width: 88.063em) {
+      .eventdetail .event-info {
+        margin-top: 4rem; } }
+    .eventdetail .event-info h5 {
+      margin: 0 0 1rem 0;
+      color: #009cde; }
+      @media only screen and (min-width: 40.063em) {
+        .eventdetail .event-info h5 {
+          margin-top: 0.125rem; } }
+      @media only screen and (min-width: 88.063em) {
+        .eventdetail .event-info h5 {
+          margin-top: 0.5rem; } }
+      @media only screen and (min-width: 120.063em) {
+        .eventdetail .event-info h5 {
+          margin-top: 0.75rem; } }
+    .eventdetail .event-info p, .eventdetail .event-info li {
+      line-height: 1.7;
+      color: #768692;
+      font-weight: lighter;
+      font-size: 1rem; }
+      @media only screen and (min-width: 40.063em) {
+        .eventdetail .event-info p, .eventdetail .event-info li {
+          font-size: 1.125rem; } }
+      @media only screen and (min-width: 88.063em) {
+        .eventdetail .event-info p, .eventdetail .event-info li {
+          font-size: 1.5rem; } }
+      @media only screen and (min-width: 120.063em) {
+        .eventdetail .event-info p, .eventdetail .event-info li {
+          font-size: 1.875rem; } }
+    .eventdetail .event-info a.button {
+      color: #009cde;
+      box-shadow: 0px 0px 0px 1px #009cde;
+      margin: 1rem 0 1rem 0; }
+      .eventdetail .event-info a.button:hover {
+        color: #FFFFFF;
+        background-color: #009cde; }

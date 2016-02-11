@@ -1,6 +1,8 @@
 ---
-layout: job
+layout: career-detail
 title: "Senior QA Engineer"
+
+category: careers
 
 location: "Durham, NC"
 
@@ -26,6 +28,6 @@ qualifications:
   - qual: You are comfortable working in a culture of learning and providing quality mentorship for all team members
   - bonusqual: You have some professional programming experience
 
-smarturl: "https://www.smartrecruiters.com/TicketmasterMobileStudio/82678943-senior-mobile-engineer-android?oga=true"
+linkout: "https://www.smartrecruiters.com/TicketmasterMobileStudio/82678943-senior-mobile-engineer-android?oga=true"
 
 ---

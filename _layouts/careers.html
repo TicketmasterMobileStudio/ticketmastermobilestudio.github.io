@@ -15,9 +15,11 @@
           <article id="positions" class="row">
             <h2 class="columns large-12">Current Openings in Durham</h2>
             <ul class="columns small-12 medium-12 large-6">
-              <li><a href="{{ site.baseurl }}/careers/ios-engineer.html">Senior Mobile Engineer, iOS</a></li>
-              <li><a href="{{ site.baseurl }}/careers/ios-manager.html">Mobile Development Manager, iOS</a></li>
-              <li><a href="{{ site.baseurl }}/careers/senior-qa-engineer.html">Senior QA Engineer</a></li>
+              {% for post in site.categories.careers %}
+                {% if post.url %}
+                    <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+                {% endif %}
+              {% endfor %}
             </ul>
           </article>
           <article id="benefits" class="row">

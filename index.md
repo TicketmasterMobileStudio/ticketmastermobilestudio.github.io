@@ -1,4 +1,4 @@
 ---
 layout: home
-title: "Listen and Decide"
+title: "Ticketmaster Mobile Studio"
 ---

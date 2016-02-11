@@ -1,0 +1,108 @@
+#events {
+	background-color: $white;
+	h2 {
+		margin-top: rem-calc(32px);
+		@media #{$medium-up} {
+			margin-top: rem-calc(48px);
+			margin-bottom: 0;
+		}
+		@media #{$large-up} {
+			margin-top: rem-calc(104px);
+		}		
+	}
+	.top {
+		background-image: url(../images/events.jpg);
+	}
+	.main {
+		background: $white;
+		ul {
+			margin: rem-calc(0px);
+			padding: rem-calc(0px 0px 0px 20px);
+			@media #{$medium-up} { 
+				margin: rem-calc(32px 0px);
+			}
+			@media #{$large-up} { 
+				margin: rem-calc(64px 0px);
+			}
+		}
+	}	
+	#upcoming-events, #past-events {
+		h2 {
+			color: $primary-color;
+		}
+		ul {
+			color: $steel;
+			li {
+				a {
+					color: $steel;
+					h3 {
+						color: $primary-color;
+						@include hugebodyfontsize;
+						@media #{$medium-up} { 
+							margin-bottom: rem-calc(8px);
+						}
+						@media #{$large-up} {
+							margin-bottom: rem-calc(24px);
+						}
+					}
+					h4, p {
+						color: $steel;
+						@include largebodyfontsize;
+					}
+				}
+				@include largebodyfontsize;
+				background-repeat: no-repeat;
+				background-position: left center;
+				font-weight: 500;
+				list-style: none;
+				transition: all 0.2s ease-in-out;
+				font-weight: light;
+				background-size: rem-calc(20px 20px);
+				line-height: rem-calc(24px);
+				padding-left: rem-calc(0px);
+				margin: rem-calc(0px);
+				@media #{$medium-up} { 
+					background-size: rem-calc(30px 30px);
+					line-height: rem-calc(34px);
+					padding-bottom: rem-calc(8px);
+				}
+				@media #{$large-up} {
+					background-size: rem-calc(40px 40px);
+					line-height: rem-calc(44px);
+					padding-bottom: rem-calc(24px);
+				}
+				&:hover {
+					opacity: 0.5;
+				}
+				&:first-child {
+					margin-top: 0;
+				}
+			}
+		}
+	}	
+	#past-events {
+		padding-bottom: rem-calc(32px);
+		@media #{$medium-up} {
+			padding-bottom: rem-calc(48px);
+		}
+		@media #{$large-up} {
+			padding-bottom: rem-calc(72px);
+		}
+		@media #{$xlarge-up} {
+			padding-bottom: rem-calc(96px);
+		}		
+		h2 {
+			color: $steel;
+		}
+		ul li a {
+			h3 {
+				color: $steel;
+				@include largebodyfontsize;
+			}
+			h4, p {
+				font-weight: normal;
+				@include bodyfontsize;
+			}
+		}		
+	}
+}

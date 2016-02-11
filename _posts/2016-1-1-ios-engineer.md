@@ -1,6 +1,8 @@
 ---
-layout: job
+layout: career-detail
 title: "Senior Mobile Engineer, iOS"
+
+category: careers
 
 location: "Durham, NC"
 
@@ -23,6 +25,6 @@ qualifications:
   - bonusqual: You’ve already started learning Swift
   - bonusqual: You have published at least one app to the iOS or Mac App Store 
 
-smarturl: "https://www.smartrecruiters.com/TicketmasterMobileStudio/82678943-senior-mobile-engineer-android?oga=true"
+linkout: "https://www.smartrecruiters.com/TicketmasterMobileStudio/82678943-senior-mobile-engineer-android?oga=true"
 
 ---
