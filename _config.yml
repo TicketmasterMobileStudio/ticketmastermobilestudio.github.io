@@ -6,7 +6,7 @@ google_analytics_id: 'UA-62605735-1'
 
 # Keep as an empty string if served up at the root. If served up at a specific
 # path (e.g. on GitHub pages) leave off the trailing slash, e.g. /my-project
-baseurl: 'http://ticketmastermobilestudio.github.io'
+baseurl: 'http://ticketmastermobilestudio.com'
 
 # Exclude non-site files
 exclude: ['README.md']
