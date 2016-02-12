@@ -1,6 +1,6 @@
 <section id="openings">
   <article class="row">
-    {% for post in site.categories.careers %}
+    {% for post in site.categories.careers limit:3%}
       {% if post.url %}
           <detail class="job columns large-3 medium-6 small-12">
             <a href="{{ site.baseurl }}{{ post.url }}">
