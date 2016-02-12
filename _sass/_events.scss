@@ -100,9 +100,12 @@
 		ul li a {
 			h3 {
 				color: $steel;
+				@media #{$large-up} {
+					margin-bottom: rem-calc(8px);
+				}
 				@include largebodyfontsize;
 			}
-			h4, p {
+			p {
 				font-weight: normal;
 				@include bodyfontsize;
 			}

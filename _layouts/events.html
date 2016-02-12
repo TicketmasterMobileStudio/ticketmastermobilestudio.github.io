@@ -16,14 +16,14 @@
           <h2 class="columns large-12">Upcoming Events</h2>
           <ul class="columns large-12">
             {% assign curDate = site.time | date: '%s' %}
-            {% for post in site.categories.events %}
+            {% for post in site.categories.events reversed %}
               {% assign postStartDate = post.date | date: '%s' %}
               {% if post.url %}
                   {% if postStartDate >= curDate %}
                   <li class="columns medium-12 large-6 eventlisting">
                     <a href="{{ site.baseurl }}{{ post.url }}">
                       <h3>{{ post.title }}</h3>
-                      <h4>{{ post.date | date: '%b %d' }}</h4>
+                      <h4>{{ post.date | date: '%b %d' }} &bull; {{ post.eventtype }}</h4>
                       {{ post.excerpt }}
                     </a>
                   </li>
@@ -44,8 +44,7 @@
                   <li class="columns medium-12 large-6 eventlisting">
                     <a href="{{ site.baseurl }}{{ post.url }}">
                       <h3>{{ post.title }}</h3>
-                      <h4>{{ post.date | date: '%b %d, %y' }}</h4>
-                      {{ post.excerpt }}
+                      <p>{{ post.date | date: '%b %d, %y' }} &bull; {{ post.eventtype }}</p>
                     </a>
                   </li>
                   {% endif %}

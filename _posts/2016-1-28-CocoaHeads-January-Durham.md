@@ -4,6 +4,7 @@ title: "CocoaHeads January - Durham"
 category: events
 linkout: http://www.meetup.com/nscoderrtp/events/227303244/
 location: Ticketmaster Mobile Studio – Durham Office
+eventtype: iOS
 ---
 
 

@@ -4,6 +4,7 @@ title: "Delightful User Experiences with Intent"
 category: events
 linkout: http://www.meetup.com/intent-design/events/220901466/
 location: American Underground Classroom
+eventtype: Design
 ---
 
 Delightful user experiences: how to design UIs that are polite and forgiving, and have a great personality.

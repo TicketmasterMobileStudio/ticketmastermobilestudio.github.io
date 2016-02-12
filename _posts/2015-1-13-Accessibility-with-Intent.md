@@ -4,6 +4,7 @@ title: "Accessibility with Intent"
 category: events
 linkout: http://www.meetup.com/intent-design/events/218639637/
 location: American Underground Classroom
+eventtype: Design
 ---
 
 Join us on January 13th for a panel discussion on the all-too-important but oft-neglected topic of accessibility. We have a wonderful panel of experienced people, so bring your most burning questions on the topic.

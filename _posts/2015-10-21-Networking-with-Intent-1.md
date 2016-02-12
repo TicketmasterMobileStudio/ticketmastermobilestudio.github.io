@@ -4,6 +4,7 @@ title: "Networking with Intent #1"
 category: events
 linkout: http://www.meetup.com/intent-design/events/226058321/
 location: Ticketmaster Mobile Studio – Durham Office
+eventtype: Design
 ---
 
 It's been a while since our last event–those of us that organize this meetup got acquired, so we've been a bit busy–but it's time to get back in the swing of things with something new: our first networking event.
