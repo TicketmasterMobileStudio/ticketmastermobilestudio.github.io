@@ -30,6 +30,9 @@
 		h2 {
 			color: $primary-color;
 		}
+		.eventlisting:last-child {
+			float: left;
+		}
 		ul {
 			color: $steel;
 			li {

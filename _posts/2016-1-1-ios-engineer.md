@@ -2,6 +2,8 @@
 layout: career-detail
 title: "Senior Mobile Engineer, iOS"
 
+jobtype: iOS
+
 category: careers
 
 location: "Durham, NC"

@@ -35,35 +35,11 @@ hr {
 		padding: rem-calc(16px 0);
 		@media #{$medium-up} { 
 			padding: rem-calc(32px 0px);
-			&:before {
-				background-position: center;
-				background-repeat: no-repeat;
-				content: " ";
-				height: rem-calc(32px);
-				width: rem-calc(32px);
-			}
-			span {
-			padding-left: rem-calc(16px);
-			}
 		}
 		h3, h4 {
 			display: block;
 			color: $primary-color;
 			margin: 0;
-		}
-			h4 {
-			&#ios:before {
-				background-image: url(../images/ios.svg);
-			}
-			&#android:before {
-				background-image: url(../images/android.svg);	
-			}
-			&#pm:before {
-				background-image: url(../images/pm.svg);
-			}
-			&#more:before {
-				display: none;
-			}
 		}
 		&:hover {
 			opacity: 0.5;

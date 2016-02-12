@@ -2,6 +2,8 @@
 layout: career-detail
 title: "Senior QA Engineer"
 
+jobtype: QA
+
 category: careers
 
 location: "Durham, NC"

@@ -2,6 +2,8 @@
 layout: career-detail
 title: "Mobile Development Manager, iOS"
 
+jobtype: iOS
+
 category: careers
 
 location: "Durham, NC"
