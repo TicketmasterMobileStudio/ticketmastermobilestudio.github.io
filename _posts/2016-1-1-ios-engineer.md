@@ -29,6 +29,6 @@ qualifications:
   - bonusqual: You’ve already started learning Swift
   - bonusqual: You have published at least one app to the iOS or Mac App Store 
 
-linkout: "https://www.smartrecruiters.com/TicketmasterMobileStudio/82678943-senior-mobile-engineer-android?oga=true"
+linkout: "https://www.smartrecruiters.com/TicketmasterMobileStudio/89203100-senior-ios-developer"
 
 ---
