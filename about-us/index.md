@@ -1,6 +1,6 @@
 ---
 layout: about
 title: "About-Us"
----
 
-aoskdjfl;kajsd
+redirect_from: "/about-us.html"
+---

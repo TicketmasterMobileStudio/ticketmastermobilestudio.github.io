@@ -2,6 +2,8 @@
 layout: career-detail
 title: "Senior QA Engineer"
 
+redirect_from: "/senior-qa-engineer.html"
+
 jobtype: QA
 
 category: careers

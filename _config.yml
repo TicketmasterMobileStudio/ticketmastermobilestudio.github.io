@@ -21,3 +21,7 @@ future: true
 
 # Fix Permalinks
 permalink: "/:categories/:title"
+
+# Redirects
+gems:
+  - jekyll-redirect-from

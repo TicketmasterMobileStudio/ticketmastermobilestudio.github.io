@@ -2,6 +2,8 @@
 layout: career-detail
 title: "Mobile Development Manager, iOS"
 
+redirect_from: "/ios-manager.html"
+
 jobtype: iOS
 
 category: careers
