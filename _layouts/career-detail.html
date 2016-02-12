@@ -31,12 +31,14 @@
           <div class="columns small-12 medium-9 large-9">
             <ul>
               {% for qualification in page.qualifications %}
-              <li>{{ qualification.qual }}</li>
+                {% if qualification.qual%}
+                  <li>{{ qualification.qual }}</li>
+                {% endif %}
               {% endfor %}
               {% for qualification in page.qualifications %}
-              {% if qualification.bonusqual%}
-              <li><strong>Bonus:</strong> {{ qualification.bonusqual }}</li>
-              {% endif %}
+                {% if qualification.bonusqual%}
+                  <li><strong>Bonus:</strong> {{ qualification.bonusqual }}</li>
+                {% endif %}
               {% endfor %}              
             </ul>
           </div>
