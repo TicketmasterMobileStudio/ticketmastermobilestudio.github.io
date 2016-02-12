@@ -20,4 +20,4 @@ sass:
 future: true
 
 # Fix Permalinks
-permalink: "/:title"
+permalink: "/:categories/:title"
