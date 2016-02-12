@@ -32,6 +32,6 @@ qualifications:
   - qual: You are comfortable working in a culture of learning and providing quality mentorship for all team members
   - bonusqual: You have some professional programming experience
 
-linkout: "https://www.smartrecruiters.com/TicketmasterMobileStudio/82678943-senior-mobile-engineer-android?oga=true"
+linkout: "https://www.smartrecruiters.com/TicketmasterMobileStudio/88805972-senior-qa-engineer-engineer"
 
 ---

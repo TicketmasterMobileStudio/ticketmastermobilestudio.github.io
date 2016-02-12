@@ -27,6 +27,6 @@ qualifications:
   - qual: You have experience with development methodologies and source control systems
   - qual: You have the ability to interface across all levels of the organization and work with multiple stakeholders
 
-linkout: "https://www.smartrecruiters.com/TicketmasterMobileStudio/82678943-senior-mobile-engineer-android?oga=true"
+linkout: "https://www.smartrecruiters.com/TicketmasterMobileStudio/89203064-manager-mobile-development-ios"
 
 ---
