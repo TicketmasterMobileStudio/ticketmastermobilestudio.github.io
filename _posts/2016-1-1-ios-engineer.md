@@ -2,7 +2,7 @@
 layout: career-detail
 title: "Senior Mobile Engineer, iOS"
 
-redirect_from: "/ios-engineer.html"
+redirect_from: "careers/ios-engineer.html"
 
 jobtype: iOS
 
