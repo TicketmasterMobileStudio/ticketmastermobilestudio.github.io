@@ -6,7 +6,7 @@ redirect_from: "careers/senior-qa-engineer.html"
 
 jobtype: QA
 
-category: careers
+category: #
 
 location: "Durham, NC"
 
