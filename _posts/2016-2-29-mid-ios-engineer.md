@@ -3,8 +3,6 @@
 layout: career-detail
 title: "Mobile Engineer, iOS"
 
-redirect_from: "careers/mid-ios-engineer.html"
-
 jobtype: iOS
 
 category: careers
