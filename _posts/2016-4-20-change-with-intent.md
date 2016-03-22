@@ -9,6 +9,7 @@ eventtype: Design
 We at Ticketmaster are right in the middle of a few major changes to our mobile products and we felt like this would be a good time to discuss the topic of “Change”. We’ll follow the same format as our last Meetup and and break off into several 5-10 person groups to discuss the topic of “Change” as it relates to user experience and interface design.
 
 A few questions we’ve been asking ourselves:
+
 - How do you know when it’s time to make changes to your product?
 - How do you get users to change their behavior?
 
