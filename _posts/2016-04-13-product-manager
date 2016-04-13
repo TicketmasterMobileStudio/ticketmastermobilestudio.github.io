@@ -1,0 +1,35 @@
+---
+layout: career-detail
+title: "Product Manager"
+
+jobtype: product management
+category: careers
+
+location: "Durham, NC"
+
+role: "At Ticketmaster Mobile Studio, Product Managers define and shepherd both Android and iOS products for Ticketmaster and its affiliated companies. They are team- and solution-oriented, with a laser-sharp focus on quality. Product Managers are not afraid to fail and are honest and confident when presenting progress and roadblocks to other members of the team, particularly upper management. Evangelizing user experiences is key, and excellent communication skills (with focused and concise messaging) are the hallmarks of a successful Product Manager."
+
+responsibilities:
+  - resp: Define and prioritize features that elevate the user experience of the mobile products we build.
+  - resp: Maintain an organized and clear product backlog for the cross-functional team and stakeholders.
+  - resp: Distill business goals into product requirements by collaborating with key stakeholders.
+  - resp: Collaborate with project stakeholders to determine release date(s), scope, and sprint goals.
+  - resp: Research and put together business cases for new product concepts and present to both technical and non-technical stakeholders.
+  - resp: Work with a cross-functional team to build clear product requirements, complete use cases, technical specifications, wireframes and UI mocks.
+  - resp: Manage bottlenecks, provide escalation management, anticipate and decide on trade-offs, and ultimately balance business needs with technical/time constraints.
+  - resp: Define key performance indicators to measure product success and drive the product roadmap post launch.
+  - resp: Plan and manage product roll-out and assist with the day-to-day operational support post roll-out.
+
+qualifications:
+  - qual: You have a minimum of 5+ years overall work experience, with 2+ years product management experience
+  - qual: You possess an aptitude for interaction design, wireframing, workflow diagrams and prototyping
+  - qual: You are proficient in requirements definition, authoring epics, user stories and acceptance criteria within the Agile/Scrum methodology
+  - qual: You are familiar with lean product management principles
+  - qual: You are able to work independently and adapt to changes in a rapidly evolving industry
+  - bonusqual:  You have experience with mobile hardware and software
+  - bonusqual: You have prior ticketing, transaction and live event experience
+
+
+linkout: "https://www.smartrecruiters.com/TicketmasterMobileStudio/91367455-product-manager"
+
+---
