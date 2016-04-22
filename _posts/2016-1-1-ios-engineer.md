@@ -6,7 +6,7 @@ redirect_from: "careers/ios-engineer.html"
 
 jobtype: iOS
 
-category: archive 
+category: careers
 
 location: "Durham, NC"
 
