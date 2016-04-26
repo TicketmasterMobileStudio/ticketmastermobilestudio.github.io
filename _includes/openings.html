@@ -2,7 +2,7 @@
   <article class="row">
     {% for post in site.categories.careers limit:3%}
       {% if post.url %}
-          <detail class="job columns large-3 medium-6 small-12">
+          <detail class="job columns large-4 medium-6 small-12">
             <a href="{{ site.baseurl }}{{ post.url }}">
               <span>
                 <h4 id="{{ post.jobtype }}">Opening</h4>
@@ -12,7 +12,7 @@
           </detail>          
       {% endif %}
     {% endfor %}
-    <detail class="job columns large-3 medium-6 small-12">
+    <detail class="job columns large-4 medium-6 small-12">
       <a id="more" href="{{ site.baseurl }}/careers">
         <span>
           <h4>Join Us</h4>
