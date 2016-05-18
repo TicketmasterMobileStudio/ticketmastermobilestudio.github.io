@@ -6,7 +6,7 @@ redirect_from: "careers/ios-manager.html"
 
 jobtype: iOS
 
-category: careers
+category: archive
 
 location: "Durham, NC"
 
