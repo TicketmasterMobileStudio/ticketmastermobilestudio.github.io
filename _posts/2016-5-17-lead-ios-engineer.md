@@ -1,5 +1,4 @@
 ---
-
 layout: career-detail
 title: "Lead Mobile Engineer, iOS"
 
@@ -26,5 +25,4 @@ qualifications:
   - qual: You have the ability to interface across all levels of the organization and work with multiple stakeholders
 
 linkout: "https://livenation.wd1.myworkdayjobs.com/en-US/LNExternalSite/job/Durham-NC-USA/Lead-Mobile-Developer_JR-00445-1"
-
 ---
