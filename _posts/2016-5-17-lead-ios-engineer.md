@@ -4,7 +4,7 @@ title: "Lead Mobile Engineer, iOS"
 
 jobtype: iOS
 
-category: careers
+category: archive
 
 location: "Durham, NC"
 
