@@ -4,7 +4,7 @@ title: "Senior Mobile Engineer, Android"
 
 jobtype: Android
 
-category: careers
+category: #
 
 location: "Durham, NC"
 
