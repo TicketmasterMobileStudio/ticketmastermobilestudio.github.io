@@ -1,3 +1,5 @@
+{% if site.categories.careers == null %}
+{% else %}
 <section id="openings">
   <article class="row">
     {% for post in site.categories.careers limit:3%}
@@ -22,3 +24,4 @@
     </detail>
   </article>
 </section>
+{% endif %}
