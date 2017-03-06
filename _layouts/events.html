@@ -13,7 +13,6 @@
       </section>
       <section class="main">
         <article id="upcoming-events" class="row">
-          <h2 class="columns large-12">Upcoming Events</h2>
           <ul class="columns large-12">
             {% assign curDate = site.time | date: '%s' %}
             {% for post in site.categories.events reversed %}
