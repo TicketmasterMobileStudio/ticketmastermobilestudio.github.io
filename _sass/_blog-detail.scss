@@ -1,0 +1,76 @@
+#blog.blog-detail {
+  .main {
+    p, li {
+      @include bodyfontsize;
+      color: $steel;
+    }
+
+    h1 {
+      @include largeheadingsize; // 44px, 56px, 72px, 96px
+    }
+
+    h2 {
+                             font-size: rem-calc(30px);
+      @media #{$medium-up} { font-size: rem-calc(36px); }
+      @media #{$large-up}  { font-size: rem-calc(48px); }
+      @media #{$xlarge-up} { font-size: rem-calc(60px); }
+    }
+
+    h3 {
+                             font-size: rem-calc(24px);
+      @media #{$medium-up} { font-size: rem-calc(28px); }
+      @media #{$large-up}  { font-size: rem-calc(36px); }
+      @media #{$xlarge-up} { font-size: rem-calc(44px); }
+    }
+
+    h4 {
+                             font-size: rem-calc(20px);
+      @media #{$medium-up} { font-size: rem-calc(24px); }
+      @media #{$large-up}  { font-size: rem-calc(32px); }
+      @media #{$xlarge-up} { font-size: rem-calc(40px); }
+    }
+
+    h5 {
+                             font-size: rem-calc(16px);
+      @media #{$medium-up} { font-size: rem-calc(18px); }
+      @media #{$large-up}  { font-size: rem-calc(24px); }
+      @media #{$xlarge-up} { font-size: rem-calc(30px); }
+    }
+
+    h6 {
+                             font-size: rem-calc(14px);
+      @media #{$medium-up} { font-size: rem-calc(16px); }
+      @media #{$large-up}  { font-size: rem-calc(20px); }
+      @media #{$xlarge-up} { font-size: rem-calc(24px); }
+    }
+  }
+
+  .post-footer {
+    margin-top: rem-calc(40px);
+
+    &, & p {
+      @include bodyfontsize;
+      color: $aluminum;
+    }
+  }
+
+  .tags {
+    padding: rem-calc(20px 0 0);
+  }
+
+  .author-info {
+    padding-top: rem-calc(40px);
+
+    h2 {
+      margin-bottom: rem-calc(20px);
+    }
+  }
+
+  .avatar {
+    float: left;
+    margin-right: rem-calc(20px);
+    height: $paragraph-line-height * 2em;
+    width: $paragraph-line-height * 2em;
+    border-radius: 40px;
+  }
+}

@@ -1,0 +1,51 @@
+---
+layout: default
+---
+
+<section class="tags top">
+  <div class="row">
+    <div class="columns">
+      <h2>Tags</h2>
+    </div>
+  </div>
+</section>
+
+<section class="tags main">
+  <div class="row">
+    <div class="columns">
+
+      {{ content }}
+
+      <!-- Get the tag name for every tag on the site and set them
+      to the `site_tags` variable. -->
+      {% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+
+      <!-- `tag_words` is a sorted array of the tag names. -->
+      {% assign tag_words = site_tags | split:',' | sort %}
+
+      <h3>All Tags</h3>
+      <ul class="tags">
+        {% for item in (0..site.tags.size) %}{% unless forloop.last %}
+          {% capture this_word %}{{ tag_words[item] }}{% endcapture %}
+          <li>
+            <a href="#{{ this_word | cgi_escape }}" class="tag">{{ this_word }}
+              <span>{{ site.tags[this_word].size }}</span>
+            </a>
+          </li>
+        {% endunless %}{% endfor %}
+      </ul>
+      <hr />
+      <h3>Posts by Tag</h3>
+      {% for item in (0..site.tags.size) %}{% unless forloop.last %}
+        {% capture this_word %}{{ tag_words[item] }}{% endcapture %}
+        <h4 id="{{ this_word | cgi_escape }}">{{ this_word }}</h4>
+        <ul class="posts-by-tag">
+        {% for post in site.tags[this_word] %}{% if post.title != null %}
+          <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+        {% endif %}{% endfor %}
+        </ul>
+      {% endunless %}{% endfor %}
+
+    </div>
+  </div>
+</section>

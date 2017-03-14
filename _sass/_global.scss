@@ -24,7 +24,9 @@ hr {
 	margin: 0px;
 	@media #{$medium-up} {
 		margin: 0 1rem;
-		}
+
+		.column &, .columns & { margin: 0; }
+	}
 }
 #openings {
 	background: #e9eff2;

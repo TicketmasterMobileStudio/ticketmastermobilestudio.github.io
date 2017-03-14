@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    {% include head.html %}
+    <body id="blog" class="blog-detail">
+      {% include header.html %}
+      <article>
+        <section class="top">
+          <div class="row">
+            <div class="columns large-12">
+              <h2>{{ page.title }}</h2>
+              <p>
+              <time datetime="{{ page.date }}">{{ page.date | date: '%b %d' }}</time>
+            </div>
+          </div>
+        </section>
+        <section class="main">
+          <div class="row">
+            <div class="columns small-12 medium-9 large-9">
+              {{ content }}
+              <footer class="post-footer">
+                {% if page.tags %}
+                  <hr />
+                  <div class="tags">
+                    <p>
+                      Tagged with
+                      {% for tag in page.tags %}
+                        {% unless forloop.first %}{% if forloop.last %} and {% else %}, {% endif %}{% endunless %}
+                        <a href="{{ site.baseurl }}/blog/tags#{{ tag }}" class="tag">{{ tag }}</a>
+                      {% endfor %}
+                    </p>
+                  </div>
+                {% endif %}
+                {% assign author = site.data.authors[page.author] %}
+                {% if author %}
+                  <hr />
+                  <div class="author-info">
+                    <h2>Author</h2>
+                    <img class="avatar" src="http://www.gravatar.com/avatar/{{ author.gravatar }}?s=160">
+                    <p>
+                      {{ author.name }}<br>
+                      {{ author.title }}
+                    </p>
+                    <p class="bio">{{ author.bio }}</p>
+                  </div>
+                {% endif %}
+              </footer>
+            </div>
+          </div>
+        </section>
+      </article>
+      {% include openings.html %}
+      {% include footer.html %}
+    </body>
+</html>
