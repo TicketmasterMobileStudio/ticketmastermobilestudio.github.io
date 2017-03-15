@@ -1,0 +1,32 @@
+---
+layout: blog
+title: "Blog"
+---
+
+<ul class="posts">
+  {% for post in paginator.posts %}
+    {% if post.url %}
+        <li>
+          <a href="{{ site.baseurl }}{{ post.url }}">
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.date | date: '%b %d, %y' }}</p>
+            {{ post.excerpt }}
+          </a>
+        </li>
+    {% endif %}
+  {% endfor %}
+</ul>
+<!-- Pagination links -->
+<nav class="pagination">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path }}" class="previous button">&larr; Previous Page</a>
+  {% else %}
+    <!-- <span class="previous">&larr; Previous Page</span> -->
+  {% endif %}
+  <!-- <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span> -->
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path }}" class="next button">Next Page &rarr;</a>
+  {% else %}
+    <!-- <span class="next ">Next Page &rarr;</span> -->
+  {% endif %}
+</nav>

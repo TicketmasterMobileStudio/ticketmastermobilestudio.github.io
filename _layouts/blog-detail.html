@@ -7,9 +7,13 @@
         <section class="top">
           <div class="row">
             <div class="columns large-12">
+              <a href="{{ site.baseurl }}/blog" class="button">&larr; Blog</a>
               <h2>{{ page.title }}</h2>
               <p>
-              <time datetime="{{ page.date }}">{{ page.date | date: '%b %d' }}</time>
+                <time datetime="{{ page.date }}">{{ page.date | date: '%b %d, %y' }}</time>
+                {% if page.categories.size > 1 %}&nbsp;&middot;&nbsp;{% endif %}
+                {% for category in page.categories %}{% unless category == 'blog' %}{% unless forloop.first %}, {% endunless %}<a href="{{ site.baseurl }}/blog/categories#{{ category }}" class="category">{{ category }}</a>{% endunless %}{% endfor %}
+              </p>
             </div>
           </div>
         </section>
@@ -34,7 +38,6 @@
                 {% if author %}
                   <hr />
                   <div class="author-info">
-                    <h2>Author</h2>
                     <img class="avatar" src="http://www.gravatar.com/avatar/{{ author.gravatar }}?s=160">
                     <p>
                       {{ author.name }}<br>

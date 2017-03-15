@@ -1,7 +1,5 @@
 #blog {
 	.top {
-		padding-bottom: 0;
-
 		h2 {
 			margin-top: rem-calc(32px);
 			margin-bottom: rem-calc(16px);
@@ -14,19 +12,40 @@
 			}		
 		}
 
-		p {
-			margin-top: 0;
-			margin-bottom: rem-calc(40px);
-		}
+	    a.button {
+	      margin-bottom: rem-calc(8px);
+	      margin-top: rem-calc(16px);
+	      @media #{$medium-up} {
+	        margin-top: rem-calc(24px);
+	      }
+	      @media #{$large-up} {
+	        margin-top: rem-calc(52px);
+	      }
+	    }
 	}
 	.main {
 		background-color: $white;
 		padding-top: rem-calc(80px);
 		padding-bottom: rem-calc(40px);
 
+		.button {
+			color: $primary-color;
+			border: 1px solid;
+			box-shadow: none;
+			padding: rem-calc(12px 24px);
+		}
+
 		.posts {
 			list-style: none;
-			margin-left: 0;
+			margin: rem-calc(0 0 40px 0);
+
+			a {
+				display: block;
+				
+				&:hover {
+					opacity: 0.5;
+				}
+			}
 
 			li {
 				margin-bottom: rem-calc(40px);
@@ -37,13 +56,66 @@
 			}
 
 			p {
-				@include largebodyfontsize;
+				@include bodyfontsize;
 				color: $steel;
 			}
 		}
 
-		.tags {
-			@include largebodyfontsize;
+		.pagination {
+			text-align: right;
+			color: $iron;
+			margin: rem-calc(0 0 40px 0);
+			overflow: auto;
+
+			span, .button {
+				border: 1px solid;
+				@include bodyfontsize;
+				border-radius: rem-calc(40px);
+				padding: rem-calc(12px 24px);
+			}
+
+			.previous {
+				float: left;
+			}
+			.page_number {
+				display: block;
+				margin: 0 auto;
+				text-align: center;
+				border: none;
+				color: $steel;
+			}
+			.next {
+				text-align: right;
+			}
 		}
+
+		ul.tags, ul.categories {
+	      list-style: none;
+	      margin: rem-calc(20px 0 40px);
+
+	      li {
+	        @include bodyfontsize;
+	        margin: rem-calc(0 0 8px 0);
+
+	        a {
+	          span {
+	            background-color: $primary-color;
+	            display: inline-block;
+	            height: 1.5em;
+	            min-width: 1.5em;
+	            font-size: 0.7em;
+	            text-align: center;
+	            margin-left: rem-calc(8px);
+	            border-radius: rem-calc(40px);
+	            padding: rem-calc(0 8px);
+	            color: $white;
+	          }
+
+	          &:hover span {
+	            background-color: $anchor-font-color-hover;
+	          }
+	        }
+	      }
+	    }
 	}
 }

@@ -1,4 +1,4 @@
-.tags {
+.categories {
   &.top {
     a.button {
       margin-bottom: rem-calc(8px);
@@ -41,7 +41,7 @@
       @media #{$medium-up} { padding-top: rem-calc(108px); }
     }
 
-    ul.tags {
+    ul.categories {
       list-style: none;
       margin: rem-calc(20px 0 0);
       overflow: auto;
@@ -76,7 +76,7 @@
       }
     }
 
-    ul.posts-by-tag {
+    ul.posts-by-category {
       list-style: none;
       margin: rem-calc(0 0 40px 0);
 
