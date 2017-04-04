@@ -46,7 +46,32 @@
                     <p class="bio">{{ author.bio }}</p>
                   </div>
                 {% endif %}
+                <nav class="pagination">
+                  {% for post in site.categories.blog %}
+                    {% if post.url == page.url %}
+                        {% assign post_index0 = forloop.index0 %}
+                        {% assign post_index1 = forloop.index %}
+                    {% endif %}
+                  {% endfor %}
+                  {% for post in site.categories.blog %}
+                      {% if post_index0 == forloop.index %}
+                          {% assign next_post = post %}
+                      {% endif %}
+                      {% if post_index1 == forloop.index0 %}
+                          {% assign prev_post = post %}
+                      {% endif %}
+                  {% endfor %}
+                  {% if prev_post %}
+                    <a href="{{ prev_post.url }}" class="previous button">&larr; {{ prev_post.title }}</a>
+                  {% endif %}
+                  {% if next_post %}
+                    <a href="{{ next_post.url }}" class="next button">{{ next_post.title }} &rarr;</a>
+                  {% endif %}
+                </nav>
               </footer>
+            </div>
+            <div class="columns small-12 medium-3 large-3">
+              {% include related_posts.html %}
             </div>
           </div>
         </section>

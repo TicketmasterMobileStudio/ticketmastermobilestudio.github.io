@@ -92,4 +92,13 @@
     width: $paragraph-line-height * 2em;
     border-radius: 40px;
   }
+
+  .related-posts {
+    list-style: none;
+    margin-left: 0;
+
+    li {
+      margin-bottom: rem-calc(20px);
+    }
+  }
 }
