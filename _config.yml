@@ -6,7 +6,7 @@ google_analytics_id: 'UA-62605735-1'
 
 # path (e.g. on GitHub pages) leave off the trailing slash, e.g. /my-project
 
-baseurl: 'http://ticketmastermobilestudio.com'
+baseurl: ''
 
 
 # Exclude non-site files
@@ -25,3 +25,26 @@ permalink: "/:categories/:title"
 # Redirects
 gems:
   - jekyll-redirect-from
+  - jekyll-paginate
+
+# Blog posts per page and url structure
+paginate: 3
+paginate_path: "/blog/page:num/"
+
+# Defaults
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      hidden: true
+  -
+    scope:
+      path: "_posts/blog"
+      type: "posts"
+    values:
+      category: blog
+      layout: blog-detail
+      permalink: "/blog/:title"
+      hidden: false
