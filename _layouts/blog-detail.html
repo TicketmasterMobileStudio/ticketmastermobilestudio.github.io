@@ -12,7 +12,11 @@
               <p>
                 <time datetime="{{ page.date }}">{{ page.date | date: '%b %d, %y' }}</time>
                 {% if page.categories.size > 1 %}&nbsp;&middot;&nbsp;{% endif %}
-                {% for category in page.categories %}{% unless category == 'blog' %}{% unless forloop.first %}, {% endunless %}<a href="{{ site.baseurl }}/blog/categories#{{ category }}" class="category">{{ category }}</a>{% endunless %}{% endfor %}
+                {% for category in page.categories %}{% unless category == 'blog' %}{% unless forloop.first %}, {% endunless %}<a href="{{ site.baseurl }}/blog/categories#{{ category | slugify }}" class="category">{{ category }}</a>{% endunless %}{% endfor %}
+                {% if page.tags.size > 0 %}&nbsp;&middot;&nbsp;
+                  Tagged as
+                  {% for tag in page.tags %}{% unless forloop.first %}{% if forloop.last %} and {% else %}, {% endif %}{% endunless %}<a href="{{ site.baseurl }}/blog/tags#{{ tag | slugify }}" class="tag">{{ tag }}</a>{% endfor %}
+                {% endif %}
               </p>
             </div>
           </div>
@@ -20,9 +24,11 @@
         <section class="main">
           <div class="row">
             <div class="columns small-12 medium-9 large-9">
-              {{ content }}
+              <div class="blog-content">
+                {{ content }}
+              </div>
               <footer class="post-footer">
-                {% if page.tags %}
+<!--                 {% if page.tags %}
                   <hr />
                   <div class="tags">
                     <p>
@@ -33,14 +39,13 @@
                       {% endfor %}
                     </p>
                   </div>
-                {% endif %}
+                {% endif %} -->
                 {% assign author = site.data.authors[page.author] %}
                 {% if author %}
-                  <hr />
                   <div class="author-info">
-                    <img class="avatar" src="http://www.gravatar.com/avatar/{{ author.gravatar }}?s=160">
+                    <img class="avatar" src="http://www.gravatar.com/avatar/{{ author.gravatar }}?s=160&d=identicon">
                     <p>
-                      {{ author.name }}<br>
+                      <strong>{{ page.author }}</strong><br>
                       {{ author.title }}
                     </p>
                     <p class="bio">{{ author.bio }}</p>
@@ -62,10 +67,16 @@
                       {% endif %}
                   {% endfor %}
                   {% if prev_post %}
-                    <a href="{{ prev_post.url }}" class="previous button">&larr; {{ prev_post.title }}</a>
+                    <a href="{{ prev_post.url }}" class="previous">
+                      <span class="button">&larr; Previous Post</span>
+                      <h4>{{ prev_post.title }}</h4>
+                    </a>
                   {% endif %}
                   {% if next_post %}
-                    <a href="{{ next_post.url }}" class="next button">{{ next_post.title }} &rarr;</a>
+                    <a href="{{ next_post.url }}" class="next">
+                      <span class="button">Next Post &rarr;</span>
+                      <h4>{{ next_post.title }}</h4>
+                    </a>
                   {% endif %}
                 </nav>
               </footer>

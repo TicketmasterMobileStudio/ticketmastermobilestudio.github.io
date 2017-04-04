@@ -9,8 +9,14 @@ title: "Blog"
         <li>
           <a href="{{ site.baseurl }}{{ post.url }}">
             <h3>{{ post.title }}</h3>
-            <p>{{ post.date | date: '%b %d, %y' }}</p>
-            {{ post.excerpt }}
+            <p><time datetime="{{ page.date }}">{{ post.date | date: '%b %d, %y' }}</time>
+                {% if post.categories.size > 1 %}&nbsp;&middot;&nbsp;{% endif %}
+                {% for category in post.categories %}{% unless category == 'blog' %}{% unless forloop.first %}, {% endunless %}<em>{{ category }}</em>{% endunless %}{% endfor %}
+                {% if post.tags.size > 0 %}&nbsp;&middot;&nbsp;
+                  Tagged as
+                  {% for tag in post.tags %}{% unless forloop.first %}{% if forloop.last %} and {% else %}, {% endif %}{% endunless %}<em>{{ tag }}</em>{% endfor %}
+                {% endif %}</p>
+            <p>{{ post.excerpt | strip_html }}</p>
           </a>
         </li>
     {% endif %}
@@ -18,15 +24,19 @@ title: "Blog"
 </ul>
 <!-- Pagination links -->
 <nav class="pagination">
-  {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path }}" class="previous button">&larr; Previous Page</a>
-  {% else %}
-    <!-- <span class="previous">&larr; Previous Page</span> -->
-  {% endif %}
-  <!-- <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span> -->
-  {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path }}" class="next button">Next Page &rarr;</a>
-  {% else %}
-    <!-- <span class="next ">Next Page &rarr;</span> -->
-  {% endif %}
+  <div class="previous">
+    {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path }}" class="button">&larr; Previous Page</a>
+    {% else %}
+      <!-- <span class="previous">&larr; Previous Page</span> -->
+    {% endif %}
+  </div>
+  <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+  <div class="next">
+    {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path }}" class="button">Next Page &rarr;</a>
+    {% else %}
+      <!-- <span class="next ">Next Page &rarr;</span> -->
+    {% endif %}
+  </div>
 </nav>

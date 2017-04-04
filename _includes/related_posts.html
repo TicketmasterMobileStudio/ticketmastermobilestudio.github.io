@@ -1,5 +1,5 @@
 {% assign maxRelated = 10 %}
-{% assign minCommonTags = 2 %}
+{% assign minCommonTags = 1 %}
 {% assign maxRelatedCounter = 0 %}
 {% assign outputHtml = '' %}
 
@@ -36,7 +36,7 @@
 {% endfor %}
 
 {% if outputHtml.size > 0 %}
-  <h3>Related</h4>
+  <h3>Related</h3>
   <ul class="related-posts">
     {{ outputHtml }}
   </ul>

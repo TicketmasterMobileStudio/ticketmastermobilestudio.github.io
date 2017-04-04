@@ -48,12 +48,15 @@
 			}
 
 			li {
-				margin-bottom: rem-calc(40px);
+				margin-bottom: rem-calc(80px);
 			}
 
-			h3 {
-				@include largeheadingsize;
-			}
+		    h3 {
+		                             font-size: rem-calc(30px);
+		      @media #{$medium-up} { font-size: rem-calc(36px); }
+		      @media #{$large-up}  { font-size: rem-calc(48px); }
+		      @media #{$xlarge-up} { font-size: rem-calc(60px); }
+		    }
 
 			p {
 				@include bodyfontsize;
@@ -62,23 +65,35 @@
 		}
 
 		.pagination {
-			text-align: right;
+			display: flex;
+			justify-content: space-between;
 			color: $iron;
-			margin: rem-calc(0 0 40px 0);
+			margin: rem-calc(40px 0 40px 0);
 			overflow: auto;
 
 			span, .button {
+				background-color: transparent;
 				border: 1px solid;
 				@include bodyfontsize;
 				border-radius: rem-calc(40px);
 				padding: rem-calc(12px 24px);
 			}
 
-			.previous {
-				float: left;
+			a {
+				&:hover {
+					opacity: 0.5;
+				}
 			}
+
+			.previous, .next, .page_number {
+				flex: 1;
+			}
+
+			.previous {
+				margin-right: rem-calc(20px);
+			}
+
 			.page_number {
-				display: block;
 				margin: 0 auto;
 				text-align: center;
 				border: none;
@@ -86,6 +101,7 @@
 			}
 			.next {
 				text-align: right;
+				margin-left: rem-calc(20px);
 			}
 		}
 

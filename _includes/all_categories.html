@@ -14,7 +14,7 @@ to the `site_categories` variable. -->
   {% for item in (0..cat_words.size) %}{% unless forloop.last %}
     {% capture this_word %}{{ cat_words[item] }}{% endcapture %}
     <li>
-      <a href="{{ site.baseurl }}/blog/categories#{{ this_word | cgi_escape }}" class="category">{{ this_word }}
+      <a href="{{ site.baseurl }}/blog/categories#{{ this_word | slugify }}" class="category">{{ this_word }}
         <span>{{ site.categories[this_word].size }}</span>
       </a>
     </li>
