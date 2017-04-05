@@ -10,11 +10,11 @@
               <a href="{{ site.baseurl }}/blog" class="button">&larr; Blog</a>
               <h2>{{ page.title }}</h2>
               <p>
-                <time datetime="{{ page.date }}">{{ page.date | date: '%b %d, %y' }}</time>
+                <time datetime="{{ page.date }}">{{ page.date | date: '%b %d, %Y' }}</time>
                 {% if page.categories.size > 1 %}&nbsp;&middot;&nbsp;{% endif %}
                 {% for category in page.categories %}{% unless category == 'blog' %}{% unless forloop.first %}, {% endunless %}<a href="{{ site.baseurl }}/blog/categories#{{ category | slugify }}" class="category">{{ category }}</a>{% endunless %}{% endfor %}
                 {% if page.tags.size > 0 %}&nbsp;&middot;&nbsp;
-                  Tagged as
+                  Tagged
                   {% for tag in page.tags %}{% unless forloop.first %}{% if forloop.last %} and {% else %}, {% endif %}{% endunless %}<a href="{{ site.baseurl }}/blog/tags#{{ tag | slugify }}" class="tag">{{ tag }}</a>{% endfor %}
                 {% endif %}
               </p>
@@ -82,7 +82,9 @@
               </footer>
             </div>
             <div class="columns small-12 medium-3 large-3">
-              {% include related_posts.html %}
+              <aside class="sidebar">
+                {% include related_posts.html %}
+              </aside>
             </div>
           </div>
         </section>

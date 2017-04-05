@@ -68,7 +68,7 @@
 			display: flex;
 			justify-content: space-between;
 			color: $iron;
-			margin: rem-calc(40px 0 40px 0);
+			margin: rem-calc(80px 0 40px 0);
 			overflow: auto;
 
 			span, .button {
@@ -105,33 +105,35 @@
 			}
 		}
 
-		ul.tags, ul.categories {
-	      list-style: none;
-	      margin: rem-calc(20px 0 40px);
+		.sidebar {
+			ul {
+		      list-style: none;
+		      margin: rem-calc(20px 0 40px);
 
-	      li {
-	        @include bodyfontsize;
-	        margin: rem-calc(0 0 8px 0);
+		      li {
+		        @include bodyfontsize;
+		        margin: rem-calc(0 0 8px 0);
 
-	        a {
-	          span {
-	            background-color: $primary-color;
-	            display: inline-block;
-	            height: 1.5em;
-	            min-width: 1.5em;
-	            font-size: 0.7em;
-	            text-align: center;
-	            margin-left: rem-calc(8px);
-	            border-radius: rem-calc(40px);
-	            padding: rem-calc(0 8px);
-	            color: $white;
-	          }
+		        a {
+		          span {
+		            background-color: $primary-color;
+		            display: inline-block;
+		            height: 1.5em;
+		            min-width: 1.5em;
+		            font-size: 0.7em;
+		            text-align: center;
+		            margin-left: rem-calc(8px);
+		            border-radius: rem-calc(40px);
+		            padding: rem-calc(0 8px);
+		            color: $white;
+		          }
 
-	          &:hover span {
-	            background-color: $anchor-font-color-hover;
-	          }
-	        }
-	      }
-	    }
+		          &:hover span {
+		            background-color: $anchor-font-color-hover;
+		          }
+		        }
+		      }
+		    }
+		}
 	}
 }

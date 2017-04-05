@@ -116,19 +116,8 @@
   }
 
   .related-posts {
-    list-style: none;
-    margin-left: 0;
-
-    a {
-      color: $steel;
-
-      &:hover {
-        opacity: 0.5;
-      }
-    }
-
     li {
-      margin-bottom: rem-calc(40px);
+      margin-bottom: rem-calc(20px);
     }
   }
 }

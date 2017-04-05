@@ -9,7 +9,7 @@ title: "Blog"
         <li>
           <a href="{{ site.baseurl }}{{ post.url }}">
             <h3>{{ post.title }}</h3>
-            <p><time datetime="{{ page.date }}">{{ post.date | date: '%b %d, %y' }}</time>
+            <p><time datetime="{{ page.date }}">{{ post.date | date: '%b %d, %Y' }}</time>
                 {% if post.categories.size > 1 %}&nbsp;&middot;&nbsp;{% endif %}
                 {% for category in post.categories %}{% unless category == 'blog' %}{% unless forloop.first %}, {% endunless %}<em>{{ category }}</em>{% endunless %}{% endfor %}
                 {% if post.tags.size > 0 %}&nbsp;&middot;&nbsp;
