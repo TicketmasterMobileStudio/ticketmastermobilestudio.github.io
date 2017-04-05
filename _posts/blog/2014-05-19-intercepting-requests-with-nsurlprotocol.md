@@ -44,7 +44,7 @@ tags:
 <h2>Introducing TWTHasselhoffImageProtocol</h2>
 <p>Suppose you are working on displaying remote images in your app and are about to board an airplane. Sure, you could temporarily change all your images to be local, but then your client code would be littered with all these changes that you’ll need to delete later. Let’s make a protocol that responds with an image from the bundle whenever an image is requested. For maximum awesomeness, let’s make that image always be a photo of David Hasselhoff.</p>
 <p>First we have our client code. This is the code that will request the photo we'd like to display.</p>
-<pre><code>#!objc
+```objc
 NSString *kittenImageString = @"http://cutekittens.com/kittens_cute_kitten.jpg";
 NSURL *url = [NSURL URLWithString:kittenImageString];
 
@@ -62,11 +62,11 @@ NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
         self.imageView.image = kittenImage;
     }]];
 }];
-</code></pre>
+```
 <p>This works as expected. We run the application and see our cute kitten.</p>
 <p>Now we start to have some fun. We’ll create <code>TWTHasselhoffImageProtocol</code>, which intercepts image requests and responds with some Hasselhoff. You <a href="https://gist.github.com/jnjosh/6f078e93f1df9a3dc14c">can download this class and follow along</a>.</p>
 <p>The first thing we need to do is tell the URL loading system if we can handle this request. We do this using <code>+canInitWithRequest:</code>. We’ll return <code>YES</code> if the request is for a PNG or JPEG.</p>
-<pre><code>#!objc
+```objc
 + (BOOL)canInitWithRequest:(NSURLRequest *)request
 {
     NSSet *validContentTypes = [NSSet setWithArray:@[ @"image/png",
@@ -75,9 +75,9 @@ NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
 
     return [validContentTypes containsObject:request.allHTTPHeaderFields[@"Content-Type"]];
 }
-</code></pre>
+```
 <p>Next we'll implement <code>‑startLoading</code> and <code>‑stopLoading</code> and simply return our Hasselhoff photo.</p>
-<pre><code>#!objc
+```objc
 ‑ (void)startLoading
 {
     id &lt;NSURLProtocolClient&gt; client = self.client;
@@ -100,15 +100,15 @@ NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
 {
     // We send all the data at once, so there is nothing to do here.
 }
-</code></pre>
+```
 <p>The only remaining piece of the puzzle here is the registration step. We’ll simply register it at the app’s launch.</p>
-<pre><code>#!objc
+```objc
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [NSURLProtocol registerClass:[TWTHasselhoffImageProtocol class]];
     return YES;
 }
-</code></pre>
+```
 <p>Now when we run the application, instead of seeing a cute kitten we should see Hasselhoff. The idea that you don’t have to change your client code should be clear. We are still requesting the cute kitten image, but our protocol knows better. It knows what we really wanted was the Hoff.</p>
 <h2>Summary</h2>
 <p>Foundation’s URL loading system is a powerful abstraction around network requests. It allows you to easily add your own handlers to provide support for new protocols or change existing behavior. This can help a lot when you are missing resources and need to stay productive.</p>

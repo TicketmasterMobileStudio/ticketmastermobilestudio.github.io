@@ -37,7 +37,7 @@ tags:
 <h2>CocoaPods Subspecs</h2>
 <p><a href="http://cocoapods.org" title="CocoaPods">CocoaPods</a> is the de-facto standard for distributing libraries in the Cocoa community, but few know about <a href="http://guides.cocoapods.org/syntax/podspec.html#subspec" title="CocoaPods Subspecs">subspecs</a>. Subspecs allow pod authors to break their podspecs into discrete chunks, each of which can be added to a Podfile like any other pod. This allows a library’s users to include only the parts they need, while its developers can treat it as a single project.</p>
 <p>With TWTToast, each utility module—typically a header and implementation file—has an associated subspec in our <a href="https://github.com/twotoasters/Toast/blob/master/TWTToast.podspec" title="TWTToast Podspec">podspec</a>. For example, the snippet below defines our <code>UIKit</code> subspec, which has two sub-subspecs: <code>AutoLayout</code> and <code>Color</code>.</p>
-<pre><code>#!ruby
+```ruby
 ## Subspec for Files Related to UIKit
 s.subspec 'UIKit' do |ss|
   ss.subspec 'AutoLayout' do |sss|
@@ -50,11 +50,11 @@ s.subspec 'UIKit' do |ss|
 
   …
 end
-</code></pre>
+```
 <p>If you only want our <code>Color</code> module, you can get it by adding the following line to your Podfile,</p>
-<pre><code>#!ruby
+```ruby
 pod 'TWTToast/UIKit/Color'
-</code></pre>
+```
 <p>None of our other utilities are included in your project. You can specify any combination of modules this way.</p>
 <p>We’ve found that this approach works very well for everyone. Module users get easy-to-use, à la carte module inclusion, and we can store all our utilities in a single repository on GitHub, where it fits in with our existing development processes. This makes it easy for us to add and share new modules.</p>
 <p>Next time you’re thinking about publishing your utility classes and categories, consider distributing them using CocoaPods subspecs. We think they’re a great, low-overhead way to organize and share utilities with the Cocoa community. Also, go have a look at <a href="https://github.com/twotoasters/toast" title="TWTToast">TWTToast</a>! We’ve got several useful utilities in there now, and we’ll be adding more soon!</p>

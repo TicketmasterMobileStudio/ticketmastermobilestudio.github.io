@@ -40,7 +40,8 @@ tags:
 <li>Pattern-based request matching using <code>UMKPatternMatchingMockRequest</code>. </li>
 </ul>
 <p>We think this last feature will really improve the way you use URLMock for mocking and stubbing. With <code>UMKPatternMatchingMockRequest</code>, you can match requests using a URL pattern and generate a response dynamically using a block. Here’s a quick example from the README:</p>
-<pre><code>NSString *pattern = @"http://hostname.com/accounts/:accountID/followers";
+```
+NSString *pattern = @"http://hostname.com/accounts/:accountID/followers";
 UMKPatternMatchingMockRequest *mockRequest =  [[UMKPatternMatchingMockRequest alloc] initWithPattern:pattern];
 mockRequest.HTTPMethods = [NSSet setWithObject:kUMKMockHTTPRequestPostMethod];
 
@@ -59,7 +60,7 @@ mockRequest.responderGenerationBlock = ^id&lt;UMKMockURLResponder&gt;(NSURLReque
 };
 
 [UMKMockURLProtocol addExpectedMockRequest:mockRequest];
-</code></pre>
+```
 <p>This mock request matches all requests whose URL matches the pattern http://hostname.com/accounts/<em>accountID</em>/followers, where <em>accountID</em> is an account ID placeholder. The mock request dynamically generates a responder using its responder generation block. In the example above, the mock request generates a response that includes data from both the request’s URL and body. See the <a href="http://cocoadocs.org/docsets/URLMock/1.2.1/Classes/UMKPatternMatchingMockRequest.html" title="UMKPatternMatchingMockRequest Documentation">UMKPatternMatchingMockRequest</a> docs for more specifics about how to use pattern-matching mock requests.</p>
 <p>We’re really proud of this release. Drop by our <a href="https://github.com/twotoasters/URLMock" title="URLMock on GitHub">GitHub page</a> for more details!</p>
 <h2>TWTValidation 1.0</h2>

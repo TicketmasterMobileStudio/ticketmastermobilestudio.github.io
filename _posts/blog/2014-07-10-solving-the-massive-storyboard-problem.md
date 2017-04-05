@@ -40,7 +40,7 @@ tags:
 <p><img src="/wp-content/uploads/2014/07/nicer-storyboard.png" alt="Nicer Storyboard" /></p>
 <p>For our project, we identified the core workflows in the app and created a storyboard for each of those workflows. For example, the app’s screens for sign-in and onboarding can be grouped together in <code>Onboarding.storyboard</code>. Screens related to account settings might go in <code>AccountSettings.storyboard</code>.</p>
 <p>These are rough examples, but most apps have a pretty good division of the types of actions a user is taking. These are logical boundaries to break up your storyboards. Aside from making it easier to navigate a smaller Storyboard, this also helps reduce opportunities for merge conflicts. It’s also really easy to cross over that boundary between Storyboard files. As an example, instead of connecting a button to another view controller by connecting a segue to it, just connect the button to an <code>IBAction</code> method:</p>
-<pre><code>#!objc
+```objc
 
 ‑ (IBAction)displayAccountSettings:(id)sender
 {
@@ -52,6 +52,6 @@ tags:
                        animated:YES
                      completion:nil];
 }
-</code></pre>
+```
 <h2>Keep an open mind</h2>
 <p>This has made our storyboards much more sane. You may have had a bad opinion of using storyboards or even Interface Builder because of problems like this. Constantly evaluating and re-evaluating the tools and techniques you use will help you be more productive. Our latest experience with storyboards and Interface Builder has convinced us that the tools are mature enough to help us be more productive. We’ll be writing more about this topic in the future, so stay tuned!</p>

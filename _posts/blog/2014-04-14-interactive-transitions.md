@@ -43,7 +43,7 @@ tags:
 <h3>Detect User Input</h3>
 <p>Most commonly, the beginning of user input is the start of some kind of continuous touch gesture. I added a <code>UIPinchGestureRecognizer</code> instance to my view controller's view. I will discuss this implementation pattern a little later, but for now, all you need know is that <code>TWTPopTransitionController</code> manages the gesture recognizer logic and also plays the roles of the animation controller and interaction controller.</p>
 <p>In TWTPopTransitionController.m:</p>
-<pre><code>#!objc
+```objc
 - (id)init
 {
     self = [super init];
@@ -53,9 +53,9 @@ tags:
     }
     return self;
 }
-</code></pre>
+```
 <p>In TWTViewController.m:</p>
-<pre><code>#!objc
+```objc
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -66,11 +66,11 @@ tags:
         [self.view addGestureRecognizer:self.popTransitionController.pinchGestureRecognizer];
     }
 }
-</code></pre>
+```
 <h3>Start the Transition</h3>
 <p>As soon as the interaction begins, you need to trigger the view controller transition. I set up my view controller to call <code>‑popViewControllerAnimated:</code> when the pinch gesture recognizer's state changes to <code>UIGestureRecognizerStateBegan</code>.</p>
 <p>In TWTPopTransitionController.m:</p>
-<pre><code>#!objc
+```objc
 - (void)handlePinchGesture:(UIPinchGestureRecognizer *)pinchGestureRecognizer
 {
     …
@@ -84,14 +84,14 @@ tags:
         …
     }
 }
-</code></pre>
+```
 <p>In TWTViewController.m:</p>
-<pre><code>#!objc
+```objc
 - (void)transitionControllerInteractionDidStart:(id&lt;TWTTransitionController&gt;)transitionController
 {
     [self.navigationController popViewControllerAnimated:YES];
 }
-</code></pre>
+```
 <h3>Return the Animation Controller</h3>
 <p>When the transition starts, the navigation controller asks its delegate for an animation controller. This is required. Otherwise, the navigation controller will not ask for an interaction controller. I set up my navigation controller delegate to return an animation controller that scales down and fades out the from view controller's view.</p>
 <p>One important caveat here is that if you are using <code>UIPercentDrivenInteractiveTransition</code> for your interaction controller, your animation controller must use the <code>UIView</code> block-based animation API to set up the animation timeline (see WWDC 2013 session 218 slide 151). Animations you set up with Core Animation directly or even with the <code>+[UIView transitionFromView:​toView:​duration:​options:​completion:]</code> method will not be managed by the <code>UIPercentDrivenInteractiveTransition</code>.</p>
@@ -101,7 +101,7 @@ tags:
 <h3>Update the Interaction Controller</h3>
 <p>After the animation and interaction controllers are supplied to the navigation controller, it's off to the races. The animation controller's <code>‑animateTransition:</code> method will set up the animation timeline, and the pinch gesture recognizer will continue to report updates with state <code>UIGestureRecognizerStateChanged</code>. I set up the pinch gesture recognizer's handler so that as the user input changes it updates the interaction controller's <code>percentComplete</code> property. The interaction controller takes the percent complete value and scrubs to the appropriate point along the animation timeline. The percent complete does not have to change in a single direction; it can increase or decrease at each update.</p>
 <p>In TWTPopTransitionController.m:</p>
-<pre><code>#!objc
+```objc
 - (void)handlePinchGesture:(UIPinchGestureRecognizer *)pinchGestureRecognizer
 {
     CGFloat scale = pinchGestureRecognizer.scale;
@@ -118,7 +118,7 @@ tags:
         …
     }
 }
-</code></pre>
+```
 <h3>Complete the Transition</h3>
 <p>Eventually, the pinch gesture will report that its state has changed to either <code>UIGestureRecognizerStateEnded</code> or <code>UIGestureRecognizerStateCancelled</code>. I made the handler determine whether the gesture is progressing in a way that indicates that the user wants to complete the transition or cancel the transition, and I call the appropriate method on the interaction controller. The interaction controller then animates the views from their current positions on the animation timeline to either the end (in the case of completing the transition) or back to the beginning (in the case of canceling the transition). There is a <a href="http://openradar.appspot.com/14675246">bug</a> in the iOS Simulator that causes these final animations to play twice. Until Apple resolves this issue, you will need to test on the device to see how it is supposed to work.</p>
 <p>One other unexpected behavior that I encountered was that when a transition is canceled, the properties of the views that you animate are returned to their pre-animation state before the completion block is called. This surprised me since it is the only case that I'm aware of in which the block-based animation API changes the <a href="https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CoreAnimation_guide/CoreAnimationBasics/CoreAnimationBasics.html#//apple_ref/doc/uid/TP40004514-CH2-SW19">model layer</a> in ways other than adding animation objects.</p>

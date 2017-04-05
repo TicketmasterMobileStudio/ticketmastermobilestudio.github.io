@@ -95,16 +95,16 @@ tags:
 <p>All three examples use <code>TWTExampleViewController</code> either directly or by subclassing. All it does on its own is set the background color for its view and make it so that you can tap anywhere inside of it to end the example and go back to the main menu.</p>
 <h3>Push and pop with flips</h3>
 <p>In this example, the goal is to make push and pop use flip animations instead of the standard slide animation. I started by setting up a navigation controller with an instance of <code>TWTPushExampleViewController</code> as the root. <code>TWTPushExampleViewController</code> adds a button to the right side of the navigation bar titled "Push". When it is tapped, a new instance of <code>TWTPushExampleViewController</code> is pushed on to the navigation stack:</p>
-<pre><code>#!objc
+```objc
 - (void)pushButtonTapped
 {
     TWTPushExampleViewController *viewController = [[TWTPushExampleViewController alloc] init];
     viewController.delegate = self.delegate;
     [self.navigationController pushViewController:viewController animated:YES];
 }
-</code></pre>
+```
 <p>The setup for the navigation controller happens in <code>TWTExamplesListViewController</code> (the view controller that runs the main menu for the demo app). Notice that it sets itself as the navigation controller's delegate:</p>
-<pre><code>#!objc
+```objc
 - (void)presentPushExample
 {
     TWTPushExampleViewController *viewController = [[TWTPushExampleViewController alloc] init];
@@ -115,9 +115,9 @@ tags:
 
     [self presentViewController:navigationController animated:YES completion:nil];
 }
-</code></pre>
+```
 <p>This means that when a navigation controller transition is about to start, <code>TWTExamplesListViewController</code> will receive the delegate message and have an opportunity to return an animation controller. For this transition, I am using an instance of <code>TWTSimpleAnimationController</code> which is just a wrapper around <code>+[UIView transitionFromView:toView:duration:options:completion:]</code>:</p>
-<pre><code>#!objc
+```objc
 - (id&lt;UIViewControllerAnimatedTransitioning&gt;)navigationController:(UINavigationController *)navigationController
                                   animationControllerForOperation:(UINavigationControllerOperation)operation
                                                fromViewController:(UIViewController *)fromVC
@@ -130,10 +130,10 @@ tags:
                                    : UIViewAnimationOptionTransitionFlipFromLeft);
     return animationController;
 }
-</code></pre>
+```
 <p>If the transition is a push, I use a flip from the right, otherwise, I use a flip from the left.</p>
 <p>Here's what the implementation of <code>TWTSimpleAnimationController</code> looks like:</p>
-<pre><code>#!objc
+```objc
 - (NSTimeInterval)transitionDuration:(id&lt;UIViewControllerContextTransitioning&gt;)transitionContext
 {
     return self.duration;
@@ -155,7 +155,7 @@ tags:
                         [transitionContext completeTransition:YES];
                     }];
 }
-</code></pre>
+```
 <p>Remember, these two methods are part of the <code>UIViewControllerAnimatedTransitioning</code> protocol. They're called by UIKit when it's time for the animation controller to run the custom transition.</p>
 <p>Here are a couple things to notice about <code>‑animateTransition:</code>:</p>
 <ul>
@@ -172,7 +172,7 @@ tags:
 <h3>Change tabs using a cross dissolve</h3>
 <p>This example should be familiar. It uses the same ideas as before, but with a tab bar controller instead of a navigation controller.</p>
 <p>Here's the setup in <code>TWTExamplesListViewController</code>:</p>
-<pre><code>#!objc
+```objc
 - (void)presentTabsExample
 {
     NSMutableArray *viewControllers = [[NSMutableArray alloc] init];
@@ -190,9 +190,9 @@ tags:
 
     [self presentViewController:tabBarController animated:YES completion:nil];
 }
-</code></pre>
+```
 <p>The <code>index</code> in the <code>TWTChangingTabsExampleViewController</code> is just a way to customize the tab for each view controller. Just like before, the <code>TWTExamplesListViewController</code> is the delegate and will provide the animation controller when it is time to change tabs:</p>
-<pre><code>#!objc
+```objc
 - (id&lt;UIViewControllerAnimatedTransitioning&gt;)tabBarController:(UITabBarController *)tabBarController
            animationControllerForTransitionFromViewController:(UIViewController *)fromVC
                                              toViewController:(UIViewController *)toVC
@@ -202,13 +202,13 @@ tags:
     animationController.options = UIViewAnimationOptionTransitionCrossDissolve;
     return animationController;
 }
-</code></pre>
+```
 <p>Look familiar? That's all there is to it.</p>
 <h3>Present an Overlay</h3>
 <p>One of my favorite uses of custom transitions is the ability to present overlay view controllers. Previously, if you wanted to mimic the behavior of one of the social sharing sheets or do anything else that required the presenting view controller to remain visible behind the presented content, you were left to choose between a number of unfortunate options (adding views directly to the window was the most common approach I had seen). Happily, this is no longer necessary.</p>
 <p>The key reason why this approach works is that when the presented view controller's <code>‑modalPresentationStyle</code> is set to <code>UIModalPresentationCustom</code>, the presenting view controller's view is not automatically removed from the view hierarchy. To build an overlay, it can simply be left as-is and the presented view controller's view can be displayed above it.</p>
 <p>Here's the setup in <code>TWTExamplesListViewController</code>:</p>
-<pre><code>#!objc
+```objc
 - (void)presentPresentExample
 {
     TWTOverlayExampleViewController *viewController = [[TWTOverlayExampleViewController alloc] init];
@@ -218,35 +218,35 @@ tags:
 
     [self presentViewController:viewController animated:YES completion:nil];
 }
-</code></pre>
+```
 <p>The two important things to note here are that <code>‑modalPresentationStyle</code> is set to <code>UIModalPresentationCustom</code>, and the presented view controller's <code>‑transitioningDelegate</code> is set to the <code>TWTExamplesListViewController</code>. When the present starts, <code>TWTExamplesListViewController</code> receives the transitioning delegate message:</p>
-<pre><code>#!objc
+```objc
 - (id&lt;UIViewControllerAnimatedTransitioning&gt;)animationControllerForPresentedController:(UIViewController *)presented
                                                                   presentingController:(UIViewController *)presenting
                                                                       sourceController:(UIViewController *)source
 {
     return [[TWTPresentAnimationController alloc] init];
 }
-</code></pre>
+```
 <p>As you can see, I created a custom animation controller class for this example. I am going to focus on the implementation of <code>‑animateTransition:</code> since it is the part that is different from before.</p>
 <p>To start off, I extract the to view controller (the presented view controller) and the container view from the transition context.</p>
-<pre><code>#!objc
+```objc
 UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
 
 UIView *containerView = [transitionContext containerView];
-</code></pre>
+```
 <p>The container view is the superview for the from and to view controllers' views during the transition. Initially, the to view controller's view has not been added to the container view, and its frame has not been set. I am setting the frame directly here, but you could also use auto layout.</p>
-<pre><code>#!objc
+```objc
 CGRect frame = containerView.bounds;
 frame = UIEdgeInsetsInsetRect(frame, UIEdgeInsetsMake(40.0, 40.0, 200.0, 40.0));
 
 toViewController.view.frame = frame;
 
 [containerView addSubview:toViewController.view];
-</code></pre>
+```
 <p>For this transition, I want the view to pop on to the screen. To do this, I animated the view's scale from 0.3 to 1 using a UIView spring animation.</p>
 <p>As an aside, starting from a scale value greater than 0 and simultaneously animating the view's alpha from 0 to 1 lets you make the animation faster than you would want to make it if you simply scaled from 0 to 1. Try removing the alpha animation and starting the scale animation from 0 to compare.</p>
-<pre><code>#!objc
+```objc
 toViewController.view.alpha = 0.0;
 toViewController.view.transform = CGAffineTransformMakeScale(0.3, 0.3);
 
@@ -263,17 +263,17 @@ CGFloat damping = 0.55;
 } completion:^(BOOL finished) {
     [transitionContext completeTransition:YES];
 }];
-</code></pre>
+```
 <p>In the completion block, I call <code>‑completeTransition:</code>, and that's it! Now for dismiss…</p>
 <p>When the dismiss starts, <code>TWTExamplesListViewController</code> receives the transitioning delegate message:</p>
-<pre><code>#!objc
+```objc
 - (id&lt;UIViewControllerAnimatedTransitioning&gt;)animationControllerForDismissedController:(UIViewController *)dismissed
 {
     return [[TWTDismissAnimationController alloc] init];
 }
-</code></pre>
+```
 <p>Another custom animation controller. Let's take a look at <code>‑animateTransition:</code>:</p>
-<pre><code>#!objc
+```objc
 UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
 
 NSTimeInterval duration = [self transitionDuration:transitionContext];
@@ -298,7 +298,7 @@ NSTimeInterval duration = [self transitionDuration:transitionContext];
                      fromViewController.view.transform = CGAffineTransformMakeScale(0.3, 0.3);
                  }
                  completion:nil];
-</code></pre>
+```
 <p>As you can see, the idea is that it is the reverse of the present animation. The important difference to notice is that the from view controller's view is removed from the view hierarchy before the transition is complete.</p>
 <p>Before going on, try making some changes to the dismiss animation.</p>
 <h2>Recommended Patterns</h2>

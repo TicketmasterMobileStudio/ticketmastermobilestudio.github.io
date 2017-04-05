@@ -32,38 +32,44 @@ tags:
 <h2>Adding some style to UINavigationBar</h2>
 <p>Let's see how this works. Say you want to style your <em>UINavigationBar</em> to be something a little different than the standard iOS style. First, look at the header file for <em>UINavigationBar</em> (you can find this by right-clicking on the symbol and choosing 'Jump to Definition' on it in Xcode).</p>
 <p>Search for <code>UI_APPEARANCE_SELECTOR</code>. You'll see it attached to many of the properties and methods, but not all. This is your guide to what is available by <a href="http://developer.apple.com/library/ios/#documentation/uikit/reference/UIAppearance_Protocol/Reference/Reference.html">UIAppearance</a>. In our case, the first time we see the attribute is with:</p>
-<pre><code>@property(nonatomic,retain) UIColor *tintColor UI_APPEARANCE_SELECTOR;
-</code></pre>
+```
+@property(nonatomic,retain) UIColor *tintColor UI_APPEARANCE_SELECTOR;
+```
 <p>This means that the tintColor property is available for UIAppearance. This means I can now apply a global style affecting the tint to all <em>UINavigationBar</em> objects by telling the appearance proxy:</p>
-<pre><code>[[UINavigationBar appearance] setTintColor:[UIColor redColor]];
-</code></pre>
+```
+[[UINavigationBar appearance] setTintColor:[UIColor redColor]];
+```
 <p>Now, no matter where a <em>UINavigationBar</em> is displayed within my app, it will be tinted red. Classy.</p>
 <p>You can make this even more specific by telling the style to only apply when it is inside your own <code>YOURCustomViewController</code>. Consider the code:</p>
-<pre><code>[[UINavigationBar appearanceWhenContainedIn:[YOURCustomViewController class], nil]
+```
+[[UINavigationBar appearanceWhenContainedIn:[YOURCustomViewController class], nil]
                                setTintColor:[UIColor redColor]];
-</code></pre>
+```
 <p>You've now told it to only apply the red tint color when a <em>UINavigationBar</em> is displayed inside a <em>YOURCustomViewController</em>. However, if I add a <em>UINavigationBar</em> to another view controller, it will not be tinted red. Only in the case that an instance of a <em>UINavigationBar</em> is in the hierarchy below an instance of a <em>YOURCustomViewController</em> will it be tinted red. Still classy.</p>
 <p>All of these appearance styles can be applied as early as you like in your application. For example, you can set all your styles in <code>-[UIApplicationDelegate application:didFinishLaunchingWithOptions:]</code>.</p>
 <h2>Supporting different iOS versions</h2>
 <p>As can often occur when working with any API, certain versions of can provide different functionality. How can we build an application level style when the available methods and properties on Apple's controls are changing?</p>
 <p>Thankfully, Objective-C is a dynamic language that allows runtime introspection on your objects. In a similar style to how you would ask your object if it <code>-respondsToSelector:</code>, you can ask a class if it's <em>instances</em> respond to a method as well.</p>
 <p>Consider this sample:</p>
-<pre><code>if ([UINavigationBar instancesRespondToSelector:@selector(setShadowImage:)]) {
+```
+if ([UINavigationBar instancesRespondToSelector:@selector(setShadowImage:)]) {
     [[UINavigationBar appearance] setShadowImage:awesomeShadow];
 }
-</code></pre>
+```
 <p>The <code>shadowImage</code> property is new to <strong>iOS 6</strong>. Using <code>+[NSObject instancesRespondToSelector:</code>, we can inspect whether <em>any</em> instance of an object of this type will respond to this selector. Since you'll be using the class type to apply an appearance, <strong>not an instance</strong>, this class method will tell you if this property can be used.</p>
 <h2>Using UIAppearance in your custom UI views</h2>
 <p>As stated earlier, you too can take advantage of UIAppearance in your custom views. Following the same pattern as seen above, let's create a UIButton subclass that provides a property through UIAppearance.</p>
 <p>I want to expose the font of the label on a UIButton. After subclassing, I'll create a property that is decorated with ``UI_APPEARANCE_SELECTOR<code>called</code>titleFont`.</p>
-<pre><code>@interface TWTButton : UIButton
+```
+@interface TWTButton : UIButton
 
 @property (nonatomic, strong) UIFont *titleFont UI_APPEARANCE_SELECTOR;
 
 @end
-</code></pre>
+```
 <p>Next, I create the setter implementation and set the title label's font property.</p>
-<pre><code>#import "TWTButton.h"
+```
+#import "TWTButton.h"
 
 @implementation TWTButton
 
@@ -76,8 +82,9 @@ tags:
 }
 
 @end
-</code></pre>
+```
 <p>Now, you can set its appearance as if it was always available via <a href="http://developer.apple.com/library/ios/#documentation/uikit/reference/UIAppearance_Protocol/Reference/Reference.html">UIAppearance</a>:</p>
-<pre><code>[[TWTButton appearance] setTitleFont:myFont];
-</code></pre>
+```
+[[TWTButton appearance] setTitleFont:myFont];
+```
 <p>For a more detailed example of this, check out <a href="https://gist.github.com/d20337095c696330460e">TWTButton</a>.</p>

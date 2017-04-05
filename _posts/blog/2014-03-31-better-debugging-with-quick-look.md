@@ -39,18 +39,18 @@ tags:
 </ul>
 <p>Apple provides great examples of <a href="https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/CustomClassDisplay_in_QuickLook/CH02-std_objects_support/CH02-std_objects_support.html#//apple_ref/doc/uid/TP40014001-CH3-SW21">what each of these looks like</a>.</p>
 <p>With this new debugging feature in Xcode, the example above could have implemented this method and provided a better visualization of the CAShapeLayer. This layer was exposed to the cell via a custom UIView subclass called OverlayView. Since the path was cached until it needed to change, OverlayView could have enabled Quick Look with just one line of code:</p>
-<pre><code>#!objc
+```objc
 ‑ (id)debugQuickLookObject
 {
    return [self overlayPath];
 }
-</code></pre>
+```
 <h2>Let's visualize Auto Layout</h2>
 <p>It can be really difficult to debug layout issues when building a view with complicated Auto Layout constraints. Being able to visualize the constraints at runtime could go a long way to help fix broken layouts. Below is a simplistic version of this idea, but it shows what you can do by adding custom Quick Look to your bag of debugging tricks.</p>
 <p>The first step is to generate the image we'd like to display. In my sample view, I'll be displaying a simple image and some text all aligned on their center <em>Y</em> values.</p>
 <p><img src="http://objectivetoast.com/wp-content/uploads/2014/03/quicklook.sample.png" alt="Sample View" /></p>
 <p>I'll create a simple method to create the constraints and, if we're currently debugging, also create the visualization.</p>
-<pre><code>#!objc
+```objc
 ‑ (void)setupConstraints
 {
     NSDictionary *views = NSDictionaryOfVariableBindings(_imageView, _nameLabel);
@@ -64,10 +64,10 @@ tags:
     [self resetConstraintVisualization]; 
 #endif
 }
-</code></pre>
+```
 <p><em>Note: <code>‑twt_addConstraintsWithVisualFormatStrings:​views:</code> is from our <a href="https://github.com/twotoasters/Toast/blob/master/UIKit/Auto%20Layout/UIView%2BTWTConvenientConstraintAddition.h">convenient constraint addition category</a> in <a href="https://github.com/twotoasters/Toast">Toast</a>.</em></p>
 <p>The <code>‑resetConstraintVisualization</code> method can now scan through the constraints and draw redlines to help visualize them.</p>
-<pre><code>#!objc
+```objc
 ‑ (void)resetConstraintVisualization
 {
     UIGraphicsBeginImageContextWithOptions(self.bounds.size, NO, 0);
@@ -105,14 +105,14 @@ tags:
     self.debugLayoutImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
 }
-</code></pre>
+```
 <p>The second and final step is the easiest. Implement <code>‑debugQuickLookObject</code> and return <code>self.debugLayoutImage</code>.</p>
-<pre><code>#!objc
+```objc
 ‑ (id)debugQuickLookObject
 {
     return self.debugLayoutImage;
 }
-</code></pre>
+```
 <p><img src="http://objectivetoast.com/wp-content/uploads/2014/03/quicklook.redlines.png" alt="Quick Look at Auto Layout" /></p>
 <h2>With great power, comes great responsibility</h2>
 <p>It's important to remember that <code>‑debugQuickLookObject</code> runs in the debugger inside a paused application. Your implementation should do as little work as possible and avoid any side effects. The recommended approach is to cache the Quick Look object and simply return it as in the two examples above.</p>

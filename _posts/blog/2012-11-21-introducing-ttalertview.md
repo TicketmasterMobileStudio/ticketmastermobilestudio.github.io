@@ -24,7 +24,8 @@ tags:
 <h2>Using TTAlertView</h2>
 <p>Using TTAlertView is simple. TTAlertView uses the familiar <code>initWithTitle:​message:​delegate:​cancelButtonTitle:​otherButtonTitles:</code> and <code>show</code> methods to create and display your alert view. From there TTAlertView handles laying out and animating the view.</p>
 <p>Lets see some code:</p>
-<pre><code>- (void)simpleAlert 
+```
+- (void)simpleAlert 
 { 
     TTAlertView *alert = [[TTAlertView alloc] initWithTitle:@"A Simple TTAlertView" 
                                                     message:@"... with the default layout!" 
@@ -33,7 +34,7 @@ tags:
                                           otherButtonTitles:nil];
     [alert show];
 }
-</code></pre>
+```
 <p>... which gives you this:</p>
 <p><img src="http://cl.ly/UDBV/download/Screen%20Shot%202012-10-19%20at%2011.23.32%20AM.png" alt="A real simple TTAlertView" /></p>
 <p>Of course, this alert hasn't been customized at all, so it looks lame. Let's see what adding in some custom images can do for us...</p>
@@ -41,7 +42,8 @@ tags:
 <p>To customize this alert view, we're going to set the background image for <code>containerView</code> (the box containing the title, message, and buttons). Since TTAlertView handles the layout and, most importantly, the sizing of the <code>containerView</code>, using a resizable UIImage here is best practice -- this guarantees that no matter the size of the <code>containerView</code>, the image will be stretched appropriately to fit.</p>
 <p>We're also going to add some button images using TTAlertView's <code>setButtonBackgroundImage:​forState:​atIndex:</code> method. With this method we will set images for the button's normal and highlighted states, again using resizable UIImages. (If you're using textured button images or button images with text baked in, worry not – we'll cover how to use these types of assets in a future blog post!)</p>
 <p>Here's some more code:</p>
-<pre><code>- (void)fancyAlert 
+```
+- (void)fancyAlert 
 {
     TTAlertView *alert = [[TTAlertView alloc] initWithTitle:@"A Fancy TTAlertView" 
                                                     message:@"... with images and designs!" 
@@ -63,7 +65,7 @@ tags:
 
     [alert show];
 }
-</code></pre>
+```
 <p>... and voilá!</p>
 <p><img src="http://cl.ly/UDum/download/Screen%20Shot%202012-10-19%20at%2011.41.56%20AM.png" alt="A fancy, styled TTAlertView" /></p>
 <h2>We're done here</h2>

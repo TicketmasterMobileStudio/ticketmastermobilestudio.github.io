@@ -44,9 +44,9 @@ tags:
 <p><code>%d Person (plural rule: one) = "One Person";</code><br />
 <code>%d Person (plural rule: other) = "%d People";</code></p>
 <p>When you need to display that string, use <code>TTTLocalizedPluralString</code> instead of using <code>NSLocalizedString</code>, passing in the quantity.</p>
-<pre><code>#!objc
+```objc
 return TTTLocalizedPluralString(count, @"Person", nil);
-</code></pre>
+```
 <p>The library then decides which category-tagged string to load based on the rules in the <a href="http://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html">CLDR</a>.</p>
 <p>Unfortunately, this library does not support gender rules, so you'll still have to do that on your own.</p>
 <h4>Smartling iOS-i8n</h4>
@@ -54,9 +54,9 @@ return TTTLocalizedPluralString(count, @"Person", nil);
 <p><code>"%d songs found##{one}" = "One song found";</code><br />
 <code>"%d songs found##{other}" = "%d songs found";</code></p>
 <p>Then use <code>SLPluralizedString</code>, or one of it's variants, instead of <code>NSLocalizedString</code>.</p>
-<pre><code>#!objc
+```objc
 return SLPluralizedString(@"%d songs found", 4, nil);
-</code></pre>
+```
 <p>We’ve used this library on several projects at <a href="http://twotoasters.com">Two Toasters</a> as it provides a simple interface to the plural rules.</p>
 <p>Unfortunately, this library also has no support for gender rules.</p>
 <h4>Apple's Localizable.stringsdict</h4>
@@ -69,21 +69,21 @@ return SLPluralizedString(@"%d songs found", 4, nil);
 <p>This is all pretty straightforward. <a href="https://github.com/ObjectiveToast/LocalizeTesting">Download a sample</a> based on the examples below.</p>
 <p>Say you are writing an app that tracks and displays how many David Hasselhoff movies you’ve watched. We can set this up in our <code>.stringsdict</code> file. Again, this is just a plist, so we can edit it with either a plist editor or your text editor of choice.</p>
 <p>First, we’ll create a new key with a dictionary value:</p>
-<pre><code>#!xml
+```xml
 &lt;key&gt;%lu out of %lu Hasselhoff movies watched&lt;/key&gt;
 &lt;dict&gt;&lt;/dict&gt;
-</code></pre>
+```
 <p>This key is the value you’ll request later with <code>NSLocalizedString</code>.</p>
 <p>Next we’ll add data to the dictionary to identify what we want to provide as a replacement.</p>
-<pre><code>#!xml
+```xml
 &lt;key&gt;%lu out of %lu Hasselhoff movies watched&lt;/key&gt;
 &lt;dict&gt;
     &lt;key&gt;NSStringLocalizedFormatKey&lt;/key&gt;
     &lt;string&gt;%1$#@lu_hasselhoff_viewings@&lt;/string&gt;
 &lt;/dict&gt;
-</code></pre>
+```
 <p>Here we supply <strong>another</strong> format as the value for our initial key. <code>@lu_hasselhoff_viewings@</code> is the new key, but where is it defined? We’ll add another key-value pair with this definition.</p>
-<pre><code>#!xml
+```xml
 &lt;key&gt;%lu out of %lu Hasselhoff movies watched&lt;/key&gt;
 &lt;dict&gt;
     &lt;key&gt;NSStringLocalizedFormatKey&lt;/key&gt;
@@ -102,7 +102,7 @@ return SLPluralizedString(@"%d songs found", 4, nil);
         &lt;string&gt;%lu of %lu movies watched.&lt;/string&gt;
     &lt;/dict&gt;
 &lt;/dict&gt;
-</code></pre>
+```
 <p>Now we are getting to those plural rule categories I mentioned earlier. This dictionary identifies the <code>NSStringFormatSpecTypeKey</code>, which in this case is <code>NSStringPluralRuleType</code>. I define the value type of the format value passed in, in this case the formatter is expecting <code>%lu</code> so the value is <code>lu</code>. Finally I define the different values to use depending on what the supplied value is. If it is <code>0</code>, then it will load the <code>zero</code> key.</p>
 <p>This is obviously much more complicated than the open source libraries above, but it's also more flexible. In the <code>stringsdict</code> above, I created a new key called <code>lu_hasselhoff_viewings</code> and the rules for replacing it. With this format, you can place keys inside of other keys and build much more complicated patterns. This also means you can change the string replacement rules in the <code>.stringsdict</code> without changing the code requesting a string.</p>
 <p>The <code>stringsdict</code> option even ostensibly supports gender rules via <code>NSStringGenderRuleType</code>. Unfortunately, as of iOS 7.1, the gender rule type only results in <code>(null)</code> being returned from the strings dictionary. If you’d like to see more about this, there is a <a href="http://openradar.appspot.com/radar?id=5824363005739008">radar submitted to Apple</a> (or if you are an Apple engineer, &lt;rdar://16670931>).</p>

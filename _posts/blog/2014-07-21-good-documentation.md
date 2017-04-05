@@ -106,7 +106,7 @@ tags:
 <h3>Example Time</h3>
 <p>Let’s apply the steps above to write some documentation for some real code. For our example, we’ll use <a href="https://github.com/twotoasters/URLMock">URLMock’s</a> <code>‑[UMKMockHTTPMessage setBodyWithJSONObject:]</code>, which sets the body of an HTTP message to the JSON representation of an object.</p>
 <p>Aside: I'll be using the HeaderDoc format (which you can read about below) to structure my comment blocks, so you'll see things like <code>@abstract</code> or <code>@param</code> which are tags helpful to the format's auto-generation engine.</p>
-<pre><code>#!objc
+```objc
 - (void)setBodyWithJSONObject:(id)JSONObject
 {
     NSData *JSONData = [NSJSONSerialization dataWithJSONObject:JSONObject options:0 error:NULL];
@@ -122,17 +122,17 @@ tags:
         forHeaderField:kUMKMockHTTPMessageContentTypeHeaderField];
     }
 } 
-</code></pre>
+```
 <p>And as I said earlier, the best place to start documentation is with a description of what the code does. I'll use the <code>@abstract</code> tag that HeaderDoc provides specifically for short descriptions like this.</p>
-<pre><code>#!objc
+```objc
 /**
   @abstract Sets the receiver's body to a serialized form of the specified JSON object.
 */
 - (void)setBodyWithJSONObject:(id)JSONObject {...}
-</code></pre>
+```
 <p>Next, lets look at the method's <code>JSONObject</code> parameter. The noteworthy things about it are that it is used as the JSON body for the receiver, and that it must be a valid JSON object (as seen by the error handling around the <code>NSJSONSerialization</code> calls). The documentation of <code>+[NSJSONSerialization<br />
 dataWithJSONObject:options:error:]</code> states that its JSON object parameter must not be <code>nil</code> and must be a valid JSON object, we'll echo those requirements in the parameter documentation. This time I'll use the HeaderDoc tag <code>@param</code>.</p>
-<pre><code>#!objc
+```objc
 /**
   @abstract Sets the receiver's body to a serialized form of the specified JSON object.
 
@@ -140,9 +140,9 @@ dataWithJSONObject:options:error:]</code> states that its JSON object parameter 
   must be a valid JSON object.
 */
 - (void)setBodyWithJSONObject:(id)JSONObject {...}
-</code></pre>
+```
 <p>Now we move on to steps 3 and 4 from above. I see that the method handles an error case by throwing an exception, and has a side effect of invoking <code>‑setValue:forHeaderField:</code> if a specific header value isn't already set, so I'll need to call those behaviors out. Note that the <code>kUMKMockHTTPMessageContentTypeHeaderField</code> and <code>kUMKMockHTTPMessageUTF8JSONContentTypeHeaderValue</code> constants correspond to "Content-Type" and "application/json; charset=utf-8", respectively.</p>
-<pre><code>#!objc
+```objc
 /**
   @abstract Sets the receiver's body to a serialized form of the specified JSON object.
 
@@ -155,7 +155,7 @@ dataWithJSONObject:options:error:]</code> states that its JSON object parameter 
       sets the value of that header to "application/json; charset=utf-8".
 */
 - (void)setBodyWithJSONObject:(id)JSONObject {...}
-</code></pre>
+```
 <p>Lastly, Step 5 would have me look at the return value, but this method doesn't return anything so we're done! We've generated some pretty useful documentation, and it wasn't that hard and didn't take too long.</p>
 <h3>Parting Pointers</h3>
 <p>Crafting helpful and concise documentation may seem intimidating at first, but hopefully with the tips and steps I've explained, you'll be motivated to write your own good documentation. Before I go, I'll leave you with a few more tips which can help you improve the scope and efficiency of your documentation.</p>

@@ -31,13 +31,13 @@ tags:
 <p>But before we get to that…</p>
 <h2>A Brief Digression on Sending Messages</h2>
 <p>Any introduction to Objective‑C worth its salt mentions that unlike Java and C#, you don’t <em>call methods</em> in Objective-C, you <em>send messages</em> to objects. The distinction is subtle, so most people just nod their heads and move on. However, the message-oriented nature of Objective‑C is one of its key differentiators from other compiled object-oriented languages. For example, message sending allows you to send the same message to objects of completely different types:</p>
-<pre><code>#!objc
+```objc
 for (id collection in @[ mutableArray, mutableSet, mutableOrderedSet ]) {
     [collection addObject:@"Hooray for unbounded polymorphism!"];
 }
-</code></pre>
+```
 <p>You can also construct and send messages dynamically at runtime:</p>
-<pre><code>#!objc
+```objc
 - (NSSet *)validatorsForKey:(NSString *)key
 {
     NSString *capitalizedKey = [key twt_capitalizedCamelCaseString];
@@ -45,16 +45,16 @@ for (id collection in @[ mutableArray, mutableSet, mutableOrderedSet ]) {
     SEL selector = NSSelectorFromString(selectorString);
     return [self respondsToSelector:selector] ? [self performSelector:selector] : nil;
 }
-</code></pre>
+```
 <p>If you’re feeling feisty, you can do less typical things, like disavowing part of your superclass’s interface:</p>
-<pre><code>#!objc
+```objc
 - (instancetype)init
 {
     // Don’t respond to -init. –initWithObject: should always be used
     [self doesNotRecognizeSelector:_cmd];
     return nil;
 }
-</code></pre>
+```
 <p>Finally, you can forward messages to another object entirely. It’s this concept that we can use to easily and generally solve the problem of counting how many times an object has received a given message.</p>
 <h2>Forwarding Messages with NSProxy</h2>
 <p>To implement our message counter, we’re going to subclass one of Cocoa’s more esoteric classes, <a href="https://developer.apple.com/library/ios/documentation/cocoa/reference/foundation/classes/NSProxy_Class/Reference/Reference.html" title="NSProxy Class Reference"><code>NSProxy</code></a>. As the name implies, <code>NSProxy</code> objects stand in for one or more other objects. They are used almost exclusively to forward messages.</p>
@@ -67,16 +67,16 @@ for (id collection in @[ mutableArray, mutableSet, mutableOrderedSet ]) {
 <p>Now that we’ve got a grip on <code>NSProxy</code>, let’s implement our message counter.</p>
 <h2>Message Counting Proxy</h2>
 <p>The idea of our message counting proxy is pretty simple. We’ll create an <code>NSProxy</code> subclass called <code>UMKMessageCountingProxy</code> which has two fundamental properties: the object for which it’s counting received messages—its <em>proxied object</em>—and a mutable dictionary that maps selectors to the number of times they’ve been received. To use a message counting proxy, we’ll just do something like this:</p>
-<pre><code>#!objc
+```objc
 id messageCountingProxy = [[UMKMessageCountingProxy alloc] initWithObject:realObject];
 [messageCountingProxy foo];
 
 …
 
 NSUInteger count = [messageCountingProxy receivedMessageCountForSelector:@selector(foo:)];
-</code></pre>
+```
 <p>Okay, so let’s get to work. <code>UMKMessageCountingProxy</code>’s interface looks like:</p>
-<pre><code>#!objc
+```objc
 @interface UMKMessageCountingProxy : NSProxy
 
 @property (nonatomic, strong, readonly) NSObject *object;
@@ -85,9 +85,9 @@ NSUInteger count = [messageCountingProxy receivedMessageCountForSelector:@select
 - (NSUInteger)receivedMessageCountForSelector:(SEL)selector;
 
 @end
-</code></pre>
+```
 <p>Our implementation file starts with a private class extension and our initializer.</p>
-<pre><code>#!objc
+```objc
 @interface UMKMessageCountingProxy ()
 @property (nonatomic, strong, readonly) NSMutableDictionary *receivedMessageCounts;
 @end
@@ -105,18 +105,18 @@ NSUInteger count = [messageCountingProxy receivedMessageCountForSelector:@select
 
     return self;
 }
-</code></pre>
+```
 <p>There’s nothing unusual here except that our initializer doesn’t call its superclass’s. This is because there isn’t one; <code>NSProxy</code> does not respond to <code>‑init</code>.</p>
 <p>Next, let’s implement message forwarding. We’ll start by overriding <code>‑methodSignatureForSelector:</code>. We’re supposed to return an <code>NSMethodSignature</code> object for the specified selector. While that might seem complicated, it’s actually really easy. Since we’ll be forwarding the message to the our proxied object, we just ask it for the appropriate method signature.</p>
-<pre><code>#!objc
+```objc
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)selector
 {
     return [self.object methodSignatureForSelector:selector];
 }
-</code></pre>
+```
 <p>Done.</p>
 <p>Next, we need to implement <code>-forwardInvocation:</code>. Our goal here is to increment the count for the appropriate selector, and then re-route the <a href="https://developer.apple.com/library/ios/documentation/cocoa/reference/foundation/classes/NSInvocation_Class/Reference/Reference.html" title="NSInvocation Class Reference">invocation</a> to our proxied object. To do this, we’ll convert the invocation’s selector to a string and use that to look up and increment the current received message count in our <code>receivedMessageCounts</code> dictionary. We’ll then use <code>‑[NSInvocation invokeWithTarget:]</code> to re-invoke the invocation with a different target, namely our proxied object.</p>
-<pre><code>#!objc
+```objc
 - (void)forwardInvocation:(NSInvocation *)invocation
 {
     NSString *selectorString = NSStringFromSelector(invocation.selector);
@@ -124,14 +124,14 @@ NSUInteger count = [messageCountingProxy receivedMessageCountForSelector:@select
     self.receivedMessageCounts[selectorString] = @(count + 1);
     [invocation invokeWithTarget:self.object];
 }
-</code></pre>
+```
 <p>And we’re done with message forwarding. All that’s left is to implement <code>‑receivedMessageCountForSelector:</code> to return the number of times we’ve responded to a given selector. This is implemented exactly how you’d expect:</p>
-<pre><code>#!objc
+```objc
 - (NSUInteger)receivedMessageCountForSelector:(SEL)selector
 {
     return [self.receivedMessageCounts[NSStringFromSelector(selector)] unsignedIntegerValue];
 }
-</code></pre>
+```
 <p>And that’s all there is to it. Take a look at the full <a href="https://github.com/twotoasters/URLMock/blob/master/URLMock/Utilities/UMKMessageCountingProxy.h" title="UMKMessageCountingProxy.h">interface</a> and <a href="https://github.com/twotoasters/URLMock/blob/master/URLMock/Utilities/UMKMessageCountingProxy.m" title="UMKMessageCountingProxy.m">implementation</a> files to see it all put together.</p>
 <h2>Summary</h2>
 <p>This is just one use of <code>NSProxy</code>, but there are plenty of others: <a href="https://github.com/erikdoe/ocmock" title="OCMock on GitHub">OCMock</a> uses <code>NSProxy</code> to implement mock objects. You could also use <code>NSProxy</code> to implement the <a href="http://en.wikipedia.org/wiki/Decorator_pattern" title="The Decorator pattern">Decorator pattern</a> in Objective-C. On OS X (but not iOS), Apple provides <a href="https://developer.apple.com/library/mac/documentation/cocoa/reference/foundation/Classes/NSProtocolChecker_Class/Reference/Reference.html" title="NSProtocolChecker Class Reference"><code>NSProtocolChecker</code></a>, a class that only forwards messages to an object if the messages appear in a particular protocol. Creating an iOS implementation is a moderately challenging exercise that I recommend you try. Here’s <a href="https://github.com/objectivetoast/ProtocolChecker" title="ProtocolChecker on GitHub">my solution</a>.</p>
