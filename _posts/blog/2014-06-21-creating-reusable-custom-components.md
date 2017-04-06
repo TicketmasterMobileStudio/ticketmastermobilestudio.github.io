@@ -13,7 +13,9 @@ In those cases, you need to make a custom component. Fortunately for us, that's 
 In this example, we need to make a CheckBox with the following requirements:
 * Two lines of text: a title and a description
 * The "box" itself aligns to the right side of the View
-* Tapping anywhere in the View will toggle the state of the CheckBox<!--more-->
+* Tapping anywhere in the View will toggle the state of the CheckBox
+
+<!--more-->
 
 ## Creating a layout for the CheckBox
 

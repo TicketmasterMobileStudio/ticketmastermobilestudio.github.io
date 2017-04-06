@@ -20,6 +20,7 @@ tags:
 - UIAppearance
 ---
 <p>Building custom user interfaces is something our <a href="http://twotoasters.com">iOS development team</a> encounters on a daily basis. Anything you can do to make it faster to develop or make your reusable controls easily customizable is an easy victory. <a href="http://developer.apple.com/library/ios/#documentation/uikit/reference/UIAppearance_Protocol/Reference/Reference.html">UIAppearance</a> gives you this easy victory.</p>
+
 <p>While <a href="http://developer.apple.com/library/ios/#documentation/uikit/reference/UIAppearance_Protocol/Reference/Reference.html">UIAppearance</a> isn't a brand new topic, it seems to get less love than it should. <a href="http://developer.apple.com/library/ios/#documentation/uikit/reference/UIAppearance_Protocol/Reference/Reference.html">UIAppearance</a> is a protocol available since <strong>iOS 5</strong> that allows a developer to quickly configure the appearance of user interface controls provided by Apple. The fact that that your custom controls can take part in UIAppearance is talked about even less. This post will cover the basics of using UIAppearance and will explore adding support to your custom interface components.</p>
 <h2>UIAppearance Basics</h2>
 <p>You'll be glad to know that <a href="http://developer.apple.com/library/ios/#documentation/uikit/reference/UIAppearance_Protocol/Reference/Reference.html">UIAppearance</a> is a straightforward API with almost no learning curve. To use it you need only know three things.</p>

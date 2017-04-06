@@ -21,6 +21,7 @@ tags:
 - Blocks
 ---
 <p><a href="https://developer.apple.com/library/ios/#documentation/Cocoa/Reference/Foundation/Classes/nsnotificationcenter_Class/Reference/Reference.html">NSNotificationCenter</a> is a long existing mechanism for broadcasting messages to zero or many listeners. Many of Apple's frameworks work deeply by notifiying you via an NSNotification when a message is posted. Traditionally, the workflow has been to follow a pattern similar to this:</p>
+
 ```
 - (void)viewDidLoad 
 {

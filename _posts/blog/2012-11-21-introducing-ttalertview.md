@@ -21,6 +21,7 @@ tags:
 - two toasters
 ---
 <p><a href="https://github.com/twotoasters/TTAlertView">TTAlertView</a> is a drop-in replacement for <a href="http://developer.apple.com/library/ios/#documentation/uikit/reference/UIAlertView_Class/UIAlertView/UIAlertView.html">UIAlertView</a> that allows the developer to customize the presentation of an alert. TTAlertView uses the familiar interface of UIAlertView, so you don't have to worry about rewriting any of your code. Just drop it in, add some assets, and <em>bam!</em>: you have a unique, customized alert view for your app!</p>
+
 <h2>Using TTAlertView</h2>
 <p>Using TTAlertView is simple. TTAlertView uses the familiar <code>initWithTitle:​message:​delegate:​cancelButtonTitle:​otherButtonTitles:</code> and <code>show</code> methods to create and display your alert view. From there TTAlertView handles laying out and animating the view.</p>
 <p>Lets see some code:</p>
