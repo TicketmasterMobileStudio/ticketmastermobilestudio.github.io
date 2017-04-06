@@ -2,29 +2,19 @@
 	.top {
 		background-image: url(../images/blog-bg.jpg);
 
-		h2 {
-			margin-top: rem-calc(32px);
-			margin-bottom: rem-calc(16px);
-			@media #{$medium-up} {
-				margin-top: rem-calc(48px);
-				margin-bottom: 0;
-			}
-			@media #{$large-up} {
-				margin-top: rem-calc(104px);
-			}		
-		}
-
-	    a.button {
-	      margin-bottom: rem-calc(8px);
-	      margin-top: rem-calc(16px);
-	      @media #{$medium-up} {
-	        margin-top: rem-calc(24px);
-	      }
-	      @media #{$large-up} {
-	        margin-top: rem-calc(52px);
-	      }
-	    }
+    h2 {
+      margin-top: rem-calc(32px);
+      margin-bottom: rem-calc(16px);
+      @media #{$medium-up} {
+        margin-top: rem-calc(48px);
+        margin-bottom: 0;
+      }
+      @media #{$large-up} {
+        margin-top: rem-calc(104px);
+      }   
+    }
 	}
+
 	.main {
 		background-color: $white;
 		padding-top: rem-calc(80px);
@@ -72,29 +62,23 @@
 	    }
 
 		.pagination {
+      @include bodyfontsize;
 			display: flex;
 			justify-content: space-between;
 			color: $iron;
 			margin: rem-calc(80px 0 40px 0);
-			overflow: auto;
-
-			span, .button {
-				background-color: transparent;
-				border: 1px solid;
-				@include bodyfontsize;
-				border-radius: rem-calc(40px);
-				padding: rem-calc(12px 24px);
-			}
-
-			a {
-				&:hover {
-					opacity: 0.5;
-				}
-			}
 
 			.previous, .next, .page_number {
 				flex: 1;
 			}
+
+      .button {
+        @include bodyfontsize;
+        background-color: transparent;
+        border: 1px solid;
+        border-radius: rem-calc(40px);
+        padding: rem-calc(12px 24px);
+      }
 
 			.previous {
 				margin-right: rem-calc(20px);
@@ -123,6 +107,8 @@
 
 		        a {
 		          span {
+		          	display: none; // hide count for visual simplicity
+
 		            background-color: $primary-color;
 		            display: inline-block;
 		            height: 1.5em;
@@ -143,4 +129,31 @@
 		    }
 		}
 	}
+}
+
+// Styles applied to articles, category and tag pages, etc.
+.blog-subpage {
+  .top {
+    a {
+      color: $white;
+      
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+
+    .breadcrumb {
+      @include largebodyfontsize;
+
+      margin-bottom: rem-calc(8px);
+      margin-top: rem-calc(16px);
+
+      @media #{$medium-up} {
+        margin-top: rem-calc(24px);
+      }
+      @media #{$large-up} {
+        margin-top: rem-calc(52px);
+      }
+    }
+  }
 }

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
     {% include head.html %}
-    <body id="blog" class="blog-detail">
+    <body id="blog" class="blog-detail blog-subpage">
       {% include header.html %}
       <article>
         <section class="top">
           <div class="row">
             <div class="columns large-12">
-              <a href="{{ site.baseurl }}/blog" class="button">&larr; Blog</a>
+              <nav class="breadcrumb"><a href="{{ site.baseurl }}/blog" class="breadcrumb">&larr; Blog</a></nav>
               <h2>{{ page.title }}</h2>
               <p>
                 <time datetime="{{ page.date }}">{{ page.date | date: '%b %d, %Y' }}</time>
