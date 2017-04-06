@@ -1,6 +1,6 @@
 #blog.blog-detail {
   .top {
-
+    background-image: none;
 
     h2 {
       margin-top: 0;
@@ -69,15 +69,6 @@
         margin: 2em 0 0.5em;
       }
     }
-
-    // Code blocks
-    pre.highlight {
-      margin: rem-calc(40px) 0;
-      background-color: $ghost;
-      padding: 1rem;
-      overflow: auto;
-    }
-
   }
 
   .post-footer {

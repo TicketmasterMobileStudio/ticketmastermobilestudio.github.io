@@ -1,5 +1,7 @@
 #blog {
 	.top {
+		background-image: url(../images/blog-bg.jpg);
+
 		h2 {
 			margin-top: rem-calc(32px);
 			margin-bottom: rem-calc(16px);
@@ -39,15 +41,7 @@
 			list-style: none;
 			margin: rem-calc(0 0 40px 0);
 
-			a {
-				display: block;
-				
-				&:hover {
-					opacity: 0.5;
-				}
-			}
-
-			li {
+			>li {
 				margin-bottom: rem-calc(80px);
 			}
 
@@ -56,13 +50,26 @@
 		      @media #{$medium-up} { font-size: rem-calc(36px); }
 		      @media #{$large-up}  { font-size: rem-calc(48px); }
 		      @media #{$xlarge-up} { font-size: rem-calc(60px); }
+
+		      a {
+		      	color: inherit;
+		      	&:hover { opacity: 0.5; }
+		      }
 		    }
 
-			p {
+			p, li ul {
 				@include bodyfontsize;
 				color: $steel;
 			}
 		}
+
+		// Code blocks
+	    pre.highlight {
+	      margin: rem-calc(40px) 0;
+	      background-color: $ghost;
+	      padding: 1rem;
+	      overflow: auto;
+	    }
 
 		.pagination {
 			display: flex;
