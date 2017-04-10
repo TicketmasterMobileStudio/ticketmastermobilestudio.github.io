@@ -17,7 +17,7 @@ sass:
     style: compressed
 
 # Display Posts Dated in the Future
-future: true
+future: false
 
 # Fix Permalinks
 permalink: "/:categories/:title"
