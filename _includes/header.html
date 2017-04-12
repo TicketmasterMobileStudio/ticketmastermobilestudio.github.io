@@ -1,10 +1,14 @@
-<header class="contain-to-grid innerfix">
-  <nav class="top-bar" data-topbar>
-      <section class="title columns hide-for-small-only medium-4">
-          <h1 id="logo"><a href="{{ site.url }}"><span>Ticketmaster Mobile Studio</span></a></h1>
-      </section>
-      <section class="nav-items columns small-12 medium-8">
-{% include navigation.html %}
-      </section>
+<header class="masthead contain-to-grid fixed">
+  <nav class="top-bar" data-topbar data-options="scrolltop:false" role="navigation">
+    <ul class="title-area title">
+      <li class="name">
+        <h1 id="logo" class="hide-for-small-only"><a href="{{ site.url }}"><span>Ticketmaster Mobile Studio</span></a></h1>
+        <a id="start" href="{{ site.url }}"><span>Start</span></a>
+      </li>
+      <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+    </ul>
+    <section class="top-bar-section nav-items">
+      {% include navigation.html %}
+    </section>
   </nav>
 </header>

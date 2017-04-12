@@ -1385,7 +1385,7 @@ $topbar-bg-color: transparent;
 $topbar-bg: $topbar-bg-color;
 
 // Height and margin
-$topbar-height: rem-calc(88);
+$topbar-height: rem-calc(44);
 $topbar-margin-bottom: 0;
 
 // Controlling the styles for the title in the top bar
@@ -1393,10 +1393,10 @@ $topbar-title-weight: $font-weight-normal;
 $topbar-title-font-size: rem-calc(20);
 
 // Set the link colors and styles for top-level nav
-$topbar-link-color: $white;
-$topbar-link-color-hover: #f12f23;
-$topbar-link-color-active: $white;
-$topbar-link-color-active-hover: transparentize($white, 0.5);
+$topbar-link-color: $primary-color;
+$topbar-link-color-hover: transparentize($primary-color, 0.5);
+$topbar-link-color-active: darken($primary-color, 10%);
+$topbar-link-color-active-hover: transparentize($primary-color, 0.5);
 $topbar-link-weight: $font-weight-normal;
 $topbar-link-font-size: rem-calc(20);
 $topbar-link-hover-lightness: -10%; // Darken by 10%
@@ -1407,21 +1407,21 @@ $topbar-link-bg-active: $primary-color;
 $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
 $topbar-link-font-family: $body-font-family;
 $topbar-link-text-transform: uppercase;
-$topbar-link-padding: ($topbar-height / 3);
+$topbar-link-padding: rem-calc(16);
 $topbar-back-link-size: rem-calc(18);
-$topbar-link-dropdown-padding: rem-calc(20);
+$topbar-link-dropdown-padding: 0;
 $topbar-button-font-size: 0.75rem;
 $topbar-button-top: 7px;
 
 // Style the top bar dropdown elements
 $topbar-dropdown-bg: none;
-$topbar-dropdown-link-color: $white;
+$topbar-dropdown-link-color: $primary-color;
 $topbar-dropdown-link-color-hover: $topbar-link-color-hover;
 $topbar-dropdown-link-bg: $oil;
 $topbar-dropdown-link-bg-hover: $oil;
 $topbar-dropdown-link-weight: $font-weight-normal;
 $topbar-dropdown-toggle-size: 5px;
-$topbar-dropdown-toggle-color: $white;
+$topbar-dropdown-toggle-color: $steel;
 $topbar-dropdown-toggle-alpha: 0.4;
 
 $topbar-dropdown-label-color: $monsoon;
@@ -1434,8 +1434,8 @@ $topbar-dropdown-label-bg: $oil;
 $topbar-menu-link-transform: uppercase;
 $topbar-menu-link-font-size: rem-calc(13);
 $topbar-menu-link-weight: $font-weight-bold;	
-$topbar-menu-link-color: $white;
-$topbar-menu-icon-color: $white;
+$topbar-menu-link-color: $primary-color;
+$topbar-menu-icon-color: $primary-color;
 $topbar-menu-link-color-toggled: $jumbo;
 $topbar-menu-icon-color-toggled: $jumbo;
 $topbar-menu-icon-position: $opposite-direction; // Change to $default-float for a left menu icon
