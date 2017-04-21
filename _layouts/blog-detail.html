@@ -40,12 +40,25 @@
                     </p>
                   </div>
                 {% endif %} -->
-                {% assign author = site.data.authors[page.author] %}
+                {% if page.author.display_name.size > 1 %}
+                  {% assign author = site.data.authors[page.author.display_name] %}
+                  {% assign author_name = page.author.display_name %}
+                {% else %}
+                  {% assign author = site.data.authors[page.author] %}
+                  {% assign author_name = page.author %}
+                {% endif %}
+                {% if author.gravatar %}
+                  {% assign author_avatar = "http://www.gravatar.com/avatar/" | append: author.gravatar | append: "?s=160&amp;d=identicon" %}
+                {% elsif author.avatar %}
+                  {% assign author_avatar = site.baseurl | append: "/images/avatars/" | append: author.avatar %}
+                {% else %}
+                  {% assign author_avatar = site.baseurl | append: "/images/avatars/kets/ket.png" %}
+                {% endif %}
                 {% if author %}
                   <div class="author-info">
-                    <img class="avatar" src="http://www.gravatar.com/avatar/{{ author.gravatar }}?s=160&d=identicon">
+                    <img class="avatar" src="{{ author_avatar }}">
                     <p>
-                      <strong>{{ page.author }}</strong><br>
+                      <strong>{{ author_name }}</strong><br>
                       {{ author.title }}
                     </p>
                     <p class="bio">{{ author.bio }}</p>
