@@ -1,6 +1,6 @@
 #blog {
-	.top {
-		background-image: url(../images/blog-bg.jpg);
+  .top {
+    background-image: url(../images/blog-bg.jpg);
 
     h2 {
       margin-top: rem-calc(32px);
@@ -13,64 +13,69 @@
         margin-top: rem-calc(104px);
       }   
     }
-	}
+  }
 
-	.main {
-		background-color: $white;
-		padding-top: rem-calc(80px);
-		padding-bottom: rem-calc(40px);
+  .main {
+    background-color: $white;
+    padding-top: rem-calc(80px);
+    padding-bottom: rem-calc(40px);
 
-		.button {
-			color: $primary-color;
-			border: 1px solid;
-			box-shadow: none;
-			padding: rem-calc(12px 24px);
-		}
+    .button {
+      color: $primary-color;
+      border: 1px solid;
+      box-shadow: none;
+      padding: rem-calc(12px 24px);
+    }
 
-		.posts {
-			list-style: none;
-			margin: rem-calc(0 0 40px 0);
+    .posts {
+      list-style: none;
+      margin: rem-calc(0 0 40px 0);
 
-			>li {
-				margin-bottom: rem-calc(80px);
-			}
+      >li {
+        margin-bottom: rem-calc(80px);
+      }
 
-		    h3 {
-		                             font-size: rem-calc(30px);
-		      @media #{$medium-up} { font-size: rem-calc(36px); }
-		      @media #{$large-up}  { font-size: rem-calc(48px); }
-		      @media #{$xlarge-up} { font-size: rem-calc(60px); }
+        h3 {
+                                 font-size: rem-calc(30px);
+          @media #{$medium-up} { font-size: rem-calc(36px); }
+          @media #{$large-up}  { font-size: rem-calc(48px); }
+          @media #{$xlarge-up} { font-size: rem-calc(60px); }
 
-		      a {
-		      	color: inherit;
-		      	&:hover { opacity: 0.5; }
-		      }
-		    }
+          a {
+            color: inherit;
+            &:hover { opacity: 0.5; }
+          }
+        }
 
-			p, li ul {
-				@include bodyfontsize;
-				color: $steel;
-			}
-		}
+      p, li ul {
+        @include bodyfontsize;
+        color: $steel;
+      }
+    }
 
-		// Code blocks
-	    pre.highlight {
-	      margin: rem-calc(40px) 0;
-	      background-color: $ghost;
-	      padding: 1rem;
-	      overflow: auto;
-	    }
+    // Code blocks
+      pre.highlight {
+        margin: rem-calc(40px) 0;
+        background-color: $ghost;
+        padding: 1rem;
+        overflow: auto;
+      }
 
-		.pagination {
+      a code {
+        color: inherit;
+        &:hover { color: inherit; }
+      }
+
+    .pagination {
       @include bodyfontsize;
-			display: flex;
-			justify-content: space-between;
-			color: $iron;
-			margin: rem-calc(80px 0 40px 0);
+      display: flex;
+      justify-content: space-between;
+      color: $iron;
+      margin: rem-calc(80px 0 40px 0);
 
-			.previous, .next, .page_number {
-				flex: 1;
-			}
+      .previous, .next, .page_number {
+        flex: 1;
+      }
 
       .button {
         @include bodyfontsize;
@@ -80,55 +85,55 @@
         padding: rem-calc(12px 24px);
       }
 
-			.previous {
-				margin-right: rem-calc(20px);
-			}
+      .previous {
+        margin-right: rem-calc(20px);
+      }
 
-			.page_number {
-				margin: 0 auto;
-				text-align: center;
-				border: none;
-				color: $steel;
-			}
-			.next {
-				text-align: right;
-				margin-left: rem-calc(20px);
-			}
-		}
+      .page_number {
+        margin: 0 auto;
+        text-align: center;
+        border: none;
+        color: $steel;
+      }
+      .next {
+        text-align: right;
+        margin-left: rem-calc(20px);
+      }
+    }
 
-		.sidebar {
-			ul {
-		      list-style: none;
-		      margin: rem-calc(20px 0 40px);
+    .sidebar {
+      ul {
+          list-style: none;
+          margin: rem-calc(20px 0 40px);
 
-		      li {
-		        @include bodyfontsize;
-		        margin: rem-calc(0 0 8px 0);
+          li {
+            @include bodyfontsize;
+            margin: rem-calc(0 0 8px 0);
 
-		        a {
-		          span {
-		          	display: none; // hide count for visual simplicity
+            a {
+              span {
+                display: none; // hide count for visual simplicity
 
-		            background-color: $primary-color;
-		            display: inline-block;
-		            height: 1.5em;
-		            min-width: 1.5em;
-		            font-size: 0.7em;
-		            text-align: center;
-		            margin-left: rem-calc(8px);
-		            border-radius: rem-calc(40px);
-		            padding: rem-calc(0 8px);
-		            color: $white;
-		          }
+                background-color: $primary-color;
+                display: inline-block;
+                height: 1.5em;
+                min-width: 1.5em;
+                font-size: 0.7em;
+                text-align: center;
+                margin-left: rem-calc(8px);
+                border-radius: rem-calc(40px);
+                padding: rem-calc(0 8px);
+                color: $white;
+              }
 
-		          &:hover span {
-		            background-color: $anchor-font-color-hover;
-		          }
-		        }
-		      }
-		    }
-		}
-	}
+              &:hover span {
+                background-color: $anchor-font-color-hover;
+              }
+            }
+          }
+        }
+    }
+  }
 }
 
 // Styles applied to articles, category and tag pages, etc.
