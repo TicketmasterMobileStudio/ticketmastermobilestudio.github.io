@@ -24,6 +24,12 @@
         <section class="main">
           <div class="row">
             <div class="columns small-12 medium-9 large-9">
+              {% if page.outdated %}
+                <div class="panel callout">
+                  <h5>This post is a little old</h5>
+                  <p>This was written back in {{ page.date | date: '%B %Y' }}, and it may no longer be relevant or valid. You have been advised.</p>
+                </div>
+              {% endif %}
               <div class="blog-content">
                 {{ content }}
               </div>

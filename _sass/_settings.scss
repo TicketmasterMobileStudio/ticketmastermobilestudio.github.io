@@ -965,28 +965,28 @@ $code-padding: 0;
 // 21. Panels
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-// $include-html-panel-classes: $include-html-classes;
+$include-html-panel-classes: $include-html-classes;
 
 // We use these to control the background and border styles
-// $panel-bg: scale-color($white, $lightness: -5%);
-// $panel-border-style: solid;
-// $panel-border-size: 1px;
+$panel-bg: scale-color($white, $lightness: -5%);
+$panel-border-style: solid;
+$panel-border-size: 1px;
 
 // We use this % to control how much we darken things on hover
-// $panel-function-factor: -11%;
-// $panel-border-color: scale-color($panel-bg, $lightness: $panel-function-factor);
+$panel-function-factor: -11%;
+$panel-border-color: scale-color($panel-bg, $lightness: $panel-function-factor);
 
 // We use these to set default inner padding and bottom margin
-// $panel-margin-bottom: rem-calc(20);
-// $panel-padding: rem-calc(20);
+$panel-margin-bottom: rem-calc(80);
+$panel-padding: rem-calc(40);
 
 // We use these to set default font colors
-// $panel-font-color: $oil;
-// $panel-font-color-alt: $white;
+$panel-font-color: $oil;
+$panel-font-color-alt: $white;
 
 // $panel-header-adjust: true;
-// $callout-panel-link-color: $primary-color;
-// $callout-panel-link-color-hover: scale-color($callout-panel-link-color, $lightness: -14%);
+$callout-panel-link-color: $primary-color;
+$callout-panel-link-color-hover: scale-color($callout-panel-link-color, $lightness: -14%);
 
 // 22. Pricing Tables
 // - - - - - - - - - - - - - - - - - - - - - - - - -

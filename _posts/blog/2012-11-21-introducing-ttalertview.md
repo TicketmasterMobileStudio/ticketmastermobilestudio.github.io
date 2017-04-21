@@ -19,6 +19,7 @@ categories:
 tags:
 - open-source
 - two toasters
+outdated: true
 ---
 <p><a href="https://github.com/twotoasters/TTAlertView">TTAlertView</a> is a drop-in replacement for <a href="http://developer.apple.com/library/ios/#documentation/uikit/reference/UIAlertView_Class/UIAlertView/UIAlertView.html">UIAlertView</a> that allows the developer to customize the presentation of an alert. TTAlertView uses the familiar interface of UIAlertView, so you don't have to worry about rewriting any of your code. Just drop it in, add some assets, and <em>bam!</em>: you have a unique, customized alert view for your app!</p>
 
