@@ -2,7 +2,7 @@
 layout: post
 title: "NFC On Android, Part 2: Implementation Details"
 author: Ben Berry
-categories: [Development]
+categories: Android Development Tutorial
 tags: [NFC, near field communication, wireless]
 ---
 

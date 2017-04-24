@@ -2,7 +2,7 @@
 layout: post
 title: "Developing a Watch Face for Android Wear Lollipop"
 author: James Barr
-categories: [development, tools]
+categories: Android Development Libraries Tutorial
 tags: [android, wear, watch face, lollipop]
 ---
 

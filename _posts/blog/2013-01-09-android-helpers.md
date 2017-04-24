@@ -2,7 +2,7 @@
 layout: post
 title: "Android Helpers"
 author: Fred Medlin
-categories: [android, java]
+categories: Android Development
 ---
 
 Java helpers are simply classes that work can be delegated to. There is no difference in Android applications. Keeping helper classes small, tight and focused can improve your app. Here are some advantages:

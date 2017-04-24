@@ -2,7 +2,7 @@
 layout: post
 title: "CWAC-Camera - An Easier Way to Take Photos in Android"
 author: Curtis Martin
-categories: [development, libraries, tools]
+categories: Android Development Open-Source
 tags: [camera, opensource]
 ---
 

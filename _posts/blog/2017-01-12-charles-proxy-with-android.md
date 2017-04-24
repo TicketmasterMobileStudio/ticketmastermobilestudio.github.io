@@ -2,7 +2,7 @@
 layout: post
 title: "Charles Proxy with Android"
 author: Patrick Jackson
-categories: [tools]
+categories: Android Development Testing
 tags: [Charles proxy, Nougat]
 ---
 

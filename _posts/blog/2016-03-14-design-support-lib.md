@@ -2,7 +2,7 @@
   layout: post
   title: "Intro to the Design Support Library - Part 1"
   author: Curtis Martin
-  categories: [development]
+  categories: Android Development Libraries Tutorial
   tags: [ui, material, lollipop]
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 title: "MessageApi: Simple Conversations with Android Wear"
 author: Curtis Martin
-categories: [development]
+categories: Android Development Tutorial
 tags: [wear, messageapi, bluetooth]
 ---
 

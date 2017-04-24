@@ -2,7 +2,7 @@
 layout: post
 title: "NFC On Android, Part 1: History and Concepts"
 author: Ben Berry
-categories: [background]
+categories: Android Development Tutorial
 tags: [nfc, near field communication, wireless]
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 title: "Material Range Slider"
 author: Patrick Jackson
-categories: [development, material, design]
+categories: Android Development Libraries
 tags: [support library]
 ---
 

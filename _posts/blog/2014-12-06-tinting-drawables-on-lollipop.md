@@ -2,7 +2,7 @@
 layout: post
 title: "Byte of Toast: Tinting Drawables on Lollipop"
 author: Chris Pierick
-categories: [development, lollipop, byte of toast]
+categories: Android Development Tutorial
 ---
 
 One of the cool things about Android 5.0 Lollipop is that you can colorize system UI widgets through the themes and styles.

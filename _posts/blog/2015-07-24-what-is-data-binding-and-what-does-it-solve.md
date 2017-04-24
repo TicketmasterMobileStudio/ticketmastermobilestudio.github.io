@@ -2,7 +2,7 @@
 layout: post
 title: "What is data binding and what does it solve?"
 author: Adam Shea
-categories: [development]
+categories: Android Development Libraries
 tags: [data binding, support library]
 ---
 

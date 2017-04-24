@@ -2,7 +2,7 @@
 layout: post
 title: "Byte of Toast: How to Detect Wired and Bluetooth Headphone Disconnects"
 author: Chris Pierick
-categories: [byte of toast]
+categories: Android Development Tutorial
 tags: [headphones, bluetooth, audio, music]
 ---
 

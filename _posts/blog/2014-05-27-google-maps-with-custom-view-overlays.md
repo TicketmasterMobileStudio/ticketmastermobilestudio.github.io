@@ -2,7 +2,7 @@
 layout: post
 title: "Google Maps with Custom View Overlays"
 author: Patrick Jackson
-categories: [development, libraries, tools]
+categories: Android Development
 tags: [google maps sdk, custom view]
 ---
 

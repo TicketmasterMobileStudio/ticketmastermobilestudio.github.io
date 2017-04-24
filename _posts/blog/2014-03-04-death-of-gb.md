@@ -2,7 +2,7 @@
 layout: post
 title: "2013: The Death of Gingerbread"
 author: Chris Pierick
-categories: [opinion]
+categories: Android Development
 tags: [GB, ICS]
 ---
 

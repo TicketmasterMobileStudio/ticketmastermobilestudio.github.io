@@ -2,7 +2,7 @@
 layout: post
 title: "Testing Apps Dependent On Private Repos"
 author: James Barr
-categories: [development, tools]
+categories: Android Development Testing
 tags: [android, tools, testing]
 ---
 
