@@ -10,7 +10,7 @@
               <nav class="breadcrumb"><a href="{{ site.baseurl }}/blog" class="breadcrumb">&larr; Blog</a></nav>
               <h2>{{ page.title }}</h2>
               <p>
-                <time datetime="{{ page.date }}">{{ page.date | date: '%b %d, %Y' }}</time>
+                <time datetime="{{ page.date }}">{{ page.date | date: '%b %e, %Y' }}</time>
                 {% if page.categories.size > 1 %}&nbsp;&middot;&nbsp;{% endif %}
                 {% for category in page.categories %}{% unless category == 'blog' %}{% unless forloop.first %}, {% endunless %}<a href="{{ site.baseurl }}/blog/categories#{{ category | slugify }}" class="category">{{ category }}</a>{% endunless %}{% endfor %}
                 {% if page.tags.size > 0 %}&nbsp;&middot;&nbsp;
