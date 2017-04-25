@@ -20,6 +20,8 @@
     padding-top: rem-calc(80px);
     padding-bottom: rem-calc(40px);
 
+    @media #{$small-only} { overflow-x: auto; } // Workaround for long lines breaking layout. TODO: Apply this globally.
+
     .button {
       color: $primary-color;
       border: 1px solid;
