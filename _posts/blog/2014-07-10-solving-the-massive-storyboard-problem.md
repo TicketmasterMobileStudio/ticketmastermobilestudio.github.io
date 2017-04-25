@@ -14,9 +14,7 @@ wordpress_id: 182
 wordpress_url: http://objectivetoast.com/?p=182
 date: '2014-07-10 10:27:08 -0400'
 date_gmt: '2014-07-10 14:27:08 -0400'
-categories:
-- Tools
-- User Interface
+categories: iOS Development
 tags:
 - Storyboards
 - Interface Builder

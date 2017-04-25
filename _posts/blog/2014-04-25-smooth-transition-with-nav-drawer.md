@@ -2,7 +2,7 @@
 layout: post
 title: "Smooth ActionBar Transitions when Opening a Navigation Drawer"
 author: Ben Berry
-categories: Android Development Tutorial
+categories: Android Development Tutorials
 tags: [android, java, animation]
 ---
 

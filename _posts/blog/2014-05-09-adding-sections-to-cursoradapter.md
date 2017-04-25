@@ -2,7 +2,7 @@
 layout: post
 title: "Adding Sections to CursorAdapter"
 author: Chris Pierick
-categories: Android Development Tutorial Open-Source
+categories: Android Development Tutorials Open-Source
 tags: [cursoradapter, java, opensource, tutorial]
 ---
 

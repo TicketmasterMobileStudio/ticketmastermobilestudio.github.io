@@ -2,7 +2,7 @@
 layout: post
 title: "Creating Reusable Custom Components"
 author: Curtis Martin
-categories: Android Development Tutorial
+categories: Android Development Tutorials
 tags: [ui, views]
 ---
 

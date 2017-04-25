@@ -15,9 +15,7 @@ wordpress_id: 167
 wordpress_url: http://objectivetoast.com/?p=167
 date: '2014-06-10 08:00:25 -0400'
 date_gmt: '2014-06-10 12:00:25 -0400'
-categories:
-- Patterns
-- Fundamentals
+categories: iOS Development Tutorials
 tags:
 - Class Variables
 - Objective-C

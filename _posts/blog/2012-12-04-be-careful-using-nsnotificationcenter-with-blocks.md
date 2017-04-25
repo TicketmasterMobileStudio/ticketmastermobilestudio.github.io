@@ -14,8 +14,7 @@ wordpress_id: 37
 wordpress_url: http://objectivetoast.com/?p=37
 date: '2012-12-04 22:58:12 -0500'
 date_gmt: '2012-12-05 03:58:12 -0500'
-categories:
-- Fundamentals
+categories: iOS Development
 tags:
 - NSNotificationCenter
 - Blocks

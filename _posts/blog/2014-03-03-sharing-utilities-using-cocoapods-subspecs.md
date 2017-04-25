@@ -15,8 +15,7 @@ wordpress_id: 21
 wordpress_url: http://objectivetoast.com/?p=21
 date: '2014-03-03 04:00:47 -0500'
 date_gmt: '2014-03-03 09:00:47 -0500'
-categories:
-- Process
+categories: iOS Development
 tags:
 - CocoaPods
 - Subspecs

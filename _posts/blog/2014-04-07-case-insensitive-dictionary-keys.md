@@ -15,8 +15,7 @@ wordpress_id: 24
 wordpress_url: http://objectivetoast.com/?p=24
 date: '2014-04-07 13:54:25 -0400'
 date_gmt: '2014-04-07 17:54:25 -0400'
-categories:
-- Fundamentals
+categories: iOS Development Tutorials
 tags:
 - Map tables
 - Dictionaries

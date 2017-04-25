@@ -14,8 +14,7 @@ wordpress_id: 129
 wordpress_url: http://objectivetoast.com/?p=129
 date: '2014-05-05 13:55:47 -0400'
 date_gmt: '2014-05-05 17:55:47 -0400'
-categories:
-- Fundamentals
+categories: iOS Development
 tags:
 - NSNumberFormatter
 - multiplier

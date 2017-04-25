@@ -15,9 +15,7 @@ wordpress_id: 121
 wordpress_url: http://objectivetoast.com/?p=121
 date: '2014-04-28 08:00:17 -0400'
 date_gmt: '2014-04-28 12:00:17 -0400'
-categories:
-- Testing
-- Tools
+categories: iOS Development Libraries Open-Source
 tags:
 - open-source
 - URLMock

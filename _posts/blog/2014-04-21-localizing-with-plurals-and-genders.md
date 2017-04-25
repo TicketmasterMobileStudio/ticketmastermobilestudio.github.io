@@ -14,8 +14,7 @@ wordpress_id: 113
 wordpress_url: http://objectivetoast.com/?p=113
 date: '2014-04-21 12:00:27 -0400'
 date_gmt: '2014-04-21 16:00:27 -0400'
-categories:
-- Tools
+categories: iOS Development
 tags:
 - Internationalization
 - Localization

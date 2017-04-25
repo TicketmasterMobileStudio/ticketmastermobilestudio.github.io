@@ -14,9 +14,7 @@ wordpress_id: 157
 wordpress_url: http://objectivetoast.com/?p=157
 date: '2014-06-02 10:21:07 -0400'
 date_gmt: '2014-06-02 14:21:07 -0400'
-categories:
-- Fundamentals
-- User Interface
+categories: iOS Development Tutorials
 tags: []
 ---
 <p>Auto Layout has been a great improvement to the layout system on iOS. It allows expressing layout rules more explicitly and reduces the need for custom layout logic. I especially appreciate that you can mix Auto Layout with manual layout in cases where setting a view's frame expresses the intended behavior more clearly.</p>

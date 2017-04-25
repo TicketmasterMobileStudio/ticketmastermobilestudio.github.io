@@ -2,7 +2,7 @@
 layout: post
 title: "Android Bluetooth Low Energy Tutorial"
 author: Marcelle Gibble
-categories: Android Development Tutorial
+categories: Android Development Tutorials
 tags: [bluetooth, btle]
 ---
 

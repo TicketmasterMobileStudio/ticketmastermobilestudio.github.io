@@ -2,7 +2,7 @@
 layout: post
 title: "The Joy of Painting: Canvas 101"
 author: Curtis Martin
-categories: Android Development Tutorial
+categories: Android Development Tutorials
 tags: [ui, canvas, paths, drawing]
 ---
 

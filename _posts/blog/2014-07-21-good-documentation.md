@@ -14,9 +14,7 @@ wordpress_id: 191
 wordpress_url: http://objectivetoast.com/?p=191
 date: '2014-07-21 10:23:00 -0400'
 date_gmt: '2014-07-21 14:23:00 -0400'
-categories:
-- Process
-- Fundamentals
+categories: iOS Development
 tags:
 - Documentation
 - Comments

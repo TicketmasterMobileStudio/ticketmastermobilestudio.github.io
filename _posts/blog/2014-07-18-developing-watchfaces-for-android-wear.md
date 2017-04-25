@@ -2,7 +2,7 @@
 layout: post
 title: "Developing Watchfaces for Android Wear"
 author: James Barr
-categories: Android Development Libraries Tutorial
+categories: Android Development Libraries Tutorials
 tags: [android, wear, watchface]
 ---
 

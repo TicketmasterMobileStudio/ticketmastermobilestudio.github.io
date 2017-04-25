@@ -2,7 +2,7 @@
 layout: post
 title: "How to use Android's Job Scheduler"
 author: Chris Pierick
-categories: Android Development Tutorial
+categories: Android Development Tutorials
 tags: [job scheduler, support library]
 ---
 

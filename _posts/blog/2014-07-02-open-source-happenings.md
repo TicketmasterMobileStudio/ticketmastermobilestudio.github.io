@@ -15,8 +15,7 @@ wordpress_id: 179
 wordpress_url: http://objectivetoast.com/?p=179
 date: '2014-07-02 11:15:15 -0400'
 date_gmt: '2014-07-02 15:15:15 -0400'
-categories:
-- Tools
+categories: iOS Development Open-Source
 tags:
 - TWTToast
 - open-source

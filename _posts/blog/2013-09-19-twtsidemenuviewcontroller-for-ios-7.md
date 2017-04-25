@@ -14,8 +14,7 @@ wordpress_id: 41
 wordpress_url: http://objectivetoast.com/?p=41
 date: '2013-09-19 23:09:26 -0400'
 date_gmt: '2013-09-20 03:09:26 -0400'
-categories:
-- User Interface
+categories: iOS Development Open-Source
 tags:
 - open-source
 - two toasters

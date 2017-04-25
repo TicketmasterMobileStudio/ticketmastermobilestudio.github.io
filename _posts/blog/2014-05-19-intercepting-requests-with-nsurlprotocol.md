@@ -14,8 +14,7 @@ wordpress_id: 148
 wordpress_url: http://objectivetoast.com/?p=148
 date: '2014-05-19 10:53:02 -0400'
 date_gmt: '2014-05-19 14:53:02 -0400'
-categories:
-- Fundamentals
+categories: iOS Development Libraries Tutorials
 tags:
 - URLMock
 - URL Loading

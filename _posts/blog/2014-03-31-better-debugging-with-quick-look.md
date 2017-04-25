@@ -14,8 +14,7 @@ wordpress_id: 82
 wordpress_url: http://objectivetoast.com/?p=82
 date: '2014-03-31 12:14:07 -0400'
 date_gmt: '2014-03-31 16:14:07 -0400'
-categories:
-- Tools
+categories: iOS Development Testing
 tags:
 - Debugging
 - Quick Look

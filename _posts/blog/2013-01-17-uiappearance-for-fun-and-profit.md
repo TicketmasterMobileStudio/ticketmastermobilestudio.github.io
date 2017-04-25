@@ -14,8 +14,7 @@ wordpress_id: 39
 wordpress_url: http://objectivetoast.com/?p=39
 date: '2013-01-17 23:05:22 -0500'
 date_gmt: '2013-01-18 04:05:22 -0500'
-categories:
-- Fundamentals
+categories: iOS Development Tutorials
 tags:
 - UIAppearance
 ---

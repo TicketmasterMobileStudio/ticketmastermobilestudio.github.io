@@ -14,8 +14,7 @@ wordpress_id: 68
 wordpress_url: http://objectivetoast.com/?p=68
 date: '2014-03-17 21:50:04 -0400'
 date_gmt: '2014-03-18 01:50:04 -0400'
-categories:
-- User Interface
+categories: iOS Development Tutorials
 tags:
 - UIViewController
 - transitions

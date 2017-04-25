@@ -14,8 +14,7 @@ wordpress_id: 196
 wordpress_url: http://objectivetoast.com/?p=196
 date: '2014-07-30 14:49:22 -0400'
 date_gmt: '2014-07-30 18:49:22 -0400'
-categories:
-- Tools
+categories: iOS Development Tutorials
 tags:
 - Interface Builder
 - Xcode

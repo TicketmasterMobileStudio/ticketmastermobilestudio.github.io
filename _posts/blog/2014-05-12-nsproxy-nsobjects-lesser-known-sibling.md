@@ -15,8 +15,7 @@ wordpress_id: 133
 wordpress_url: http://objectivetoast.com/?p=133
 date: '2014-05-12 08:00:50 -0400'
 date_gmt: '2014-05-12 12:00:50 -0400'
-categories:
-- Fundamentals
+categories: iOS Development Tutorials
 tags:
 - URLMock
 - NSProxy
