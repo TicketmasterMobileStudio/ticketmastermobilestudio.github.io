@@ -11,7 +11,9 @@ Java helpers are simply classes that work can be delegated to. There is no diffe
 * Wrap platform differences
 * Keep your code DRY
 
-First things first. Create a class with a private constructor. That will prevent accidental instantiation of the helper class. For our purposes, the helper class will simply be a collection of public static methods.<!--more-->
+First things first. Create a class with a private constructor. That will prevent accidental instantiation of the helper class. For our purposes, the helper class will simply be a collection of public static methods.
+
+<!--more-->
 
 ```java
 public class ExternalStorageHelper {

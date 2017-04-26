@@ -19,6 +19,7 @@ protected void onDraw(Canvas canvas) {
     //Draw some stuff on the Canvas here!
 }
 ```
+
 <!--more-->
 
 You may think you're ready to draw now that you've got the Canvas, and you're half right. Before you draw, you need something colorful to draw with. Just like in the real world, we're going to draw on our Canvas with some good old-fashioned `Paint`.

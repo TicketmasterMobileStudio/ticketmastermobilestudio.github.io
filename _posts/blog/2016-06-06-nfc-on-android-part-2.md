@@ -30,7 +30,9 @@ public class ReadWriteActivity extends AppCompatActivity implements ReaderCallba
     }
 }
 ```
+
 <!--more-->
+
 This simple Activity gives you what you need to interact with a tag. In `onResume()`, we get the default `NfcAdapter` and subscribe to be notified any time a new NFC tag is scanned, and provide a few options to specify we're only interested in NFC Type A tags and that we don't want the system to make any noises when a tag is scanned. We also make sure to unsubscribe in `onPause()`.
 
 `onTagDiscovered()` is the callback that gets invoked whenever a tag comes into range of the phone. The parameter provided to the method is a Tag object that you can inspect to see what functionality it supports and act accordingly. For example, here's an implementation that, if the tag is already formatted to store NDEF records, will show a Toast with the existing NDEF record and then write a new one to open the Ticketmaster app.

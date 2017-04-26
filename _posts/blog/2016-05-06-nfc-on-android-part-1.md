@@ -8,7 +8,9 @@ tags: [nfc, near field communication, wireless]
 
 Near Field Communication (NFC) is an RFID technology that's been rattling around in the mobile world for years and never quite managed to take off. More general forms RFID still dominate badging and physical access control. Apple Pay and Android Pay are struggling to find acceptance without anybody mentioning they run on NFC. And nobody's quite figured out why you would use an NFC sticker to control your Android phone when an app like [Tasker](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm&hl=en) can tell your location, movement mode, and connected wireless networks. 
 
-So I was quite surprised to find that modern versions of Android have surprisingly robust support for NFC and it's the rare Android phone that omits hardware support for it. It may be the case that NFC hasn't really taken off in any major way, but that's certainly not for lack of support in Android hardware or software. There's plenty of cool stuff to be done with NFC.<!--more-->
+So I was quite surprised to find that modern versions of Android have surprisingly robust support for NFC and it's the rare Android phone that omits hardware support for it. It may be the case that NFC hasn't really taken off in any major way, but that's certainly not for lack of support in Android hardware or software. There's plenty of cool stuff to be done with NFC.
+
+<!--more-->
 
 ## Near Field Communication
 

@@ -8,6 +8,7 @@ tags: [data binding, support library]
 
 Data binding allows us to remove all the boilerplate `findViewById()` calls as well as having to manually update those views in the code. 
 With Android now officially supporting data binding it opens the doors for a [MVVM][1] architecture. MVVM stands for Model-View-ViewModel. With MVVM the ViewModel and the View are really de-coupled making it easy to test the ViewModel without even needing a View. Since the View updates its components via a data binder there is no need for the ViewModel to be dependent on it. The ViewModel can simply update the Model and whichever View is currently binding to that Model will also update.
+
 <!--more-->
 
 ## MVVM Architecture example

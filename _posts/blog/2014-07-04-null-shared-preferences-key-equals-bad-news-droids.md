@@ -10,7 +10,9 @@ There is a little [known bug][1] in Android’s SharedPreference that will have 
 
 ## Why would you have a null key?
 
-This is a good question. In most cases, if you have "good" code, you’ll never run into this. Let me tell you how I ran into this problem.<!--more-->
+This is a good question. In most cases, if you have "good" code, you’ll never run into this. Let me tell you how I ran into this problem.
+
+<!--more-->
 
 In my case I was working with an ever changing api. My response returned an array of objects, each with an id. As these objects could be changed on the website, when I received them from the api I wanted to update what was already stored in the SharedPreferences.
 

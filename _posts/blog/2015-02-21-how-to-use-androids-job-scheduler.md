@@ -10,7 +10,8 @@ One of the really cool things about Lollipop is the new [`JobScheduler`][1] API.
  This surprisingly easy to use API lets your app schedule a job to take place according to a number of parameters.
  The cool thing about this is that you can easily set parameters that will save the end user lots of battery life, giving your users one less reason to uninstall your app.
  There are three main parts to this API: [`JobInfo`][3], [`JobService`][2] and [`JobScheduler`][1].
- <!--more-->
+ 
+<!--more-->
 
 ## JobInfo and Available Parameters
 

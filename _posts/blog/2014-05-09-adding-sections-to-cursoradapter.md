@@ -8,7 +8,9 @@ tags: [cursoradapter, java, opensource, tutorial]
 
 Creating a [`ListAdapter`][ListAdapter] from a [`BaseAdapter`][BaseAdapter] with sections is fairly easy, though it can be non-trival. Here at Two Toasters we often use SQLite databases with a [`CursorAdapter`][CursorAdapter]. [`CursorAdapter`][CursorAdapter] abstracts `getView` from you by having you implement `newView` and `bindView` instead. This is great because then you don’t have manage any of the view recycling yourself and the cursor is given to you already moved to the position for your list item. This is where things get tricky when you want to add sections.
 
-[__`SectionCursorAdapter`__][SectionCursorAdapter] was created to make adding sections to the [`CursorAdapter`][CursorAdapter] with fast scroll trival. It is a scientific fact that it’s 348.265% easier to implement compared to adding sections to a [`BaseAdapter`][BaseAdapter] on array data(clinical trial data available on request). The question is, is it really that hard to implement your own sectioning [`CursorAdapter`][CursorAdapter]? Also, is this library really that versatile, and what does this give you over creating one yourself?<!--more-->
+[__`SectionCursorAdapter`__][SectionCursorAdapter] was created to make adding sections to the [`CursorAdapter`][CursorAdapter] with fast scroll trival. It is a scientific fact that it’s 348.265% easier to implement compared to adding sections to a [`BaseAdapter`][BaseAdapter] on array data(clinical trial data available on request). The question is, is it really that hard to implement your own sectioning [`CursorAdapter`][CursorAdapter]? Also, is this library really that versatile, and what does this give you over creating one yourself?
+
+<!--more-->
 
 ### How does the SectionCursorAdapter work?
 
