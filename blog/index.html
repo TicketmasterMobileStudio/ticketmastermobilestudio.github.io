@@ -9,17 +9,15 @@ title: "Blog"
         <li>
           <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
           <p>
-            <time datetime="{{ page.date }}">{{ post.date | date: '%b %e, %Y' }}</time>
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%b %e, %Y' }}</time>
             {% if post.categories.size > 1 %}&nbsp;&middot;&nbsp;{% endif %}
             {% for category in post.categories %}{% unless category == 'blog' %}{% unless forloop.first %}, {% endunless %}<a href="{{ site.baseurl }}/blog/categories#{{ category | slugify }}" class="category">{{ category }}</a>{% endunless %}{% endfor %}
           </p>
-          <p>
-            {% if post.content contains '<!--more-->' %}
-              {{ post.content | split:'<!--more-->' | first }}
-            {% else %}
-              {{ post.excerpt }}
-            {% endif %}
-          </p>
+          {% if post.content contains '<!--more-->' %}
+            {{ post.content | split:'<!--more-->' | first }}
+          {% else %}
+            {{ post.excerpt }}
+          {% endif %}
           <a href="{{ site.baseurl }}{{ post.url }}" class="button">Continue Reading</a>
         </li>
     {% endif %}

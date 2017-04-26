@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     {% include head.html %}
     <body id="blog" class="blog-detail blog-subpage">
       {% include header.html %}
       <article>
-        <section class="top">
+        <div class="top">
           <div class="row">
             <div class="columns large-12">
               <nav class="breadcrumb"><a href="{{ site.baseurl }}/blog" class="breadcrumb">&larr; Blog</a></nav>
               <h2>{{ page.title }}</h2>
               <p>
-                <time datetime="{{ page.date }}">{{ page.date | date: '%b %e, %Y' }}</time>
+                <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%b %e, %Y' }}</time>
                 {% if page.categories.size > 1 %}&nbsp;&middot;&nbsp;{% endif %}
                 {% for category in page.categories %}{% unless category == 'blog' %}{% unless forloop.first %}, {% endunless %}<a href="{{ site.baseurl }}/blog/categories#{{ category | slugify }}" class="category">{{ category }}</a>{% endunless %}{% endfor %}
                 {% if page.tags.size > 0 %}&nbsp;&middot;&nbsp;
@@ -20,8 +20,8 @@
               </p>
             </div>
           </div>
-        </section>
-        <section class="main">
+        </div>
+        <div class="main">
           <div class="row">
             <div class="columns small-12 medium-9 large-9">
               {% if page.outdated %}
@@ -62,7 +62,7 @@
                 {% endif %}
                 {% if author %}
                   <div class="author-info">
-                    <img class="avatar" src="{{ author_avatar }}">
+                    <img class="avatar" src="{{ author_avatar }}" alt="Avatar">
                     <p>
                       <strong>{{ author_name }}</strong><br>
                       {{ author.title }}
@@ -106,7 +106,7 @@
               </aside>
             </div>
           </div>
-        </section>
+        </div>
       </article>
       {% include openings.html %}
       {% include footer.html %}
