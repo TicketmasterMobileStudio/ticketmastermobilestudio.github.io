@@ -17,7 +17,7 @@
   {% endfor %}
 
   {% if sameTagCount >= minCommonTags %}
-    {% capture postItemHtml %}<li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a><br /><time datetime="{{ page.date }}">{{ post.date | date: '%b %e, %Y' }}</time></li>{% endcapture %}
+    {% capture postItemHtml %}<li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a><br /><time datetime="{{ page.date | date_to_xmlschema }}">{{ post.date | date: '%b %e, %Y' }}</time></li>{% endcapture %}
     {% assign outputHtml = outputHtml | append: postItemHtml %}
     {% assign maxRelatedCounter = maxRelatedCounter | plus: 1 %}
     {% if maxRelatedCounter >= maxRelated %}
