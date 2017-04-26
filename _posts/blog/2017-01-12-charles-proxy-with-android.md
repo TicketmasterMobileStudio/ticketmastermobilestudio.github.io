@@ -22,16 +22,16 @@ On the Android device go to `Settings --> Wifi`.  You will then see a list of wi
 
 If you're on an emulator, you can set the proxy by using -http-proxy from the command line.
 
-<p align="center">
-<img src="https://storage.googleapis.com/tmapp/proxy_settings.png" style="max-height: 600px; max-width: 600px;"  />
+<p style="text-align:center">
+<img src="https://storage.googleapis.com/tmapp/proxy_settings.png" style="max-height: 600px; max-width: 600px;" alt="" />
 </p>
 
 ### 3) Install Charles cert on Android device 
 
 Now that the proxy is set we need the Charles root certificate installed so Charles can decrypt your SSL traffic.  To do this navigate to [https://chls.pro/ssl](https://chls.pro/ssl) on your device and you will be prompted to download the cert.  If this is your first time using Charles with your device, you will get a dialog asking if you want to allow incoming traffic.  Click yes.  Once downloaded you can open it and you will be asked to name the cert.  You will also need to add security to your lock screen, if not enabled already.  You should now see the cert in your security settings under "View security certificates".
    
-<p align="center">
-<img src="https://storage.googleapis.com/tmapp/user_certs.png" style="max-height: 600px; max-width: 600px;"  />
+<p style="text-align:center">
+<img src="https://storage.googleapis.com/tmapp/user_certs.png" style="max-height: 600px; max-width: 600px;" alt="" />
 </p>
 
 ### 4) Add a Network Security Configuration file
