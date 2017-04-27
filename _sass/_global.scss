@@ -84,9 +84,14 @@ a.button {
 	background-size: cover;
 	background-position: center;	
 	color: $white;
-	padding-top: rem-calc(44px);
-	@media #{$medium-up} {
-		padding-top: rem-calc(88px);
+
+	body:not(#home) & {
+		margin-top: -$topbar-height;
+		padding-top: $topbar-height;
+		@media #{$medium-up} {
+			margin-top: rem-calc(-88);
+			padding-top: rem-calc(88);
+		}
 	}
 	
 	h2 {

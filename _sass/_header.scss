@@ -104,15 +104,16 @@ header.masthead {
   .nav-items {
     text-align: left;
 
+    // override Foundation's topbar hover color
+    #home:not(.f-topbar-fixed) & li:hover:not(.has-form)>a {
+      color: transparentize($white, 0.5);
+    }
+
     a {
       color: $white;
       @include bodyfontsize;
       text-transform: uppercase;
       font-weight: light;
-
-      &:hover {
-        opacity: 0.5;
-      }
     }
 
     @media #{$medium-up} {
