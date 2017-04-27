@@ -35,3 +35,32 @@
   @media #{$large-up} {margin: rem-calc(56px 0 104px 0);}
   @media #{$xlarge-up} {margin: rem-calc(64px 0 128px 0);}
 }
+
+// Ticker animation for text in blog header
+// From http://hugogiraudel.com/2014/07/16/automating-css-animations-with-sass/
+// TODO: Remove pause from the final frame
+@mixin ticker-animation($frames, $static, $name: 'ticker') {
+  $animating: (100% - $frames * $static) / ($frames - 1);
+
+  @at-root {
+    @keyframes #{$name} {
+      @for $i from 0 to $frames {
+        $current-frame: ($i * $static) + ($i * $animating);
+        $next-frame: (($i + 1) * $static) + ($i * $animating);
+
+        #{$current-frame, $next-frame} {
+          transform: translate3d(0, $i * -100% / $frames, 0);
+          filter: blur(0);
+        }
+
+        $halfway-frame: $i * ($static / 1%) + ($i - 1) * $animating + ($animating / 2);
+
+        @if $i > 0 {
+          #{$halfway-frame} {
+            filter: blur(2px);
+          }
+        }
+      }
+    }
+  }
+}

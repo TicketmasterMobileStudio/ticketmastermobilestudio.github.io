@@ -1,23 +1,57 @@
 #blog {
   .top {
-    background-image: url(../images/blog-bg.jpg);
+    background-image: url(../images/blog-bg.png);
 
     h2 {
-      margin-top: rem-calc(32px);
-      margin-bottom: rem-calc(16px);
-      @media #{$medium-up} {
-        margin-top: rem-calc(48px);
-        margin-bottom: 0;
+                             margin: rem-calc(32 0);
+      @media #{$medium-up} { margin: rem-calc(48 0); }
+      @media #{$large-up}  { margin: rem-calc(104 0); }
+      @media #{$xlarge-up} { margin: rem-calc(128 0); }
+
+      // animation stuff
+      $ticker-line-height: 1.3em;
+      $ticker-item-count: 6;
+
+      .ticker {
+        display: block;
+        overflow: hidden;
+        height: $ticker-line-height;
+
+        // @keyframes ticker {
+        //   0%, 10%   { top: 0; }
+        //   20%, 30%  { top: -1 * $ticker-line-height; }
+        //   40%, 50%  { top: -2 * $ticker-line-height; }
+        //   60%, 70%  { top: -3 * $ticker-line-height; }
+        //   80%, 90%  { top: -4 * $ticker-line-height; }
+        //   100%      { top: -5 * $ticker-line-height; }
+        // }
+
+        > span {
+          display: block;
+          animation-name: ticker;
+          animation-duration: #{$ticker-item-count * 2}s;
+          animation-iteration-count: infinite;
+          // animation-timing-function: ease;
+
+          @include ticker-animation(
+            $frames: $ticker-item-count,
+            $static: 14.5%
+          );
+
+          > span {
+            display: block;
+            height: $ticker-line-height;
+          }
+        }
       }
-      @media #{$large-up} {
-        margin-top: rem-calc(104px);
-      }   
     }
   }
 
   .main {
     background-color: $white;
-    padding-top: rem-calc(80px);
+    padding-top: rem-calc(40);
+    @media #{$medium-up} { padding-top: rem-calc(60); }
+    @media #{$large-up}  { padding-top: rem-calc(80); }
     padding-bottom: rem-calc(40px);
 
     @media #{$small-only} { overflow-x: auto; } // Workaround for long lines breaking layout. TODO: Apply this globally.
@@ -34,7 +68,9 @@
       margin: rem-calc(0 0 40px 0);
 
       >li {
-        margin-bottom: rem-calc(80px);
+        margin-bottom: rem-calc(40);
+        @media #{$medium-up} { margin-bottom: rem-calc(60); }
+        @media #{$large-up}  { margin-bottom: rem-calc(80); }
       }
 
         h3 {
