@@ -16,7 +16,7 @@ We don't ask permission.
 We explore.
 
 <!--more-->
-### "The Right Way" - There Are Several.
+### "The Right Way" &mdash; There Are Several
 
 Sometimes, we make people uncomfortable. They say, "I'm not sure we can do that." or "That's not the way we do things." or ask "Have you checked with ____?"
 
