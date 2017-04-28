@@ -6,7 +6,7 @@ to the `site_tags` variable. -->
 {% assign tag_words = site_tags | split:',' | sort %}
 
 <ul class="tags">
-  {% for item in (0..site.tags.size) %}{% unless forloop.last %}
+  {% for item in (1..site.tags.size) %}{% unless forloop.last %}
     {% capture this_word %}{{ tag_words[item] }}{% endcapture %}
     <li>
       <a href="{{ site.baseurl }}/blog/tags#{{ this_word | slugify }}" class="tag">{{ this_word }}
