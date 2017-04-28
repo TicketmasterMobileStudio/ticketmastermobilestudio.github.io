@@ -93,6 +93,10 @@ featured-image: assets/2017-04-01-sketch-tips-for-leet-hackers/kittens.jpg
 
 Facebook has some [sizing guidelines](https://developers.facebook.com/docs/sharing/best-practices#images) for this image.
 
+### Excerpts
+
+The post excerpt is the part that shows in the list, before you click through to the post detail page. By default, this is the first paragraph of your post, but you can specify the break anywhere by adding `<!--more-->` on a new line.
+
 ### New authors
 
 If this is your first post, you'll need to add yourself to the `_data/authors.yml` file. Your Ket avatar should already be uploaded, so you just need to specify the path to it. If you'd rather not use your Ket, you can upload another avatar or use your Gravatar.
