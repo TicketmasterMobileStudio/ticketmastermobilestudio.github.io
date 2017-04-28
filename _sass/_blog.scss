@@ -47,6 +47,10 @@
     }
   }
 
+  &:not(.blog-subpage) .top h2 {
+    @media #{$small-only} { font-size: rem-calc(32); } // to accommodate long ticker phrases
+  }
+
   .main {
     background-color: $white;
     padding-top: rem-calc(40);
