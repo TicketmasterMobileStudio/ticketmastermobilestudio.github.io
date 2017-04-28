@@ -55,6 +55,7 @@ tags: [tips, Sketch, a tag with spaces]
 To make browsing easier, try to choose one or more categories for your post from the established list below. If you feel that your post needs a new category, go ahead and add it and we'll discuss it during review.
 
 * Android
+* Culture
 * Development
 * Design
 * iOS
@@ -77,3 +78,21 @@ If your post has headings, start them at the H3 level, which looks like this in 
 ```
 
 This gives you 4 levels of headings to work with (H3, H4, H5, and H6). If you need more than that, your post is probably too long.
+
+### Images
+
+If your post has supporting images, you can create a folder in `/assets/` using the name of your post, for example: `/assets/2017-04-01-sketch-tips-for-leet-hackers/` and upload your images there.
+
+#### Featured image
+
+When your post is shared, it appears with a generic TMS graphic. If you want to use a different image (you do!), you can specify it using the `featured-image` front matter variable:
+
+```yaml
+featured-image: assets/2017-04-01-sketch-tips-for-leet-hackers/kittens.jpg
+```
+
+Facebook has some [sizing guidelines](https://developers.facebook.com/docs/sharing/best-practices#images) for this image.
+
+### New authors
+
+If this is your first post, you'll need to add yourself to the `_data/authors.yml` file. Your Ket avatar should already be uploaded, so you just need to specify the path to it. If you'd rather not use your Ket, you can upload another avatar or use your Gravatar.
