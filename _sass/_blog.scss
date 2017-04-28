@@ -10,7 +10,7 @@
 
       // animation stuff
       $ticker-line-height: 1.3em;
-      $ticker-item-count: 6;
+      $ticker-item-count: 12;
 
       .ticker {
         display: block;
@@ -35,7 +35,7 @@
 
           @include ticker-animation(
             $frames: $ticker-item-count,
-            $static: 14.5%
+            $static: 100% / $ticker-item-count * 0.87
           );
 
           > span {
