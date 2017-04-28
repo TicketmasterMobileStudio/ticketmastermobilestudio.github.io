@@ -10,12 +10,23 @@
               What we've learned by<br />
               <span class="ticker">
                 <span>
-                  <span>exploring. </span>
-                  <span>listening. </span>
-                  <span>testing. </span>
-                  <span>iterating. </span>
-                  <span>breaking things. </span>
-                  <span>exploring.</span>
+                  {% assign phrases =
+                    'exploring
+                    creating
+                    listening
+                    <u>not</u> listening
+                    asking questions
+                    testing
+                    iterating
+                    being crazy
+                    pushing limits
+                    moving quickly
+                    breaking things'
+                  | newline_to_br | strip_newlines | split: '<br />' %}
+                  {% for phrase in phrases %}
+                    <span>{{ phrase | strip }}. </span>
+                  {% endfor %}
+                  <span>{{ phrases.first }}. </span>
                 </span>
               </span>
             </h2>
