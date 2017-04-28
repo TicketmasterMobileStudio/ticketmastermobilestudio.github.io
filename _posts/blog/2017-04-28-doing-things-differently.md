@@ -1,7 +1,7 @@
 ---
 title: Doing Things Differently
 author: Mike Hay
-category: Culture
+categories: Culture
 tags: methodology team
 ---
 
