@@ -24,7 +24,9 @@ hr {
 	margin: 0px;
 	@media #{$medium-up} {
 		margin: 0 1rem;
-		}
+
+		.column &, .columns & { margin: 0; }
+	}
 }
 #openings {
 	background: #e9eff2;
@@ -82,10 +84,16 @@ a.button {
 	background-size: cover;
 	background-position: center;	
 	color: $white;
-	padding-top: rem-calc(44px);
-	@media #{$medium-up} {
-		padding-top: rem-calc(88px);
+
+	body:not(#home) & {
+		margin-top: -$topbar-height;
+		padding-top: $topbar-height;
+		@media #{$medium-up} {
+			margin-top: rem-calc(-88);
+			padding-top: rem-calc(88);
+		}
 	}
+	
 	h2 {
 		color: $white;
 	}
@@ -109,6 +117,6 @@ a.button {
 .wf-active {
 	h2, h3, h4, h5, h6, p, li, a, span {
 		visibility: visible;
-		font-family: $font-family-sans-serif;
+		// font-family: $font-family-sans-serif;
 	}
 }

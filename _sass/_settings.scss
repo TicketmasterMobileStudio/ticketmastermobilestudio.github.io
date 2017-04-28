@@ -201,7 +201,7 @@ $xxlarge-range: (140.063em, 99999999em);
 $header-font-family: $body-font-family;
 $header-font-weight: $font-weight-bold;
 $header-font-style: normal;
-$header-font-color: $jet;
+$header-font-color: $steel;
 $header-line-height: 1.2;
 $header-top-margin: .2rem;
 $header-bottom-margin: .5rem;
@@ -246,14 +246,14 @@ $paragraph-aside-font-style: italic;
 $paragraph-text-rendering: optimizeLegibility;
 
 // We use these to style <code> tags
-// $code-color: $oil;
-// $code-font-family: $font-family-monospace;
-// $code-font-weight: $font-weight-normal;
-// $code-background-color: scale-color($secondary-color, $lightness: 70%);
-// $code-border-size: 1px;
-// $code-border-style: solid;
-// $code-border-color: scale-color($code-background-color, $lightness: -10%);
-// $code-padding: rem-calc(2) rem-calc(5) rem-calc(1);
+$code-color: $charcoal;
+$code-font-family: $font-family-monospace;
+$code-font-weight: $font-weight-normal;
+$code-background-color: transparent;
+$code-border-size: 0;
+$code-border-style: none;
+$code-border-color: transparent;
+$code-padding: 0;
 
 // We use these to style anchors
 // $anchor-text-decoration: none;
@@ -965,28 +965,28 @@ $paragraph-text-rendering: optimizeLegibility;
 // 21. Panels
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-// $include-html-panel-classes: $include-html-classes;
+$include-html-panel-classes: $include-html-classes;
 
 // We use these to control the background and border styles
-// $panel-bg: scale-color($white, $lightness: -5%);
-// $panel-border-style: solid;
-// $panel-border-size: 1px;
+$panel-bg: scale-color($white, $lightness: -5%);
+$panel-border-style: solid;
+$panel-border-size: 1px;
 
 // We use this % to control how much we darken things on hover
-// $panel-function-factor: -11%;
-// $panel-border-color: scale-color($panel-bg, $lightness: $panel-function-factor);
+$panel-function-factor: -11%;
+$panel-border-color: scale-color($panel-bg, $lightness: $panel-function-factor);
 
 // We use these to set default inner padding and bottom margin
-// $panel-margin-bottom: rem-calc(20);
-// $panel-padding: rem-calc(20);
+$panel-margin-bottom: rem-calc(80);
+$panel-padding: rem-calc(40);
 
 // We use these to set default font colors
-// $panel-font-color: $oil;
-// $panel-font-color-alt: $white;
+$panel-font-color: $oil;
+$panel-font-color-alt: $white;
 
 // $panel-header-adjust: true;
-// $callout-panel-link-color: $primary-color;
-// $callout-panel-link-color-hover: scale-color($callout-panel-link-color, $lightness: -14%);
+$callout-panel-link-color: $primary-color;
+$callout-panel-link-color-hover: scale-color($callout-panel-link-color, $lightness: -14%);
 
 // 22. Pricing Tables
 // - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -1385,7 +1385,7 @@ $topbar-bg-color: transparent;
 $topbar-bg: $topbar-bg-color;
 
 // Height and margin
-$topbar-height: rem-calc(88);
+$topbar-height: rem-calc(44);
 $topbar-margin-bottom: 0;
 
 // Controlling the styles for the title in the top bar
@@ -1393,10 +1393,10 @@ $topbar-title-weight: $font-weight-normal;
 $topbar-title-font-size: rem-calc(20);
 
 // Set the link colors and styles for top-level nav
-$topbar-link-color: $white;
-$topbar-link-color-hover: #f12f23;
-$topbar-link-color-active: $white;
-$topbar-link-color-active-hover: transparentize($white, 0.5);
+$topbar-link-color: $primary-color;
+$topbar-link-color-hover: transparentize($primary-color, 0.5);
+$topbar-link-color-active: darken($primary-color, 10%);
+$topbar-link-color-active-hover: transparentize($primary-color, 0.5);
 $topbar-link-weight: $font-weight-normal;
 $topbar-link-font-size: rem-calc(20);
 $topbar-link-hover-lightness: -10%; // Darken by 10%
@@ -1407,21 +1407,21 @@ $topbar-link-bg-active: $primary-color;
 $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
 $topbar-link-font-family: $body-font-family;
 $topbar-link-text-transform: uppercase;
-$topbar-link-padding: ($topbar-height / 3);
+$topbar-link-padding: rem-calc(16);
 $topbar-back-link-size: rem-calc(18);
-$topbar-link-dropdown-padding: rem-calc(20);
+$topbar-link-dropdown-padding: 0;
 $topbar-button-font-size: 0.75rem;
 $topbar-button-top: 7px;
 
 // Style the top bar dropdown elements
 $topbar-dropdown-bg: none;
-$topbar-dropdown-link-color: $white;
+$topbar-dropdown-link-color: $primary-color;
 $topbar-dropdown-link-color-hover: $topbar-link-color-hover;
 $topbar-dropdown-link-bg: $oil;
 $topbar-dropdown-link-bg-hover: $oil;
 $topbar-dropdown-link-weight: $font-weight-normal;
 $topbar-dropdown-toggle-size: 5px;
-$topbar-dropdown-toggle-color: $white;
+$topbar-dropdown-toggle-color: $steel;
 $topbar-dropdown-toggle-alpha: 0.4;
 
 $topbar-dropdown-label-color: $monsoon;
@@ -1434,8 +1434,8 @@ $topbar-dropdown-label-bg: $oil;
 $topbar-menu-link-transform: uppercase;
 $topbar-menu-link-font-size: rem-calc(13);
 $topbar-menu-link-weight: $font-weight-bold;	
-$topbar-menu-link-color: $white;
-$topbar-menu-icon-color: $white;
+$topbar-menu-link-color: $primary-color;
+$topbar-menu-icon-color: $primary-color;
 $topbar-menu-link-color-toggled: $jumbo;
 $topbar-menu-icon-color-toggled: $jumbo;
 $topbar-menu-icon-position: $opposite-direction; // Change to $default-float for a left menu icon

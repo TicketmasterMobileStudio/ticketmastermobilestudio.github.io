@@ -1,4 +1,4 @@
-footer {
+.footer {
 	background: $primary-color;
 	color: $white;
 	padding: rem-calc(32px 0 16px 0);
@@ -36,7 +36,7 @@ footer {
 	strong {
 		font-weight: normal;
 	}
-	#logo {
+	.logo {
 		background-image: url(../images/logo.svg);
 		background-size: 100%;
 		background-repeat: no-repeat;

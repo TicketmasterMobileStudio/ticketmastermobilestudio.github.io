@@ -1,0 +1,22 @@
+<!-- Get the category name for every category on the site and set them
+to the `site_categories` variable. -->
+{% capture site_categories %}{% for category in site.categories %}{{ category.first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+
+<!-- remove the categories we're using for other things -->
+{% assign filtered_categories = site_categories | remove: "blog" | remove: "events" | remove: "archive" | replace: ",,", "," %}
+{% assign first_char = filtered_categories | slice: 0 %}
+{% if first_char == "," %}{% assign filtered_categories = filtered_categories | slice: 1, 150 %}{% endif %}
+
+<!-- `cat_words` is a sorted array of the tag names. -->
+{% assign cat_words = filtered_categories | split: ',' | sort %}
+
+<ul class="categories">
+  {% for item in (0..cat_words.size) %}{% unless forloop.last %}
+    {% capture this_word %}{{ cat_words[item] }}{% endcapture %}
+    <li>
+      <a href="{{ site.baseurl }}/blog/categories#{{ this_word | slugify }}" class="category">{{ this_word }}
+        <span>{{ site.categories[this_word].size }}</span>
+      </a>
+    </li>
+  {% endunless %}{% endfor %}
+</ul>

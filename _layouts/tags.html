@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% include head.html %}
+    <body class="blog-subpage">
+      {% include header.html %}
+      <section class="tags top">
+        <div class="row">
+          <div class="columns">
+            <nav class="breadcrumb"><a href="{{ site.baseurl }}/blog" class="breadcrumb">&larr; Blog</a></nav>
+            <h2>Tags</h2>
+          </div>
+        </div>
+      </section>
+
+      <section class="tags main">
+        <div class="row">
+          <div class="columns">
+
+            {{ content }}
+
+            <h3>All Tags</h3>
+            {% include all_tags.html %}
+            <hr />
+            <h3>Posts by Tag</h3>
+            <!-- This code uses the tag_words list from all_tags.html -->
+            {% for item in (0..site.tags.size) %}{% unless forloop.last %}
+              {% capture this_word %}{{ tag_words[item] }}{% endcapture %}
+              <h4 id="{{ this_word | slugify }}">{{ this_word }}</h4>
+              <ul class="posts-by-tag">
+              {% for post in site.tags[this_word] %}{% if post.title != null %}
+                <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+              {% endif %}{% endfor %}
+              </ul>
+            {% endunless %}{% endfor %}
+
+          </div>
+        </div>
+      </section>

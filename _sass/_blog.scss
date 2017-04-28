@@ -1,0 +1,202 @@
+#blog {
+  .top {
+    background-image: url(../images/blog-bg.png);
+
+    h2 {
+                             margin: rem-calc(32 0);
+      @media #{$medium-up} { margin: rem-calc(48 0); }
+      @media #{$large-up}  { margin: rem-calc(104 0); }
+      @media #{$xlarge-up} { margin: rem-calc(128 0); }
+
+      // animation stuff
+      $ticker-line-height: 1.3em;
+      $ticker-item-count: 6;
+
+      .ticker {
+        display: block;
+        overflow: hidden;
+        height: $ticker-line-height;
+
+        // @keyframes ticker {
+        //   0%, 10%   { top: 0; }
+        //   20%, 30%  { top: -1 * $ticker-line-height; }
+        //   40%, 50%  { top: -2 * $ticker-line-height; }
+        //   60%, 70%  { top: -3 * $ticker-line-height; }
+        //   80%, 90%  { top: -4 * $ticker-line-height; }
+        //   100%      { top: -5 * $ticker-line-height; }
+        // }
+
+        > span {
+          display: block;
+          animation-name: ticker;
+          animation-duration: #{$ticker-item-count * 2}s;
+          animation-iteration-count: infinite;
+          // animation-timing-function: ease;
+
+          @include ticker-animation(
+            $frames: $ticker-item-count,
+            $static: 14.5%
+          );
+
+          > span {
+            display: block;
+            height: $ticker-line-height;
+          }
+        }
+      }
+    }
+  }
+
+  .main {
+    background-color: $white;
+    padding-top: rem-calc(40);
+    @media #{$medium-up} { padding-top: rem-calc(60); }
+    @media #{$large-up}  { padding-top: rem-calc(80); }
+    padding-bottom: rem-calc(40px);
+
+    @media #{$small-only} { overflow-x: auto; } // Workaround for long lines breaking layout. TODO: Apply this globally.
+
+    .button {
+      color: $primary-color;
+      border: 1px solid;
+      box-shadow: none;
+      padding: rem-calc(12px 24px);
+    }
+
+    .posts {
+      list-style: none;
+      margin: rem-calc(0 0 40px 0);
+
+      >li {
+        margin-bottom: rem-calc(40);
+        @media #{$medium-up} { margin-bottom: rem-calc(60); }
+        @media #{$large-up}  { margin-bottom: rem-calc(80); }
+      }
+
+        h3 {
+                                 font-size: rem-calc(30px);
+          @media #{$medium-up} { font-size: rem-calc(36px); }
+          @media #{$large-up}  { font-size: rem-calc(48px); }
+          @media #{$xlarge-up} { font-size: rem-calc(60px); }
+
+          a {
+            color: inherit;
+            &:hover { opacity: 0.5; }
+          }
+        }
+
+      p, li ul {
+        @include bodyfontsize;
+        color: $steel;
+      }
+    }
+
+    // Code blocks
+      pre.highlight {
+        margin: rem-calc(40px) 0;
+        background-color: $ghost;
+        padding: 1rem;
+        overflow: auto;
+      }
+
+      a code {
+        color: inherit;
+        &:hover { color: inherit; }
+      }
+
+    .pagination {
+      @include bodyfontsize;
+      display: flex;
+      justify-content: space-between;
+      color: $iron;
+      margin: rem-calc(80px 0 40px 0);
+
+      .previous, .next, .page_number {
+        flex: 1;
+      }
+
+      .button {
+        @include bodyfontsize;
+        background-color: transparent;
+        border: 1px solid;
+        border-radius: rem-calc(40px);
+        padding: rem-calc(12px 24px);
+      }
+
+      .previous {
+        margin-right: rem-calc(20px);
+      }
+
+      .page_number {
+        margin: 0 auto;
+        text-align: center;
+        border: none;
+        color: $steel;
+      }
+      .next {
+        text-align: right;
+        margin-left: rem-calc(20px);
+      }
+    }
+
+    .sidebar {
+      ul {
+          list-style: none;
+          margin: rem-calc(20px 0 40px);
+
+          li {
+            @include bodyfontsize;
+            margin: rem-calc(0 0 8px 0);
+
+            a {
+              span {
+                display: none; // hide count for visual simplicity
+
+                background-color: $primary-color;
+                display: inline-block;
+                height: 1.5em;
+                min-width: 1.5em;
+                font-size: 0.7em;
+                text-align: center;
+                margin-left: rem-calc(8px);
+                border-radius: rem-calc(40px);
+                padding: rem-calc(0 8px);
+                color: $white;
+              }
+
+              &:hover span {
+                background-color: $anchor-font-color-hover;
+              }
+            }
+          }
+        }
+    }
+  }
+}
+
+// Styles applied to articles, category and tag pages, etc.
+.blog-subpage {
+  .top {
+    a {
+      color: $white;
+      
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+
+    .breadcrumb {
+      @include largebodyfontsize;
+
+      margin-bottom: rem-calc(8px);
+      margin-top: rem-calc(16px);
+
+      @media #{$medium-up} {
+        margin-top: rem-calc(24px);
+      }
+      @media #{$large-up} {
+        margin-top: rem-calc(52px);
+      }
+    }
+  }
+}

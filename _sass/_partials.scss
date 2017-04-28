@@ -1,37 +1,66 @@
 // Heading Sizes
 @mixin largeheadingsize {
-	font-size: rem-calc(44px); 
-	@media #{$medium-up} {font-size: rem-calc(56px);}
-	@media #{$large-up} {font-size: rem-calc(72px);}
-	@media #{$xlarge-up} {font-size:rem-calc(96px);}
+  font-size: rem-calc(44px); 
+  @media #{$medium-up} {font-size: rem-calc(56px);}
+  @media #{$large-up} {font-size: rem-calc(72px);}
+  @media #{$xlarge-up} {font-size:rem-calc(96px);}
 }
 
 // Body Text Sizes
 @mixin bodyfontsize {
-	font-size: rem-calc(14px); 
-	@media #{$medium-up} {font-size: rem-calc(16px);}
-	@media #{$large-up} {font-size: rem-calc(20px);}
-	@media #{$xlarge-up} {font-size:rem-calc(24px);}
+  font-size: rem-calc(14px); 
+  @media #{$medium-up} {font-size: rem-calc(16px);}
+  @media #{$large-up} {font-size: rem-calc(20px);}
+  @media #{$xlarge-up} {font-size:rem-calc(24px);}
 }
 
 @mixin largebodyfontsize {
-	font-size: rem-calc(16px); 
-	@media #{$medium-up} {font-size: rem-calc(18px);}
-	@media #{$large-up} {font-size: rem-calc(24px);}
-	@media #{$xlarge-up} {font-size:rem-calc(30px);}
+  font-size: rem-calc(16px); 
+  @media #{$medium-up} {font-size: rem-calc(18px);}
+  @media #{$large-up} {font-size: rem-calc(24px);}
+  @media #{$xlarge-up} {font-size:rem-calc(30px);}
 }
 
 @mixin hugebodyfontsize {
-	font-size: rem-calc(20px); 
-	@media #{$medium-up} {font-size: rem-calc(24px);}
-	@media #{$large-up} {font-size: rem-calc(32px);}
-	@media #{$xlarge-up} {font-size:rem-calc(48px);}
+  font-size: rem-calc(20px); 
+  @media #{$medium-up} {font-size: rem-calc(24px);}
+  @media #{$large-up} {font-size: rem-calc(32px);}
+  @media #{$xlarge-up} {font-size:rem-calc(48px);}
 }
 
 // Spacing
 @mixin largebodyspacing {
-	margin: rem-calc(8px 0 56px 0);
-	@media #{$medium-up} {margin: rem-calc(48px 0 88px 0);}
-	@media #{$large-up} {margin: rem-calc(56px 0 104px 0);}
-	@media #{$xlarge-up} {margin: rem-calc(64px 0 128px 0);}
+  margin: rem-calc(8px 0 56px 0);
+  @media #{$medium-up} {margin: rem-calc(48px 0 88px 0);}
+  @media #{$large-up} {margin: rem-calc(56px 0 104px 0);}
+  @media #{$xlarge-up} {margin: rem-calc(64px 0 128px 0);}
+}
+
+// Ticker animation for text in blog header
+// From http://hugogiraudel.com/2014/07/16/automating-css-animations-with-sass/
+// TODO: Remove pause from the final frame
+@mixin ticker-animation($frames, $static, $name: 'ticker') {
+  $animating: (100% - $frames * $static) / ($frames - 1);
+
+  @at-root {
+    @keyframes #{$name} {
+      @for $i from 0 to $frames {
+        $current-frame: ($i * $static) + ($i * $animating);
+        $next-frame: (($i + 1) * $static) + ($i * $animating);
+
+        #{$current-frame, $next-frame} {
+          transform: translate3d(0, $i * -100% / $frames, 0);
+          filter: blur(0);
+        }
+
+        $halfway-frame: $i * ($static / 1%) + ($i - 1) * $animating + ($animating / 2);
+
+        @if $i > 0 {
+          #{$halfway-frame} {
+            filter: blur(2px);
+          }
+        }
+      }
+    }
+  }
 }

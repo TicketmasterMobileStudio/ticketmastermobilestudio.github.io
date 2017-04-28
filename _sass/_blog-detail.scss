@@ -1,0 +1,122 @@
+#blog.blog-detail {
+  .top {
+    .breadcrumb {
+      margin-bottom: 0;
+                             margin-top: rem-calc(44);
+      @media #{$medium-up} { margin-top: rem-calc(88); }
+      @media #{$large-up}  { margin-top: rem-calc(104); }
+      @media #{$xlarge-up} { margin-top: rem-calc(128); }
+    }
+
+    h2 {
+      margin: 0;
+    }
+
+    p {
+      color: rgba($white, 0.5);
+      margin-top: 0;
+    }
+  }
+  
+  .main {
+    p, li {
+      @include bodyfontsize;
+      color: $steel;
+    }
+
+    h1 {
+      @include largeheadingsize; // 44px, 56px, 72px, 96px
+    }
+
+    h2 {
+                             font-size: rem-calc(30px);
+      @media #{$medium-up} { font-size: rem-calc(36px); }
+      @media #{$large-up}  { font-size: rem-calc(48px); }
+      @media #{$xlarge-up} { font-size: rem-calc(60px); }
+    }
+
+    h3 {
+                             font-size: rem-calc(24px);
+      @media #{$medium-up} { font-size: rem-calc(28px); }
+      @media #{$large-up}  { font-size: rem-calc(36px); }
+      @media #{$xlarge-up} { font-size: rem-calc(44px); }
+    }
+
+    h4 {
+                             font-size: rem-calc(20px);
+      @media #{$medium-up} { font-size: rem-calc(24px); }
+      @media #{$large-up}  { font-size: rem-calc(32px); }
+      @media #{$xlarge-up} { font-size: rem-calc(40px); }
+    }
+
+    h5 {
+                             font-size: rem-calc(16px);
+      @media #{$medium-up} { font-size: rem-calc(18px); }
+      @media #{$large-up}  { font-size: rem-calc(24px); }
+      @media #{$xlarge-up} { font-size: rem-calc(30px); }
+    }
+
+    h6 {
+                             font-size: rem-calc(14px);
+      @media #{$medium-up} { font-size: rem-calc(16px); }
+      @media #{$large-up}  { font-size: rem-calc(20px); }
+      @media #{$xlarge-up} { font-size: rem-calc(24px); }
+    }
+
+    .blog-content {
+      h1, h2, h3, h4, h5, h6 {
+        margin: 2em 0 0.5em;
+      }
+    }
+  }
+
+  .post-footer {
+    margin-top: rem-calc(80px);
+
+    &, & p {
+      @include bodyfontsize;
+      color: $aluminum;
+    }
+  }
+
+  .tags {
+    padding: rem-calc(20px 0 0);
+  }
+
+  .author-info {
+    background-color: $snow;
+    padding: rem-calc(40px 40px 20px);
+    margin: rem-calc(0 0 40px);
+
+    strong {
+      color: $charcoal;
+    }
+
+    h2 {
+      margin-bottom: rem-calc(20px);
+    }
+  }
+
+  .avatar {
+    float: left;
+    margin-right: rem-calc(20px);
+    height: $paragraph-line-height * 2em;
+    width: $paragraph-line-height * 2em;
+    border-radius: 40px;
+    background-color: $white;
+  }
+
+  .related-posts {
+    li {
+      margin-bottom: rem-calc(20px);
+    }
+  }
+
+  .pagination {
+    a {
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+}

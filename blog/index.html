@@ -1,0 +1,43 @@
+---
+layout: blog
+title: "Blog"
+---
+
+<ul class="posts">
+  {% for post in paginator.posts %}
+    {% if post.url %}
+        <li>
+          <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
+          <p>
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%b %e, %Y' }}</time>
+            {% if post.categories.size > 1 %}&nbsp;&middot;&nbsp;{% endif %}
+            {% for category in post.categories %}{% unless category == 'blog' %}{% unless forloop.first %}, {% endunless %}<a href="{{ site.baseurl }}/blog/categories#{{ category | slugify }}" class="category">{{ category }}</a>{% endunless %}{% endfor %}
+          </p>
+          {% if post.content contains '<!--more-->' %}
+            {{ post.content | split:'<!--more-->' | first }}
+          {% else %}
+            {{ post.excerpt }}
+          {% endif %}
+          <a href="{{ site.baseurl }}{{ post.url }}" class="button">Continue Reading</a>
+        </li>
+    {% endif %}
+  {% endfor %}
+</ul>
+<!-- Pagination links -->
+<nav class="pagination">
+  <div class="previous">
+    {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path }}">&larr; Previous Page</a>
+    {% else %}
+      <!-- <span class="previous">&larr; Previous Page</span> -->
+    {% endif %}
+  </div>
+  <span class="page_number ">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+  <div class="next">
+    {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path }}">Next Page &rarr;</a>
+    {% else %}
+      <!-- <span class="next ">Next Page &rarr;</span> -->
+    {% endif %}
+  </div>
+</nav>

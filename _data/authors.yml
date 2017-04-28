@@ -1,0 +1,63 @@
+# Example:
+# Jane Smith
+#   title: Mad Scientist
+#   avatar: path/to/image.png (starts in images/avatars)
+#   gravatar: 23463b99b62a72f26ed677cc556c44e8 (email hash: https://en.gravatar.com/site/check/)
+#   bio: >
+#     I like long walks on the beach.
+
+# Android
+
+Patrick Jackson:
+  title: Android Engineer
+  avatar: kets/firefighter.png
+
+Chris Pierick:
+  title: Android Engineer
+  avatar: kets/spock.png
+
+Ben Berry:
+  title: Android Engineer
+  avatar: kets/gordonfreeman.png
+
+Curtis Martin:
+  title: Android Engineer
+  avatar: kets/captfalcon.png
+
+Adam Shea:
+  title: Android Engineer
+  avatar: kets/captamerica.png
+
+James Barr:
+  title: Android Engineer
+
+Marcelle Gibble:
+  title: Android Platform Lead
+  avatar: kets/wonder-woman.png
+
+# iOS
+
+Prachi Gauriar:
+  title: iOS Engineer
+  avatar: kets/trex.png
+
+Steve Foster:
+  title: iOS Engineer
+  avatar: kets/stevemcqueen.png
+
+Duncan Lewis:
+  title: iOS Engineer
+  avatar: kets/fencer.png
+
+Josh Johnson:
+  title: iOS Platform Lead
+  avatar: kets/drwho.png
+
+Andrew Hershberger:
+  title: iOS Engineer
+
+Karl Smith:
+  title: QA Engineer
+
+Fred Medlin:
+  title: Android Engineer

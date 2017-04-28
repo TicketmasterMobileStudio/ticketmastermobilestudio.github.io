@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% include head.html %}
+    <body id="blog" class="blog-detail blog-subpage">
+      {% include header.html %}
+      <article>
+        <div class="top">
+          <div class="row">
+            <div class="columns large-12">
+              <p class="breadcrumb"><a href="{{ site.baseurl }}/blog">&larr; Blog</a></p>
+              <h2>{{ page.title }}</h2>
+              <p>
+                <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%b %e, %Y' }}</time>
+                {% if page.categories.size > 1 %}&nbsp;&middot;&nbsp;{% endif %}
+                {% for category in page.categories %}{% unless category == 'blog' %}{% unless forloop.first %}, {% endunless %}<a href="{{ site.baseurl }}/blog/categories#{{ category | slugify }}" class="category">{{ category }}</a>{% endunless %}{% endfor %}
+                {% if page.tags.size > 0 %}&nbsp;&middot;&nbsp;
+                  Tagged
+                  {% for tag in page.tags %}{% unless forloop.first %}{% if forloop.last %} and {% else %}, {% endif %}{% endunless %}<a href="{{ site.baseurl }}/blog/tags#{{ tag | slugify }}" class="tag">{{ tag }}</a>{% endfor %}
+                {% endif %}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="main">
+          <div class="row">
+            <div class="columns small-12 medium-9 large-9">
+              {% if page.outdated %}
+                <div class="panel callout">
+                  <h5>This post is a little old</h5>
+                  <p>This was written back in {{ page.date | date: '%B %Y' }}, and it may no longer be relevant or valid. You have been advised.</p>
+                </div>
+              {% endif %}
+              <div class="blog-content">
+                {{ content }}
+              </div>
+              <footer class="post-footer">
+<!--                 {% if page.tags %}
+                  <hr />
+                  <div class="tags">
+                    <p>
+                      Tagged with
+                      {% for tag in page.tags %}
+                        {% unless forloop.first %}{% if forloop.last %} and {% else %}, {% endif %}{% endunless %}
+                        <a href="{{ site.baseurl }}/blog/tags#{{ tag }}" class="tag">{{ tag }}</a>
+                      {% endfor %}
+                    </p>
+                  </div>
+                {% endif %} -->
+                {% if page.author.display_name.size > 1 %}
+                  {% assign author = site.data.authors[page.author.display_name] %}
+                  {% assign author_name = page.author.display_name %}
+                {% else %}
+                  {% assign author = site.data.authors[page.author] %}
+                  {% assign author_name = page.author %}
+                {% endif %}
+                {% if author.gravatar %}
+                  {% assign author_avatar = "http://www.gravatar.com/avatar/" | append: author.gravatar | append: "?s=160&amp;d=identicon" %}
+                {% elsif author.avatar %}
+                  {% assign author_avatar = site.baseurl | append: "/images/avatars/" | append: author.avatar %}
+                {% else %}
+                  {% assign author_avatar = site.baseurl | append: "/images/avatars/kets/ket.png" %}
+                {% endif %}
+                {% if author %}
+                  <div class="author-info">
+                    <img class="avatar" src="{{ author_avatar }}" alt="Avatar">
+                    <p>
+                      <strong>{{ author_name }}</strong><br>
+                      {{ author.title }}
+                    </p>
+                    <p class="bio">{{ author.bio }}</p>
+                  </div>
+                {% endif %}
+                <nav class="pagination">
+                  {% for post in site.categories.blog %}
+                    {% if post.url == page.url %}
+                        {% assign post_index0 = forloop.index0 %}
+                        {% assign post_index1 = forloop.index %}
+                    {% endif %}
+                  {% endfor %}
+                  {% for post in site.categories.blog %}
+                      {% if post_index0 == forloop.index %}
+                          {% assign next_post = post %}
+                      {% endif %}
+                      {% if post_index1 == forloop.index0 %}
+                          {% assign prev_post = post %}
+                      {% endif %}
+                  {% endfor %}
+                  {% if prev_post %}
+                    <a href="{{ prev_post.url }}" class="previous">
+                      <span class="button">&larr; Previous Post</span>
+                      <h4>{{ prev_post.title }}</h4>
+                    </a>
+                  {% endif %}
+                  {% if next_post %}
+                    <a href="{{ next_post.url }}" class="next">
+                      <span class="button">Next Post &rarr;</span>
+                      <h4>{{ next_post.title }}</h4>
+                    </a>
+                  {% endif %}
+                </nav>
+              </footer>
+            </div>
+            <div class="columns small-12 medium-3 large-3">
+              <aside class="sidebar">
+                {% include related_posts.html %}
+              </aside>
+            </div>
+          </div>
+        </div>
+      </article>
+      {% include openings.html %}
+      {% include footer.html %}
+    </body>
+</html>
