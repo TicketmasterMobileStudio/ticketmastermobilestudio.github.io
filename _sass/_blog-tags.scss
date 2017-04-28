@@ -1,25 +1,20 @@
 .tags {
   &.top {
-    a.button {
-      margin-bottom: rem-calc(8px);
-      margin-top: rem-calc(16px);
-      @media #{$medium-up} {
-        margin-top: rem-calc(24px);
-      }
-      @media #{$large-up} {
-        margin-top: rem-calc(52px);
-      }
+    background-image: url(../images/blog-bg.png);
+
+    .breadcrumb {
+      margin-bottom: 0;
+                             margin-top: rem-calc(44);
+      @media #{$medium-up} { margin-top: rem-calc(88); }
+      @media #{$large-up}  { margin-top: rem-calc(104); }
+      @media #{$xlarge-up} { margin-top: rem-calc(128); }
     }
 
     h2 {
-      margin: rem-calc(0 0 32px);
-
-      @media #{$medium-up} {
-        margin: rem-calc(0 0 72px);
-      }
-      @media #{$large-up} {
-        margin: rem-calc(0 0 104px);
-      }
+                             margin: rem-calc(0 0 32);
+      @media #{$medium-up} { margin: rem-calc(0 0 48); }
+      @media #{$large-up}  { margin: rem-calc(0 0 104); }
+      @media #{$xlarge-up} { margin: rem-calc(0 0 128); }
     }
   }
 
