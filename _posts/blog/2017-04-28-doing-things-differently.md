@@ -1,4 +1,9 @@
-## Doing Things Differently
+---
+title: Doing Things Differently
+author: Mike Hay
+category: Culture
+tags: methodology team
+---
 
 We do things differently.
 
