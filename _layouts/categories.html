@@ -23,7 +23,7 @@
             <hr />
             <h3>Posts by Category</h3>
             <!-- This code uses the cat_words list from all_categories.html -->
-            {% for item in (0..cat_words.size) %}{% unless forloop.last %}
+            {% for item in (1..cat_words.size) %}{% unless forloop.last %}
               {% capture this_word %}{{ cat_words[item] }}{% endcapture %}
               <h4 id="{{ this_word | slugify }}">{{ this_word }}</h4>
               <ul class="posts-by-category">

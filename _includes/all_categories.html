@@ -11,7 +11,7 @@ to the `site_categories` variable. -->
 {% assign cat_words = filtered_categories | split: ',' | sort %}
 
 <ul class="categories">
-  {% for item in (0..cat_words.size) %}{% unless forloop.last %}
+  {% for item in (1..cat_words.size) %}{% unless forloop.last %}
     {% capture this_word %}{{ cat_words[item] }}{% endcapture %}
     <li>
       <a href="{{ site.baseurl }}/blog/categories#{{ this_word | slugify }}" class="category">{{ this_word }}
