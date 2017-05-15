@@ -1,7 +1,7 @@
 ---
 title: How to Structure Product Feedback
 author: Brandon Houlihan
-categories: Product, Culture
+categories: Product Culture
 tags: feedback team design
 ---
 
