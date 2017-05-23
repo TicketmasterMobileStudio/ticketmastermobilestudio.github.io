@@ -25,7 +25,9 @@ Whatever editor you choose to write your post in, at some point you'll need to a
 
 ### File naming
 
-Posts have filenames like `2017-04-01-sketch-tips-for-leet-hackers.md`. The first part is the publish date in `yyyy-mm-dd` format. If you use a future date here, the post will go live on that date.
+Posts have filenames like `2017-04-01-sketch-tips-for-leet-hackers.md`. The first part is the publish date in `yyyy-mm-dd` format.
+
+⚠️ **Using a future date will not prevent your post from going live immediately.** If you want to keep it unpublished until a specific date, add `published: false` to the front matter (see below) and remove it on that date.
 
 The rest of the filename becomes the URL slug. Remember to update this if you change the name of your post while writing. After the post is published, avoid making changes to the filename, since that will break inbound links to the old URL and throw a wrench into page analytics.
 
