@@ -5,11 +5,11 @@ categories: Product Design
 tags: [Google I/O, voice interfaces, conversational interfaces]
 ---
 
-Natural language processing has improved exponentially over the last few years. One of the clear themes of Google I/O 2017 was building conversational interfaces.
+Natural language processing has improved exponentially over the last few years. As expected, one of the clear themes of Google I/O 2017 was building conversational interfaces.
  
 As part of a team invited to create one of the first Actions on Google with transactional and multi-modal capabilities, I paid particular attention to sessions that focused on designing user experiences for voice interactions. While all the speakers had something unique to offer, I felt like all the messages boiled down to one maxim: 
  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Always imagine the whole experience you are creating as a conversation between two people.**
+**Always imagine the whole experience you are creating as a conversation between two people.**
 
 
 ### Make It A Conversation
@@ -20,7 +20,7 @@ One of the unmistakable benefits of voice interactions is how efficiently they c
 
 Give your product a real human voice.
  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;“Exactly _why_ do I need to make the interaction sound like a personal conversation?” asks the analytical, dispassionate engineer. 
+“Exactly _why_ do I need to make the interaction sound like a personal conversation?” asks the analytical, dispassionate engineer. 
  
 The act of conversation has the inherent side effect of being more personal and intimate. After all, it is the natural human reaction to personify things that speak (didn’t you enjoy the talking clock and candlestick in Disney’s _Beauty and the Beast_?). Use this to your advantage and set the tone, mood, and style to pervade the experience. 
  
@@ -47,12 +47,12 @@ That being said, as I listened to all of these special cases, the engineer in me
  
 I hope you’ve found this primer helpful. If you’d like more detailed information from the experts, here are some great sessions from Google I/O 2017 on developing conversational user interfaces:
 
-[Finding the Right Voice Interactions for your App](https://www.youtube.com/watch?v=0PmWruLLUoE&list=PLOU2XLYxmsIKC8eODk_RNCWv3fBcLvMMy&index=78)
+[Finding the Right Voice Interactions for your App](https://www.youtube.com/watch?v=0PmWruLLUoE&list=PLOU2XLYxmsIKC8eODk_RNCWv3fBcLvMMy&index=78){:target='_blank'}
 
-[In Conversation, There Are No Errors](https://www.youtube.com/watch?v=oOLo071Pj1U&index=101&list=PLOU2XLYxmsIKC8eODk_RNCWv3fBcLvMMy)
+[In Conversation, There Are No Errors](https://www.youtube.com/watch?v=oOLo071Pj1U&index=101&list=PLOU2XLYxmsIKC8eODk_RNCWv3fBcLvMMy){:target='_blank'}
 
-[PullString: Storytelling in the Age of Conversational Interfaces](https://www.youtube.com/watch?v=pz8EQHMRr6Y&index=133&list=PLOU2XLYxmsIKC8eODk_RNCWv3fBcLvMMy&t=1s)
+[PullString: Storytelling in the Age of Conversational Interfaces](https://www.youtube.com/watch?v=pz8EQHMRr6Y&index=133&list=PLOU2XLYxmsIKC8eODk_RNCWv3fBcLvMMy&t=1s){:target='_blank'}
 
-[Applying Built-in Hacks of Conversation to Your Voice UI](https://www.youtube.com/watch?v=wuDP_eygsvs&index=151&list=PLOU2XLYxmsIKC8eODk_RNCWv3fBcLvMMy)
+[Applying Built-in Hacks of Conversation to Your Voice UI](https://www.youtube.com/watch?v=wuDP_eygsvs&index=151&list=PLOU2XLYxmsIKC8eODk_RNCWv3fBcLvMMy){:target='_blank'}
 
 
