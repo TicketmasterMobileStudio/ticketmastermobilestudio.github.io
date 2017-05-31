@@ -1,5 +1,5 @@
 ---
-title: Creating Conversational Interfaces: Highlights from Google I/O 2017
+title: “Creating Conversational Interfaces: Highlights from Google I/O 2017”
 author: Marcelle Gibble
 categories: Product Design
 tags: [Google I/O, voice interfaces, conversational interfaces]
@@ -9,7 +9,7 @@ Natural language processing has improved exponentially over the last few years. 
  
 As part of a team invited to create one of the first Actions on Google with transactional and multi-modal capabilities, I paid particular attention to sessions that focused on designing user experiences for voice interactions. While all the speakers had something unique to offer, I felt like all the messages boiled down to one maxim: 
  
-**Always imagine the whole experience you are creating as a conversation between two people.**
+> **Always imagine the whole experience you are creating as a conversation between two people.**
 
 
 ### Make It A Conversation
@@ -20,7 +20,7 @@ One of the unmistakable benefits of voice interactions is how efficiently they c
 
 Give your product a real human voice.
  
-“Exactly _why_ do I need to make the interaction sound like a personal conversation?” asks the analytical, dispassionate engineer. 
+> “Exactly _why_ do I need to make the interaction sound like a personal conversation?” asks the analytical, dispassionate engineer. 
  
 The act of conversation has the inherent side effect of being more personal and intimate. After all, it is the natural human reaction to personify things that speak (didn’t you enjoy the talking clock and candlestick in Disney’s _Beauty and the Beast_?). Use this to your advantage and set the tone, mood, and style to pervade the experience. 
  
