@@ -27,6 +27,11 @@
 }
 
 header.masthead {
+
+  &.fixed.expanded:not(.top-bar) {
+    overflow-y: visible; // fix disappearing bar on safari
+  }
+
   &.contain-to-grid {
     background: $primary-color;
     transition: all 0.2s ease-in-out;
@@ -73,7 +78,7 @@ header.masthead {
         height: 100%;
         width: 100%;
         padding: 0;
-        margin: 0;  
+        margin: 0;
       }
 
       span {
@@ -140,7 +145,7 @@ header.masthead {
 
     #logo a {
       height: rem-calc(88);
-      width: rem-calc(102px); 
+      width: rem-calc(102px);
 
       &:before {
         transition: all 0.6s ease-in-out;
