@@ -21,7 +21,7 @@
 			@media #{$medium-up} {
 			margin: rem-calc(0 16px);
 			}
-		}		
+		}
 		@media #{$medium-up} {
 		padding-top: rem-calc(56px);
 		}
@@ -29,10 +29,10 @@
 			color: $white;
 			padding-top: 0;
 			margin-top: rem-calc(48px);
-				@media #{$medium-up} { 
+				@media #{$medium-up} {
 					margin-top: rem-calc(48px);
 				}
-				@media #{$large-up} { 
+				@media #{$large-up} {
 					margin-top: rem-calc(56px);
 				}
 		}
@@ -45,22 +45,22 @@
 		text-align: center;
 		padding-top: rem-calc(64px);
 		padding-bottom: rem-calc(64px);
-			@media #{$medium-up} { 
+			@media #{$medium-up} {
 				padding-top: rem-calc(96px);
 				padding-bottom: rem-calc(96px);
 			}
-			@media #{$large-up} { 
+			@media #{$large-up} {
 				padding-top: rem-calc(240px);
 				padding-bottom: rem-calc(240px);
-			}		
+			}
 		a.button {
 			display: block;
 			width: rem-calc(160px);
-			@media #{$medium-up} { 
+			@media #{$medium-up} {
 				margin-top: rem-calc(32px);
 				width: rem-calc(280px);
 			}
-			@media #{$large-up} { 
+			@media #{$large-up} {
 				margin-top: rem-calc(48px);
 			}
 		}
@@ -71,12 +71,19 @@
 	}
 }
 
-a.homedescription {
+.homedescription {
 	@include largebodyfontsize;
 	@include largebodyspacing;
 	line-height: 1.7;
 	color: $white;
-	@media #{$medium-up} { 
+}
+
+a.homedescription {
+	&:hover {
+		opacity: 0.5;
+	}
+	
+	@media #{$medium-up} {
 		&:before {
 			background: url(../images/arrow_white.svg);
 			background-size: 100%;
@@ -86,13 +93,11 @@ a.homedescription {
 			width: rem-calc(40px);
 			top: rem-calc(4px);
 			left: rem-calc(-56px);
-			position: absolute;	
+			position: absolute;
 		}
 	}
-	&:hover {
-		opacity: 0.5;
-	}
 }
+
 #selective {
 	background-color: #005b82;
 	background-image: url(../images/selected.jpg);
@@ -135,7 +140,7 @@ a.homedescription {
 	background-color: #707e89;
 	background-image: url(../images/pride.jpg);
 	background-size: cover;
-	background-position: center;	
+	background-position: center;
 }
 #home-bottom {
 	background-color: $white;
