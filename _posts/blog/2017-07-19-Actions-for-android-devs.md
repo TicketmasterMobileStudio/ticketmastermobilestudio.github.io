@@ -13,7 +13,7 @@ tags: [Google Assistant, Actions on Google, conversational interfaces, Android, 
 There is a lot of buzz and excitment around the [Google Assistant Actions](https://developers.google.com/actions/), and with good reason:  this is an entirely new platform for building experiences for a number of devices.  Building a conversational Action with Google Assistant means it will be available on Android, iOS, Google Home, and others as they become available.
 
 
-For the uninitiated, Actions on Google are third-party apps that can be built using Google's APIs.  Actions extend what the Google Assistant can do by letting user talk to them.  They can be accessed with trigger words such as 'Ok Google, talk to Ticketmaster', or 'Ok Google, ask ticketmaster to find a Yankee's games this weekend'. (Ticketmaster Action coming soon!)
+For the uninitiated, Actions on Google are third-party apps that can be built using Google's APIs.  Actions extend what the Google Assistant can do by letting user talk to them.  They can be accessed with trigger words such as 'Ok Google, talk to Ticketmaster', or 'Ok Google, ask Ticketmaster to find a Yankee's games this weekend'. (Ticketmaster Action coming soon!)
 
 <img src="https://storage.googleapis.com/banjotms.appspot.com/Screenshot_20170718-103901.png" width="300"> 
 
