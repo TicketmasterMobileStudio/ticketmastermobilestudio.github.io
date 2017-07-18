@@ -15,7 +15,7 @@ There is a lot of buzz and excitment around the [Google Assistant Actions](https
 
 Actions on Google are third-party apps that can be built using Google's APIs.  Actions extend what the Google Assistant can do by allowing a conversation between the user and your Action.  They can be accessed with trigger words such as 'Ok Google, talk to Ticketmaster', or 'Ok Google, ask Ticketmaster to find a Yankees games this weekend'. (Ticketmaster Action coming soon!)
 
-<img src="https://storage.googleapis.com/banjotms.appspot.com/Screenshot_20170718-103901.png" width="300"> 
+![](https://storage.googleapis.com/banjotms.appspot.com/basic_card_300.png)
 
 At Ticketmaster Mobile Studio, we decided to leverage our expertise with Kotlin/Java, IntelliJ, & Gradle.  This also allows us to reuse some code with Android apps.  Unfortunately, the documentation and examples are only in Node.js and Java/Kotlin is not officially supported.
 
