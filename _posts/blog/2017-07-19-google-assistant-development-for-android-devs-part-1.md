@@ -18,7 +18,8 @@ Actions on Google are third-party apps that can be built using Google's APIs.  A
 
 At Ticketmaster Mobile Studio, we decided to leverage our expertise with Kotlin/Java, IntelliJ, and Gradle.  This also allows us to reuse some code with Android apps.  Unfortunately, the documentation and examples are only in Node.js and Java/Kotlin is not officially supported.
 
-Looking through the JSON specs and creating response objects to match is pretty tedious, so we have decided to open source an [unofficial Kotlin/Java Actions-on-google SDK](https://github.com/TicketmasterMobileStudio/actions-on-google-kotlin).  This is an early release and we will be adding functionality, with a goal of matching the official SDK.  Currently, all the conversation components are supported.  Using the Kotlin SDK you can get up and running in no time.  And since Kotlin has great interoperability with Java, you can use it from Java as well.
+Looking through the JSON specs and creating response objects to match is pretty tedious, so we have decided to open source an [Actions on Google Kotlin SDK](https://github.com/TicketmasterMobileStudio/actions-on-google-kotlin){:target='_github'}.  This is an early release and we will be adding functionality, with a goal of matching the official SDK.  Currently, all the conversation components are supported.  Using the Kotlin SDK you can get up and running in no time.  And since Kotlin has great interoperability with Java, you can use it from Java as well.
+<a href="example.com" target="_blank">New Tab</a>
 
  
-Over the next few weeks, I'll be posting about our experience building an Action from the perspective of an Android developer, as well as some updates on the [Actions on Google Kotlin SDK.](https://github.com/TicketmasterMobileStudio/actions-on-google-kotlin)
+Over the next few weeks, I'll be posting about our experience building an Action from the perspective of an Android developer, as well as some updates on the [Actions on Google Kotlin SDK.](https://github.com/TicketmasterMobileStudio/actions-on-google-kotlin){:target='_github'}
