@@ -3,7 +3,13 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ site.title }}{% if page.title %} : {{ page.title }}{% endif %}</title>
-    <meta name="description" content="{{ site.subtitle }}">
+    {% if content contains '<!--more-->' %}
+      <meta name="description" content="{{ content | split: '<!--more-->' | first | strip_html | strip }}">
+    {% elsif page.excerpt %}
+      <meta name="description" content="{{ page.excerpt | strip_html | strip }}">
+    {% else %}
+      <meta name="description" content="{{ site.subtitle }}">
+    {% endif %}
     {% include og.html %}
     <script src="bhttps://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
     <meta name="google-site-verification" content="U7PSeLAfMFo_yiau9yHk38wMbCtPx92R1SZiA7LQfXQ" />

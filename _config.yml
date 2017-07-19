@@ -1,5 +1,6 @@
 # Site title and subtitle. This is used in _includes/header.html
 title: 'Ticketmaster Mobile Studio'
+subtitle: 'A tight-knit team in Durham, NC solving problems for mobile users, from event discovery for fans to planning and analytics solutions for venues and artists.'
 
 # if you use google analytics, add your tracking id here
 google_analytics_id: 'UA-62605735-1'

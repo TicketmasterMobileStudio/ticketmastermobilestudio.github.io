@@ -9,10 +9,12 @@
 {% else %}
   <meta content="website" property="og:type">
 {% endif %}
-{% if page.excerpt %}
-  <meta content="{{ page.excerpt | strip_html }}" property="og:description">
+{% if content contains '<!--more-->' %}
+  <meta content="{{ content | split: '<!--more-->' | first | strip_html | strip }}" property="og:description">
+{% elsif page.excerpt %}
+  <meta content="{{ page.excerpt | strip_html | strip }}" property="og:description">
 {% else %}
-  <meta content="{{ site.description }}" property="og:description">
+  <meta content="{{ site.subtitle }}" property="og:description">
 {% endif %}
 {% if page.url %}
   <meta content="{{ site.url }}{{ page.url }}" property="og:url">
