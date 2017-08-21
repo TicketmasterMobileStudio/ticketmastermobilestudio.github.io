@@ -1,12 +1,12 @@
 ---
 title: "Google Assistant Development for Android Devs (Part 2)"
 author: Patrick Jackson
-categories: Development, Android
+categories: [Development, Android]
 tags: [Google Assistant, Actions on Google, conversational interfaces, Kotlin]
 ---
 
 
-![](https://developers.google.com/actions/images/surfaces-hero.svg)
+![](https://storage.googleapis.com/kotlin-actions-sdk.appspot.com/actions-kotlin-java.png)
 
 This is part 2 in a series on developing Actions on Google.  [Part one is here](http://ticketmastermobilestudio.com/blog/google-assistant-development-for-android-devs-part-1).
 
@@ -19,10 +19,11 @@ In my last post, I introduced an open source SDK for Actions on Google for Kotli
  - Transaction Sample for API.AI
  - Java conversation sample
  
-Now the capabilities of the [official Node.js SDK](https://github.com/TicketmasterMobileStudio/actions-on-google-kotlin) can be matched easily in Kotlin & Java (or any JVM language).  Since this is a port, and the API is nearly identical, one can look at the Node.js docs and examples and easily do the same in Kotlin or Java.  Below is how writing Actions for Google with the unofficial SDK looks.
+Now the capabilities of the [official Node.js SDK](https://github.com/actions-on-google/actions-on-google-nodejs){:target='_blank'} can be matched easily by using the [unofficial Kotlin/Java SDK](https://github.com/TicketmasterMobileStudio/actions-on-google-kotlin).  Since this is a port, and the API is nearly identical, one can look at the Node.js docs and examples and easily do the same in Kotlin, Java, or any JVM language.  Below is how writing Actions for Google with the unofficial SDK looks.
 
 ### Actions in Kotlin
 
+{% raw %}
 ```kotlin
     fun welcome(app: ApiAiApp) =
         app.ask(app.buildRichResponse()
@@ -59,9 +60,11 @@ Now the capabilities of the [official Node.js SDK](https://github.com/Ticketmast
        }
     }
 ```
+{% endraw %}
 
 ### Actions in Java
 
+{% raw %}
 ```java
 	@WebServlet("/conversation/java")
 	public class ConversationComponentsSampleJava extends HttpServlet {
@@ -100,10 +103,10 @@ Now the capabilities of the [official Node.js SDK](https://github.com/Ticketmast
     	}
     }
 ```
-
+{% endraw %}
 
  
-Many Android and Java developers should be able to get started quickly, even if yor're a newbie to back-end development.  Check out [our GitHub repo]((https://github.com/TicketmasterMobileStudio/actions-on-google-kotlin)) for examples and more information on getting started.
+Many Android and Java developers should be able to get started quickly, even if your're a newbie to back-end development.  Check out [our GitHub repo]((https://github.com/TicketmasterMobileStudio/actions-on-google-kotlin) for examples and more information on getting started.
 
 In the next post I'll be covering some of the basic concepts and tools for developing Actions on Google.
 
