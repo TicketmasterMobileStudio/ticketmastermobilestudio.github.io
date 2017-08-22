@@ -19,7 +19,9 @@ In my last post, I introduced an open source SDK for Actions on Google for Kotli
  - Transaction Sample for API.AI
  - Java conversation sample
  
-Now the capabilities of the [official Node.js SDK](https://github.com/actions-on-google/actions-on-google-nodejs){:target='_blank'} can be matched easily by using the [unofficial Kotlin/Java SDK](https://github.com/TicketmasterMobileStudio/actions-on-google-kotlin).  Since this is a port, and the API is nearly identical, one can look at the Node.js docs and examples and easily do the same in Kotlin, Java, or any JVM language.  Below is how writing Actions for Google with the unofficial SDK looks.
+ <!--more-->
+ 
+Now the capabilities of the [official Node.js SDK](https://github.com/actions-on-google/actions-on-google-nodejs){:target='_blank'} can be matched easily by using the [unofficial Kotlin/Java SDK](https://github.com/TicketmasterMobileStudio/actions-on-google-kotlin){:target='_github'}.  Since this is a port, and the API is nearly identical, one can look at the Node.js docs and examples and easily do the same in Kotlin, Java, or any JVM language.  Below is how writing Actions for Google with the unofficial SDK looks.
 
 ### Actions in Kotlin
 
@@ -106,7 +108,7 @@ Now the capabilities of the [official Node.js SDK](https://github.com/actions-on
 {% endraw %}
 
  
-Many Android and Java developers should be able to get started quickly, even if your're a newbie to back-end development.  Check out [our GitHub repo]((https://github.com/TicketmasterMobileStudio/actions-on-google-kotlin) for examples and more information on getting started.
+Many Android and Java developers should be able to get started quickly, even if you're a newbie to back-end development.  Check out [our GitHub repo](https://github.com/TicketmasterMobileStudio/actions-on-google-kotlin){:target='_github'} for examples and more information on getting started.
 
 In the next post I'll be covering some of the basic concepts and tools for developing Actions on Google.
 
