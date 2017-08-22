@@ -2,6 +2,7 @@
 title: "Google Assistant Development for Android Devs (Part 2)"
 author: Patrick Jackson
 categories: [Development, Android]
+featured-image: https://storage.googleapis.com/kotlin-actions-sdk.appspot.com/actions-kotlin-java.png
 tags: [Google Assistant, Actions on Google, conversational interfaces, Kotlin]
 ---
 
