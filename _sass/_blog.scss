@@ -93,6 +93,11 @@
         @include bodyfontsize;
         color: $steel;
       }
+
+      li ul {
+        list-style-type: disc;
+        margin-bottom: $paragraph-margin-bottom;
+      }
     }
 
     // Code blocks
@@ -183,7 +188,7 @@
   .top {
     a {
       color: $white;
-      
+
       &:hover {
         opacity: 0.5;
       }
