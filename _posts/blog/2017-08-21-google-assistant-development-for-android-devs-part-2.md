@@ -27,7 +27,7 @@ Now the capabilities of the [official Node.js SDK](https://github.com/actions-on
 
 {% raw %}
 ```kotlin
-    fun welcome(app: ApiAiApp) =
+fun welcome(app: ApiAiApp) =
         app.ask(app.buildRichResponse()
                 .addSimpleResponse(speech = "Hi there!", displayText = "Hello there!")
                 .addSimpleResponse(
@@ -36,31 +36,31 @@ Now the capabilities of the [official Node.js SDK](https://github.com/actions-on
                         displayText = """"I can show you basic cards, lists and carousels as
                     "well as suggestions"""")
                 .addSuggestions("Basic Card", "List", "Carousel", "Suggestions"))
-                
-    fun normalAsk(app: ApiAiApp) = app.ask("Ask me to show you a list, carousel, or basic card")
 
-    fun suggestions(app: ApiAiApp) {
-        app.ask(app
+fun normalAsk(app: ApiAiApp) = app.ask("Ask me to show you a list, carousel, or basic card")
+
+fun suggestions(app: ApiAiApp) {
+    app.ask(app
             .buildRichResponse()
             .addSimpleResponse("This is a simple response for suggestions")
             .addSuggestions("Suggestion Chips")
             .addSuggestions("Basic Card", "List", "Carousel")
             .addSuggestionLink("Suggestion Link", "https://assistant.google.com/"))
-    }
-    
-    val actionMap = mapOf(
+}
+
+val actionMap = mapOf(
         WELCOME to ::welcome,
         NORMAL_ASK to ::normalAsk,
         SUGGESTIONS to ::suggestions)
-      
-    
-    @WebServlet("/conversation")
-    class WebHook : HttpServlet() {
 
-    	override fun doPost(req: HttpServletRequest, resp: HttpServletResponse) {
-        	ApiAiAction(req, resp).handleRequest(actionMap)
-       }
+
+@WebServlet("/conversation")
+class WebHook : HttpServlet() {
+
+    override fun doPost(req: HttpServletRequest, resp: HttpServletResponse) {
+        ApiAiAction(req, resp).handleRequest(actionMap)
     }
+}
 ```
 {% endraw %}
 
@@ -68,42 +68,42 @@ Now the capabilities of the [official Node.js SDK](https://github.com/actions-on
 
 {% raw %}
 ```java
-	@WebServlet("/conversation/java")
-	public class ConversationComponentsSampleJava extends HttpServlet {
-    	private static final Logger logger = Logger.getAnonymousLogger();
+@WebServlet("/conversation/java")
+public class ConversationComponentsSampleJava extends HttpServlet {
+    private static final Logger logger = Logger.getAnonymousLogger();
 
-		Function1<ApiAiApp, Object> welcome = app -> {
-        	app.ask(app.buildRichResponse()
+    Function1<ApiAiApp, Object> welcome = app -> {
+        app.ask(app.buildRichResponse()
                 .addSimpleResponse("Hi there from Java!", "Hello there from Java!")
                 .addSimpleResponse(
                         "I can show you basic cards, lists and carousels as well as suggestions on your phone",
                         "I can show you basic cards, lists and carousels as well as suggestions")
                 .addSuggestions("Basic Card", "List", "Carousel", "Suggestions"), null);
-        	return Unit.INSTANCE;
-    	};
+        return Unit.INSTANCE;
+    };
 
-    	Function1<ApiAiApp, Object> normalAsk = app ->
-       	     app.ask("Ask me to show you a list, carousel, or basic card");
+    Function1<ApiAiApp, Object> normalAsk = app ->
+            app.ask("Ask me to show you a list, carousel, or basic card");
 
-    	Function1<ApiAiApp, Object> suggestions = app ->
-       	     app.ask(app.buildRichResponse(null)
+    Function1<ApiAiApp, Object> suggestions = app ->
+            app.ask(app.buildRichResponse(null)
                     .addSimpleResponse("This is a simple response for suggestions", null)
                     .addSuggestions("Suggestion Chips")
                     .addSuggestions("Basic Card", "List", "Carousel")
                     .addSuggestionLink("Suggestion Link", "https://assistant.google.com/"));
 
-		private Map<String, Function1<String, Object>> intentMap = new HashMap() {{
-        	put(ConversationComponentsSampleKt.WELCOME, welcome);
-        	put(ConversationComponentsSampleKt.NORMAL_ASK, normalAsk);
-        	put(ConversationComponentsSampleKt.SUGGESTIONS, suggestions);
-    	}};
+    private Map<String, Function1<String, Object>> intentMap = new HashMap() {{
+        put(ConversationComponentsSampleKt.WELCOME, welcome);
+        put(ConversationComponentsSampleKt.NORMAL_ASK, normalAsk);
+        put(ConversationComponentsSampleKt.SUGGESTIONS, suggestions);
+    }};
 
-    	@Override
-    	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-         	 ApiAiAction action = new ApiAiAction(req, resp);
-       	 	 action.handleRequest(intentMap);
-    	}
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        ApiAiAction action = new ApiAiAction(req, resp);
+        action.handleRequest(intentMap);
     }
+}
 ```
 {% endraw %}
 
