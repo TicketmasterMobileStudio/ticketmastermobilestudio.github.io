@@ -7,7 +7,7 @@ location: Ticketmaster Mobile Studio
 eventtype: Android, Development
 ---
 
-Join the Tridroid community on Sept 28 for three lightning talks!
-  * Optimizing network calls with GraphQL - Marcelle Gibble
-  * Android Development with Flutter - Fred Medlin
-  * Background services changes in Oreo - Evan Halley
+Join the TriDroid Community on September 28 for three lightning talks!
+1. Optimizing network calls with GraphQL - Marcelle Gibble
+2. Android Development with Flutter - Fred Medlin
+3. Background services changes in Oreo - Evan Halley
